@@ -2,6 +2,10 @@
   import axios from 'axios';
   import { onMount } from 'svelte';
   import { profileUrl } from '../lib/vars';
+  import Footer from '$lib/footer.svelte';
+  import Right from '$lib/right.svelte';
+  import Left from '$lib/left.svelte';
+  import Signup from '$lib/signup.svelte';
 
   export let data;
 
@@ -60,79 +64,87 @@
   });
 </script>
 
+
 <svelte:head>
   <title>Home</title>
 </svelte:head>
 
-<div class="container">
-  <!-- Desktop -->
-  <div
-    class="d-flex justify-content-start mt-3 d-none d-lg-block"
-    role="group"
-    aria-label="Basic radio toggle button group"
-    style="max-width: 70%"
-  >
-    <!--TODO: Make this a anchor tag  , so it can have a href property -->
-    <button
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
-    >
-
-    {#each allTags as tag}
-      <!--TODO: Make this a anchor tag , so it can have a href property -->
-      <!-- Here  -->
-      <input type="button" class="btn-check" id={tag.tag} />
-      <label class="btn btn-outline-primary mx-2 my-2" for={tag.tag}
-        >{tag.tag}</label
-      >
-      <!-- To Here  -->
-    {/each}
-    {#if loadMore != false}
-      <button
-        type="button"
-        on:click={loadMoreTags}
-        class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
-      >
-    {/if}
-  </div>
-  <!-- Mobile overflow-auto -->
-  <div
-    class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
-    role="group"
-    aria-label="Basic radio toggle button group"
-  >
-    <!--TODO: Make this a anchor tag  , so it can have a href property -->
-    <button
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
-    >
-    {#each allTags as tag}
-      <!--TODO: Make this a anchor tag  , so it can have a href property -->
-      <!-- Here  -->
-      <!-- <input type="button" class="btn-check" id={tag.tag} />
-      <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label
-      > -->
-      <a href="/" class="btn btn-outline-primary mx-2">{tag.tag}</a>
-      <!-- To Here  -->
-    {/each}
-    {#if loadMore != false}
-      <button
-        type="button"
-        on:click={loadMoreTags}
-        class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
-      >
-    {/if}
-  </div>
-</div>
+<Signup />
 
 <div class="container mt-3">
   <div class="row">
-    <div class="col-sm-8" id="slide">
+    <div class="col-sm-2" id="slide">
+      <Left />
+
+    </div>
+
+    <div class="col-sm-7">
       <!-- New design start -->
+
+      <div class="container">
+        <!-- Desktop -->
+        <div
+          class="d-flex justify-content-start mt-3 d-none d-lg-block"
+          role="group"
+          aria-label="Basic radio toggle button group"
+          style="max-width: 70%"
+        >
+          <!--TODO: Make this a anchor tag  , so it can have a href property -->
+          <button
+            type="button"
+            class="btn btn-outline-secondary mx-1 rounded-pill explore"
+            data-bs-toggle="modal"
+            data-bs-target="#explore">Explore</button
+          >
+      
+          {#each allTags as tag}
+            <!--TODO: Make this a anchor tag , so it can have a href property -->
+            <!-- Here  -->
+            <input type="button" class="btn-check" id={tag.tag} />
+            <label class="btn btn-outline-primary mx-2 my-2" for={tag.tag}
+              >{tag.tag}</label
+            >
+            <!-- To Here  -->
+          {/each}
+          {#if loadMore != false}
+            <button
+              type="button"
+              on:click={loadMoreTags}
+              class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
+            >
+          {/if}
+        </div>
+        <!-- Mobile overflow-auto -->
+        <div
+          class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <!--TODO: Make this a anchor tag  , so it can have a href property -->
+          <button
+            type="button"
+            class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector"
+            data-bs-toggle="modal"
+            data-bs-target="#explore">Explore</button
+          >
+          {#each allTags as tag}
+            <!--TODO: Make this a anchor tag  , so it can have a href property -->
+            <!-- Here  -->
+            <!-- <input type="button" class="btn-check" id={tag.tag} />
+            <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label
+            > -->
+            <a href="/" class="btn btn-outline-primary mx-2">{tag.tag}</a>
+            <!-- To Here  -->
+          {/each}
+          {#if loadMore != false}
+            <button
+              type="button"
+              on:click={loadMoreTags}
+              class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
+            >
+          {/if}
+        </div>
+      </div>
 
       <p class="fw-normal"><i class="bi bi-{icon} fs-4" /> {greet}</p>
 
@@ -294,42 +306,23 @@
 
       <!-- New design end -->
     </div>
-    <div
-      class="col-sm-4 fixed-top d-none d-lg-block"
-      style="margin-left: 65%; margin-top: 2%;"
-    >
-      <div
-        class="card rounded"
-        style="background-color: #F3F6FF; border: none;"
-      >
-        <div class="card-body">
-          <h5 class="card-title">What is eli5?</h5>
-          <p class="card-text">
-            ELI5 is short for “Explain Like I’m 5,” a request for a simple
-            explanation to an otherwise complicated question or concept.
-          </p>
-          <b class="card-text">How can I answer question?</b>
-          <p class="card-text">Just hit EIL5 button follow the basic rule:</p>
-          <ul>
-            <li>State it: State the idea clearly, in a few sentences.</li>
-            <li>
-              Elaborate: Explain the idea further in your own words. Elaborate
-              on the concept in a paragraph or less.
-            </li>
-            <li>
-              Exemplify: Provide concrete examples (and counter-examples, if
-              necessary).
-            </li>
-            <li>Summarise: Summarise your explanation.</li>
-          </ul>
 
-          <i class="bi bi-info-circle" />
-          <a class="link-dark" href="/rules">Rules</a>
-        </div>
-      </div>
-    </div>
+
+    <div
+    class="col-sm-3 d-none d-lg-block"
+  >
+      <Right />
+  </div>
+
+
+  
+
   </div>
 </div>
+
+<Footer />
+
+
 
 <style>
   .tags {
