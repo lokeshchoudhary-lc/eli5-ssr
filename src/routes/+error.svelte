@@ -1,7 +1,13 @@
 <script>
   import { page } from '$app/stores';
+  import Signup from '$lib/signup.svelte';
+  import Nav from '$lib/navbar.svelte';
+  import Footer from '$lib/footer.svelte';
 </script>
 
+<Nav />
+
+<Signup />
 {#if $page?.status == 404}
   <div class="px-4 pt-5 mt-5 text-center border-bottom">
     <div class="container">
@@ -26,8 +32,8 @@
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
         <!-- TODO : Make anchor tag button -->
-        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3"
-          >Go home</button
+        <a href="/" type="button" class="btn btn-primary btn-lg px-4 me-sm-3"
+          >Go home</a
         >
       </div>
     </div>
@@ -61,3 +67,5 @@
     </div>
   </div>
 {/if}
+
+<Footer />

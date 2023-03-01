@@ -6,6 +6,7 @@
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
   import Signup from '$lib/signup.svelte';
+  import Nav from '$lib/navbar.svelte';
 
   export let data;
 
@@ -71,20 +72,22 @@
 
 <Signup />
 
+<Nav />
+
 <div class="container mt-3">
   <div class="row">
-    <div class="col-sm-2" id="slide">
+    <div class="col-sm-3" id="slide">
       <Left />
 
     </div>
 
-    <div class="col-sm-7">
+    <div class="col-sm-6">
       <!-- New design start -->
 
       <div class="container">
         <!-- Desktop -->
         <div
-          class="d-flex justify-content-start mt-3 d-none d-lg-block"
+          class=" contianer my-3"
           role="group"
           aria-label="Basic radio toggle button group"
           style="max-width: 70%"
@@ -92,19 +95,17 @@
           <!--TODO: Make this a anchor tag  , so it can have a href property -->
           <button
             type="button"
-            class="btn btn-outline-secondary mx-1 rounded-pill explore"
+            class="btn btn-outline-secondary rounded-pill explore"
             data-bs-toggle="modal"
             data-bs-target="#explore">Explore</button
           >
       
-          {#each allTags as tag}
-            <!--TODO: Make this a anchor tag , so it can have a href property -->
-            <!-- Here  -->
+          <!-- {#each allTags as tag}
             <input type="button" class="btn-check" id={tag.tag} />
             <label class="btn btn-outline-primary mx-2 my-2" for={tag.tag}
               >{tag.tag}</label
             >
-            <!-- To Here  -->
+
           {/each}
           {#if loadMore != false}
             <button
@@ -112,7 +113,7 @@
               on:click={loadMoreTags}
               class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
             >
-          {/if}
+          {/if} -->
         </div>
         <!-- Mobile overflow-auto -->
         <div
@@ -120,21 +121,15 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          <!--TODO: Make this a anchor tag  , so it can have a href property -->
+         
           <button
             type="button"
             class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector"
             data-bs-toggle="modal"
             data-bs-target="#explore">Explore</button
           >
-          {#each allTags as tag}
-            <!--TODO: Make this a anchor tag  , so it can have a href property -->
-            <!-- Here  -->
-            <!-- <input type="button" class="btn-check" id={tag.tag} />
-            <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label
-            > -->
+          <!-- {#each allTags as tag}
             <a href="/" class="btn btn-outline-primary mx-2">{tag.tag}</a>
-            <!-- To Here  -->
           {/each}
           {#if loadMore != false}
             <button
@@ -142,7 +137,7 @@
               on:click={loadMoreTags}
               class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
             >
-          {/if}
+          {/if} -->
         </div>
       </div>
 
@@ -353,4 +348,5 @@
       background-position: 0% 50%;
     }
   }
+  
 </style>
