@@ -1,24 +1,49 @@
 <script>
+  import Right from '$lib/right.svelte';
+  import Left from '$lib/left.svelte';
+  import Signup from '$lib/signup.svelte';
+  import Nav from '$lib/navbar.svelte';
+  import Podcast from '$lib/podcast.svelte';
   export let data;
   let exploreTags = data.exploreTags.data;
 </script>
 
-<div class="container">
-  <div class="row text-center">
-    {#each exploreTags as tag}
-      <div
-        id={tag.tag}
-        data-bs-dismiss="modal"
-        class="col m-1 p-2 border border-1 rounded shadow-sm"
-      >
-        {tag.tag}
-      </div>
-    {/each}
-  </div>
-</div>
+<Nav />
 
-<div class="card-footer">
-  <div class="container mb-2">
-    <img src="/assets/images/explore.png" class="img-fluid" alt="noanswer" />
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-3">
+      <Left />
+    </div>
+
+    <div class="col-sm-6">
+      <div class="container">
+        <h4>Explore</h4>
+
+        <div class="contianer mt-3">
+          <h6>#️⃣ Eli5 Tags</h6>
+          <div class="row text-center">
+            {#each exploreTags as tag}
+              <a
+                href={`/${tag.tag}`}
+                class="col m-1 p-2 border border-1 rounded shadow-sm text-decoration-none"
+              >
+                {tag.tag}
+              </a>
+              <!-- <div id={tag.tag} class="col m-1 p-2 border border-1 rounded shadow-sm">
+              {tag.tag}
+            </div> -->
+            {/each}
+          </div>
+        </div>
+
+        <Podcast />
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <Right />
+    </div>
+    <Signup />
   </div>
 </div>

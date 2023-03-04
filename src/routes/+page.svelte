@@ -3,6 +3,12 @@
   import { onMount } from 'svelte';
   import { profileUrl } from '../lib/vars';
 
+  import Footer from '$lib/footer.svelte';
+  import Right from '$lib/right.svelte';
+  import Left from '$lib/left.svelte';
+  import Signup from '$lib/signup.svelte';
+  import Nav from '$lib/navbar.svelte';
+
   export let data;
 
   let greet;
@@ -55,6 +61,11 @@
     }
   }
 
+  function makeUrl(q, i) {
+    let res = q.trim().replace(/\s/g, '-');
+    return res + '--' + i;
+  }
+
   onMount(() => {
     greetUser();
   });
@@ -64,75 +75,79 @@
   <title>Home</title>
 </svelte:head>
 
-<div class="container">
-  <!-- Desktop -->
-  <div
-    class="d-flex justify-content-start mt-3 d-none d-lg-block"
-    role="group"
-    aria-label="Basic radio toggle button group"
-    style="max-width: 70%"
-  >
-    <!--TODO: Make this a anchor tag  , so it can have a href property -->
-    <button
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
-    >
+<Signup />
 
-    {#each allTags as tag}
-      <!--TODO: Make this a anchor tag , so it can have a href property -->
-      <!-- Here  -->
-      <input type="button" class="btn-check" id={tag.tag} />
-      <label class="btn btn-outline-primary mx-2 my-2" for={tag.tag}
-        >{tag.tag}</label
-      >
-      <!-- To Here  -->
-    {/each}
-    {#if loadMore != false}
-      <button
-        type="button"
-        on:click={loadMoreTags}
-        class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
-      >
-    {/if}
-  </div>
-  <!-- Mobile overflow-auto -->
-  <div
-    class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
-    role="group"
-    aria-label="Basic radio toggle button group"
-  >
-    <!--TODO: Make this a anchor tag  , so it can have a href property -->
-    <button
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
-    >
-    {#each allTags as tag}
-      <!--TODO: Make this a anchor tag  , so it can have a href property -->
-      <!-- Here  -->
-      <!-- <input type="button" class="btn-check" id={tag.tag} />
-      <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label
-      > -->
-      <a href="/" class="btn btn-outline-primary mx-2">{tag.tag}</a>
-      <!-- To Here  -->
-    {/each}
-    {#if loadMore != false}
-      <button
-        type="button"
-        on:click={loadMoreTags}
-        class="btn btn-outline-primary mx-1 rounded-pill explore">More..</button
-      >
-    {/if}
-  </div>
-</div>
+<Nav />
 
 <div class="container mt-3">
   <div class="row">
-    <div class="col-sm-8" id="slide">
+    <div class="col-sm-3" id="slide">
+      <Left />
+    </div>
+    <div class="col-sm-6">
       <!-- New design start -->
+      <div class="container">
+        <!-- Desktop -->
+        <div
+          class=" contianer my-3"
+          role="group"
+          aria-label="Basic radio toggle button group"
+          style="max-width: 70%"
+        >
+          <a
+            href="/explore"
+            class="btn btn-outline-secondary mx-1 rounded-pill explore text-decoration-none"
+            >Explore</a
+          >
+
+          <!-- {#each allTags as tag}
+            <input type="button" class="btn-check" id={tag.tag} />
+              <label class="btn btn-outline-primary mx-2 my-2" for={tag.tag}
+                >{tag.tag}</label
+              >
+            <a
+              href={`/${tag.tag}`}
+              class="btn btn btn-outline-primary mx-2 my-2">{tag.tag}</a
+            >
+          {/each}
+          {#if loadMore != false}
+            <button
+              type="button"
+              on:click={loadMoreTags}
+              class="btn btn-outline-primary mx-1 rounded-pill explore"
+              >More..</button
+            >
+          {/if} -->
+        </div>
+        <!-- Mobile overflow-auto -->
+        <div
+          class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <a
+            href="/explore"
+            class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector text-decoration-none"
+            >Explore</a
+          >
+
+          <!-- {#each allTags as tag}
+            <input type="button" class="btn-check" id={tag.tag} />
+              <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label>
+            <a href={`/${tag.tag}`} class="btn btn-outline-primary mx-2"
+              >{tag.tag}</a
+            >
+          {/each}
+          {#if loadMore != false}
+            <button
+              type="button"
+              on:click={loadMoreTags}
+              class="btn btn-outline-primary mx-1 rounded-pill explore"
+              >More..</button
+            >
+          {/if} -->
+        </div>
+      </div>
 
       <p class="fw-normal"><i class="bi bi-{icon} fs-4" /> {greet}</p>
 
@@ -212,16 +227,13 @@
           <div class="col-12">
             <div class="card-body">
               {#each topTags as tag}
-                <!--TODO: Make this a anchor tag  , so it can have a href property -->
-                <!-- Here -->
-                <button
+                <!-- <button
                   id={tag}
                   type="button"
                   style="background: #F3F6FF"
                   class="btn btn-outline-primary mb-2 mx-1">{tag}</button
-                >
-                <a href="/" class="btn btn-primary mb-2 mx-1">{tag}</a>
-                <!--To Here -->
+                > -->
+                <a href={`/${tag}`} class="btn btn-primary mb-2 mx-1">{tag}</a>
               {/each}
             </div>
           </div>
@@ -233,7 +245,10 @@
       </p>
 
       {#each topQuestions as question, i}
-        <a href="/" class="text-decoration-none">
+        <a
+          href={`/${question.tag}/${makeUrl(question.question, question.id)}`}
+          class="text-decoration-none"
+        >
           <div id={question.id} class="card mb-3 shadow-sm round">
             <div class="row g-0 p-2">
               <div class="col-2 my-auto text-center">
@@ -253,34 +268,43 @@
 
       <p class="fw-normal mt-4"><i class="bi bi-suit-heart" /> Best answer</p>
 
-      <div class="card mb-3 shadow-sm round">
-        <h5 class="card-header fs-6 bg-white">
-          <img
-            src={profileUrl + 'pic' + bestAnswer.profilePictureCode + '.png'}
-            alt=""
-            height="30"
-          />
-          {bestAnswer.answeredBy} &ensp;
-          <i style="color: #3366FF;" class="bi bi-heart-fill fs-6" />
-          <small class="text-muted"> {bestAnswer.likeNumber} likes</small>
-        </h5>
-        <div class="card-body mt-1 pt-0">
-          <small
-            ><span class="badge rounded-pill text-bg-primary">Question</span
-            ></small
-          >
-          <h5 class="card-title fs-6 border-bottom py-2">
-            {bestAnswer.question}?
+      <a
+        href={`/${bestAnswer.tag}/${makeUrl(
+          bestAnswer.question,
+          bestAnswer.questionId
+        )}`}
+        class="text-decoration-none"
+      >
+        <div class="card mb-3 shadow-sm round">
+          <h5 class="card-header fs-6 bg-white">
+            <img
+              src={profileUrl + 'pic' + bestAnswer.profilePictureCode + '.png'}
+              alt=""
+              height="30"
+            />
+            {bestAnswer.answeredBy} &ensp;
+            <i style="color: #3366FF;" class="bi bi-heart-fill fs-6" />
+            <small class="text-muted"> {bestAnswer.likeNumber} likes</small>
           </h5>
-          <p class="card-text text-secondary">
-            <small>
-              <span class="badge rounded-pill text-bg-success mb-1">Answer</span
-              >
-              <div>{@html bestAnswer.answer}</div>
-            </small>
-          </p>
+          <div class="card-body mt-1 pt-0">
+            <small
+              ><span class="badge rounded-pill text-bg-primary">Question</span
+              ></small
+            >
+            <h5 class="card-title fs-6 border-bottom py-2">
+              {bestAnswer.question}?
+            </h5>
+            <p class="card-text text-secondary">
+              <small>
+                <span class="badge rounded-pill text-bg-success mb-1"
+                  >Answer</span
+                >
+                <div>{@html bestAnswer.answer}</div>
+              </small>
+            </p>
+          </div>
         </div>
-      </div>
+      </a>
 
       <!-- Bottom Image start -->
       <div class="container d-lg-none mb-2">
@@ -294,42 +318,13 @@
 
       <!-- New design end -->
     </div>
-    <div
-      class="col-sm-4 fixed-top d-none d-lg-block"
-      style="margin-left: 65%; margin-top: 2%;"
-    >
-      <div
-        class="card rounded"
-        style="background-color: #F3F6FF; border: none;"
-      >
-        <div class="card-body">
-          <h5 class="card-title">What is eli5?</h5>
-          <p class="card-text">
-            ELI5 is short for “Explain Like I’m 5,” a request for a simple
-            explanation to an otherwise complicated question or concept.
-          </p>
-          <b class="card-text">How can I answer question?</b>
-          <p class="card-text">Just hit EIL5 button follow the basic rule:</p>
-          <ul>
-            <li>State it: State the idea clearly, in a few sentences.</li>
-            <li>
-              Elaborate: Explain the idea further in your own words. Elaborate
-              on the concept in a paragraph or less.
-            </li>
-            <li>
-              Exemplify: Provide concrete examples (and counter-examples, if
-              necessary).
-            </li>
-            <li>Summarise: Summarise your explanation.</li>
-          </ul>
-
-          <i class="bi bi-info-circle" />
-          <a class="link-dark" href="/rules">Rules</a>
-        </div>
-      </div>
+    <div class="col-sm-3 d-none d-lg-block">
+      <Right />
     </div>
   </div>
 </div>
+
+<Footer />
 
 <style>
   .tags {

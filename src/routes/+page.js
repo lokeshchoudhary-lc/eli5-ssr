@@ -17,5 +17,6 @@ export const load = async () => {
   if (tags.data.length < 10) {
     loadMore = false;
   }
+
   return { feed, tags, loadMore };
 };

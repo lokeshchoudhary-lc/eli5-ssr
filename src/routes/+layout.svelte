@@ -4,5 +4,4 @@
   axios.defaults.withCredentials = true;
 </script>
 
-<h1>asdas</h1>
 <slot />

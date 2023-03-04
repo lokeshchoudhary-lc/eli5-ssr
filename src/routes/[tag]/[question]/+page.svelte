@@ -1,67 +1,183 @@
 <script>
   import axios from 'axios';
   import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
   import { profanity } from '@2toad/profanity';
-  import { link, replace } from 'svelte-spa-router';
-  import {
-    textEditorHtml,
-    userChoosenTagState,
-    userChoosenQuestionState,
-    noAnswerContent,
-  } from './store';
+  // import { textEditorHtml } from './store';
 
-  import Answers from './components/Answers.svelte';
-  import TipTapEditor from './components/TipTapEditor.svelte';
+  // import Answers from './components/Answers.svelte';
+  // import TipTapEditor from '../../../lib/TipTapEditor.svelte';
+
+  export let data;
 
   let textAreaAnswer = '';
   let textAreaAskQuestion = '';
   let boolAnswered = false;
 
   let profileUrl = '/assets/images/profile/';
-
-  let profilePictureCode = 1;
-  let firstName = '';
-  let totalLikes = '';
-  let totalAnswers = '';
-  let streak = '';
+  let profilePictureCode = 1; //change it when user loggedIn
 
   let userAnswer = {};
 
-  let userChoosenTag;
-  let userChoosenQuestion;
-
-  let noAnswer;
-
-  noAnswerContent.subscribe((value) => {
-    noAnswer = value;
-  });
-
-  userChoosenTagState.subscribe((value) => {
-    userChoosenTag = value;
-    if (value == null) {
-      userChoosenTag = localStorage.getItem('userChoosenExploreTag');
-    }
-  });
-
-  userChoosenQuestionState.subscribe((value) => {
-    userChoosenQuestion = value;
-  });
-
-  let selectedQuestion;
-  let selectedQuestionId;
+  let sortType = data.sortType;
+  let userChoosenTag = data.userChoosenTag;
+  let noAnswer = data.noAnswerContent;
+  let loadMore = data.loadMore;
+  let selectedQuestion = data.question.question;
+  let selectedQuestionId = data.question.id;
+  $: answers = [];
 
   let nextPage = 1;
   let backPage = 1;
-  let sortType;
-  let reRender = false;
-  let explore = [];
-
-  let leaderboard = [];
-
-  let smleaderboard = [];
+  let page = 1;
 
   let questionFeed = new Map();
   let counter = 0;
+
+  function findLikeClassAndTime() {
+    answers.forEach((answer) => {
+      if (answer.liked == true) {
+        answer.likeClass = 'bi bi-heart-fill';
+      } else {
+        answer.likeClass = 'bi bi-heart';
+      }
+
+      let time = Math.floor(Date.now() / 1000);
+      let newTime = time - answer.createdAt;
+      let timehrs = Math.floor(newTime / 3600);
+      let timemin = Math.floor(newTime / 60);
+      let timedays = Math.floor(timehrs / 24);
+      let timemonth = Math.floor(timedays / 30);
+      let timeyear = Math.floor(timemonth / 12);
+
+      if (timemin <= 59) {
+        if (timemin == 1) {
+          answer.createdAt = timemin + ' minute ago';
+        } else {
+          answer.createdAt = timemin + ' minutes ago';
+        }
+      } else if (timehrs <= 24) {
+        if (timehrs == 1) {
+          answer.createdAt = timehrs + ' hour ago';
+        } else {
+          answer.createdAt = timehrs + ' hours ago';
+        }
+      } else if (timedays <= 30) {
+        if (timedays == 1) {
+          answer.createdAt = timedays + ' day ago';
+        } else {
+          answer.createdAt = timedays + ' days ago';
+        }
+      } else if (timemonth <= 12) {
+        if (timemonth == 1) {
+          answer.createdAt = timemonth + ' month ago';
+        } else {
+          answer.createdAt = timemonth + ' months ago';
+        }
+      } else {
+        if (timeyear == 1) {
+          answer.createdAt = timeyear + ' year ago';
+        } else {
+          answer.createdAt = timeyear + ' years ago';
+        }
+      }
+    });
+  }
+
+  async function getAnswers() {
+    try {
+      const response = await axios.get(
+        `/answers/${selectedQuestionId}?sort=${sortType}`
+      );
+      // console.log(response);
+      if (response.status == 204) {
+        loadMore = false;
+        noAnswer = true;
+        return;
+      }
+      if (response.data.length < 10) {
+        loadMore = false;
+      }
+      noAnswer = false;
+      answers = [...response.data];
+      findLikeClassAndTime();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function loadMoreAnswers() {
+    try {
+      if (loadMore == false) {
+        return;
+      }
+      page++;
+
+      const response = await axios.get(
+        `/answers/${selectedQuestionId}?sort=${sortType}&page=${page}`
+      );
+      // console.log(response);
+
+      if (response.status == 204) {
+        loadMore = false;
+        return;
+      }
+      if (response.data.length < 10) {
+        loadMore = false;
+      }
+
+      answers = [...answers, ...response.data];
+      findLikeClassAndTime();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function likeAnswer(answerId, answeredBy) {
+    try {
+      let tmp = answeredBy.split('#');
+      let name = tmp[0];
+      let number = tmp[1];
+      const response = await axios.put(
+        `/like/${answerId}?answeredBy=${name}&number=${number}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function cancellikeAnswer(answerId, answeredBy) {
+    try {
+      let tmp = answeredBy.split('#');
+
+      let name = tmp[0];
+      let number = tmp[1];
+      const response = await axios.put(
+        `/cancelLike/${answerId}?answeredBy=${name}&number=${number}`
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function toggleLike(event) {
+    //get answer id from event
+    let answerId = event.currentTarget.id;
+
+    let index = answers.findIndex((answer) => answer.id == answerId);
+
+    if (answers[index].liked == true) {
+      answers[index].liked = false;
+      answers[index].likeNumber -= 1;
+      answers[index].likeClass = 'bi bi-heart';
+      cancellikeAnswer(answerId, answers[index].answeredBy);
+    } else {
+      answers[index].liked = true;
+      answers[index].likeNumber += 1;
+      answers[index].likeClass = 'bi bi-heart-fill';
+      likeAnswer(answerId, answers[index].answeredBy);
+    }
+  }
 
   async function getUserAnswer(questionId) {
     try {
@@ -100,7 +216,6 @@
         boolAnswered = true;
         userAnswer = response.data.userAnswer;
         streak = response.data.streak;
-        reRender = true;
       })
       .catch(function (error) {
         console.log(error);
@@ -112,67 +227,15 @@
 
   function chooseSort(event) {
     sortType = event.currentTarget.value;
+    getAnswers();
   }
 
-  function eraseCookie(name) {
-    document.cookie =
-      name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  function makeUrl(q, i) {
+    let res = q.trim().replace(/\s/g, '-');
+    let url = res + '--' + i;
+    goto(url, { replaceState: true });
   }
 
-  function logout() {
-    axios
-      .get('/logout')
-      .then(function (response) {
-        eraseCookie('loginState');
-        replace('/');
-        // console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  async function getExploreTags() {
-    try {
-      const response = await axios.get(`/explore`);
-      // console.log(response);
-      explore = [...response.data];
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  function chooseExploreTag(event) {
-    let tag = event.currentTarget.id;
-    userChoosenTagState.set(tag);
-    localStorage.setItem('userChoosenExploreTag', tag);
-    localStorage.setItem('userChoosenTag', tag);
-    replace('/exploreQuestions');
-  }
-
-  async function getUserDetails() {
-    try {
-      const response = await axios.get('/userDetails');
-      // console.log(response);
-
-      firstName = response.data.firstName;
-      profilePictureCode = response.data.profilePictureCode;
-      streak = response.data.streak;
-      totalLikes = response.data.totalLikes;
-      totalAnswers = response.data.totalAnswers;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function getLeaderboard() {
-    try {
-      const response = await axios.get('/leaderboard');
-      // console.log(response);
-      leaderboard = response.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
   async function nextQuestion() {
     try {
       let tmpCounter = counter;
@@ -185,10 +248,13 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
-        await getUserAnswer(selectedQuestionId);
+        makeUrl(selectedQuestion, selectedQuestionId);
+        //TODO:check if user is loggedin
+        // await getUserAnswer(selectedQuestionId);
+        await getAnswers();
       } else {
         const response = await axios.get(
-          `/question/${selectedQuestionId}?tag=${userChoosenTag}&page=${nextPage}&action=next`
+          `/changeQuestion/${selectedQuestionId}?tag=${userChoosenTag}&page=${nextPage}&action=next`
         );
         // console.log(response);
         if (response.status == 204) {
@@ -204,7 +270,11 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
-        await getUserAnswer(selectedQuestionId);
+        makeUrl(selectedQuestion, selectedQuestionId);
+
+        //TODO:check if user is loggedin
+        // await getUserAnswer(selectedQuestionId);
+        await getAnswers();
       }
     } catch (error) {
       console.log(error);
@@ -222,10 +292,13 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
-        await getUserAnswer(selectedQuestionId);
+        makeUrl(selectedQuestion, selectedQuestionId);
+        //TODO:check if user is loggedin
+        // await getUserAnswer(selectedQuestionId);
+        await getAnswers();
       } else {
         const response = await axios.get(
-          `/question/${selectedQuestionId}?tag=${userChoosenTag}&page=${backPage}&action=back`
+          `/changeQuestion/${selectedQuestionId}?tag=${userChoosenTag}&page=${backPage}&action=back`
         );
         // console.log(response);
         if (response.status == 204) {
@@ -241,7 +314,10 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
-        await getUserAnswer(selectedQuestionId);
+        makeUrl(selectedQuestion, selectedQuestionId);
+        //TODO:check if user is loggedin
+        // await getUserAnswer(selectedQuestionId);
+        await getAnswers();
       }
     } catch (error) {
       console.log(error);
@@ -262,51 +338,12 @@
   }
 
   onMount(async () => {
-    if (userChoosenQuestion == null) {
-      userChoosenTag = localStorage.getItem('userChoosenTag');
-      const response = await axios.get(`/singleQuestion/${userChoosenTag}`);
-      selectedQuestion = response.data.question;
-      selectedQuestionId = response.data.id;
-      questionFeed.set(0, response.data);
-    } else {
-      if (
-        userChoosenQuestion.question != null &&
-        userChoosenQuestion.id != null
-      ) {
-        localStorage.setItem(
-          'userChoosenQuestion',
-          userChoosenQuestion.question
-        );
-        localStorage.setItem('userChoosenQuestionId', userChoosenQuestion.id);
-      }
+    // sortType = 'trending';
+    // await getUserAnswer(selectedQuestionId);
 
-      selectedQuestion = localStorage.getItem('userChoosenQuestion');
-      selectedQuestionId = localStorage.getItem('userChoosenQuestionId');
-      questionFeed.set(0, userChoosenQuestion);
-    }
-
-    if (localStorage.getItem('userChoosenQuestion') != null) {
-      selectedQuestion = localStorage.getItem('userChoosenQuestion');
-      selectedQuestionId = localStorage.getItem('userChoosenQuestionId');
-      questionFeed.set(0, userChoosenQuestion);
-    }
-
-    sortType = 'trending';
-
-    await getUserDetails();
-    await getLeaderboard();
-
-    await getUserAnswer(selectedQuestionId);
-    let len = leaderboard.length;
-    if (len <= 3) {
-      for (let i = 0; i < len; i++) {
-        smleaderboard[i] = leaderboard[i];
-      }
-    } else {
-      for (let i = 0; i < 3; i++) {
-        smleaderboard[i] = leaderboard[i];
-      }
-    }
+    // Intialize answers array for client side render , this only work on client side
+    answers = [...data.answers];
+    findLikeClassAndTime();
   });
 </script>
 
@@ -334,74 +371,16 @@
 </nav>
 
 <div class="container">
-  <nav class="navbar navbar-light border-bottom border-light">
-    <div class="container justify-content-start">
-      <a class="navbar-brand" href={null}>
-        <img
-          src={profileUrl + 'pic' + profilePictureCode + '.png'}
-          alt=""
-          height="30"
-        />
-        <b class="blockquote">Hey {firstName}</b>
-      </a>
-      <div class="text-end d-lg-none">
-        <a
-          href={null}
-          class="btn btn-outline-secondary rounded align-center"
-          data-bs-toggle="modal"
-          data-bs-target="#profile"><i class="bi bi-sunglasses" /></a
-        >
-        <a
-          href={null}
-          class="btn btn-outline-secondary rounded align-center"
-          data-bs-toggle="modal"
-          data-bs-target="#leaderboard"><i class="bi bi-bar-chart-fill" /></a
-        >
-        <a
-          class="btn btn-outline-danger rounded align-center"
-          on:click={logout}
-          href={null}><i class="bi bi-box-arrow-right" /></a
-        >
-      </div>
-
-      <div class="form d-none d-lg-block">
-        <button class="btn btn-outline-secondary mx-4 btn-sm"
-          ><i class="bi bi-pen" />{totalAnswers} Answer</button
-        >
-        <button class="btn btn-outline-secondary mx-4 btn-sm"
-          ><i class="bi bi-sunglasses" />{streak} Streak</button
-        >
-        <button class="btn btn-outline-secondary mx-4 btn-sm"
-          ><i class="bi bi-heart-fill" />{totalLikes} Likes</button
-        >
-        <button
-          class="btn btn-outline-secondary mx-4 btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#suggest"
-          ><i class="bi bi-plus" /> Ask Question</button
-        >
-        <a
-          on:click={logout}
-          href={null}
-          class="btn btn-outline-danger mx-4 btn-sm"
-          ><i class="bi bi-box-arrow-right" /> Logout</a
-        >
-      </div>
-    </div>
-  </nav>
-
   <!-- Desktop -->
   <div
     class="container mt-3 d-none d-lg-block overflow-auto"
     role="group"
     aria-label="Basic radio toggle button group"
   >
-    <button
-      on:click={getExploreTags}
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
+    <a
+      href="/explore"
+      class="btn btn-outline-secondary mx-1 rounded-pill explore text-decoration-none"
+      >Explore</a
     >
     <label class="btn btn-outline-primary mx-1" for={userChoosenTag}
       >{userChoosenTag}</label
@@ -414,12 +393,10 @@
     role="group"
     aria-label="Basic radio toggle button group"
   >
-    <button
-      on:click={getExploreTags}
-      type="button"
-      class="btn btn-outline-secondary mx-1 rounded-pill explore"
-      data-bs-toggle="modal"
-      data-bs-target="#explore">Explore</button
+    <a
+      href="/explore"
+      class="btn btn-outline-secondary mx-1 rounded-pill explore text-decoration-none"
+      >Explore</a
     >
     <label class="btn btn-outline-primary mx-2" for={userChoosenTag}
       >{userChoosenTag}</label
@@ -563,182 +540,46 @@
         </div>
       {/if}
 
-      {#key [sortType, selectedQuestionId, reRender]}
-        <Answers {sortType} {selectedQuestionId} />
-      {/key}
-    </div>
-
-    <div
-      class="col-sm-4 fixed-top d-none d-lg-block"
-      style="margin-left: 65%; margin-top: 2%;"
-    >
-      <div
-        class="card rounded"
-        style="background-color: #F3F6FF; border: none;"
-      >
-        <div class="card-body">
-          <h5 class="card-title">What is eli5?</h5>
-          <p class="card-text">
-            ELI5 is short for “Explain Like I’m 5,” a request for a simple
-            explanation to an otherwise complicated question or concept.
-          </p>
-          <b class="card-text">How can I answer question?</b>
-          <p class="card-text">Just hit EIL5 button follow the basic rule:</p>
-          <ul>
-            <li>State it: State the idea clearly, in a few sentences.</li>
-            <li>
-              Elaborate: Explain the idea further in your own words. Elaborate
-              on the concept in a paragraph or less.
-            </li>
-            <li>
-              Exemplify: Provide concrete examples (and counter-examples, if
-              necessary).
-            </li>
-            <li>Summarise: Summarise your explanation.</li>
-          </ul>
-
-          <i class="bi bi-info-circle" />
-          <a class="link-dark" href="/rules" use:link>Rules</a>
-        </div>
-      </div>
-
-      <div class="card" style="border:none">
-        <div class="card-body">
-          <h5 class="card-title">Leaderboard</h5>
-          <table class="table" style="border: solid; border-color: #E6E8F0;">
-            <thead style="background-color:#FAFBFF;">
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">User</th>
-                <th scope="col">Likes</th>
-                <th scope="col">Answers</th>
-              </tr>
-            </thead>
-            <tbody>
-              {#each smleaderboard as lead, i}
-                <tr>
-                  <td> <b>{i + 1}</b></td>
-                  <td
-                    ><img
-                      src={profileUrl +
-                        'pic' +
-                        lead.profilePictureCode +
-                        '.png'}
-                      alt=""
-                      height="30"
-                    /> <b>{lead.uniqueAlias}</b></td
-                  >
-                  <td>{lead.totalLikes}</td>
-                  <td>{lead.totalAnswers}</td>
-                </tr>
-              {/each}
-              <tr>
-                <th
-                  ><a
-                    href={null}
-                    class="small"
-                    data-bs-toggle="modal"
-                    data-bs-target="#leaderboard">More</a
-                  ></th
-                >
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Profile Modal -->
-<div
-  class="modal fade"
-  id="profile"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Profile Detials</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="alert alert-primary" role="alert">
-            <i class="bi bi-pen" />
-            {totalAnswers} Answer
+      {#each answers as answer}
+        <div class="card border-light mt-4 shadow-sm rounded">
+          <div class="card-header bg-white border-light">
+            <img
+              src={profileUrl + 'pic' + answer.profilePictureCode + '.png'}
+              alt=""
+              height="30"
+            />
+            <b class="small">{answer.answeredBy}</b> &emsp;
+            <small class="text-muted">{answer.createdAt}</small>
           </div>
-
-          <div class="alert alert-primary" role="alert">
-            <i class="bi bi-sunglasses" />
-            {streak} Streak
+          <div class="card-body text-secondary pb-1">
+            <p class="card-text small text-secondary">
+              {@html answer.answer}
+            </p>
           </div>
-
-          <div class="alert alert-primary" role="alert">
-            <i class="bi bi-heart-fill" />
-            {totalLikes} Likes
+          <div class="card-body text-secondary pt-0">
+            <input type="button" class="btn-check" id={answer.id} />
+            <label
+              style="border-radius: 100%;"
+              class="btn btn-outline-primary"
+              for={answer.id}
+              id={answer.id}
+              on:click={toggleLike}
+              on:keydown={null}><i class={answer.likeClass} /></label
+            > <small class="text-muted">{answer.likeNumber} likes</small> &ensp;
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+      {/each}
 
-<!-- Leaderboard Modal -->
-<div
-  class="modal fade"
-  id="leaderboard"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Leaderboard</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-      <div class="modal-body p-0">
-        <table class="table p-0 m-0" style="font-size: small;">
-          <thead style="background-color:#FAFBFF;">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">User</th>
-              <th scope="col">Likes</th>
-              <th scope="col">Answers</th>
-            </tr>
-          </thead>
-          <tbody>
-            {#each leaderboard as lead, i}
-              <tr>
-                <td><span>{i + 1}</span></td>
-                <td
-                  ><img
-                    src={profileUrl + 'pic' + lead.profilePictureCode + '.png'}
-                    alt=""
-                    height="20"
-                  /> <span class="small">{lead.uniqueAlias}</span></td
-                >
-                <td>{lead.totalLikes}</td>
-                <td>{lead.totalAnswers}</td>
-              </tr>
-            {/each}
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer" />
+      {#if loadMore != false}
+        <div class="container text-center mt-3 mb-4">
+          <button
+            on:click={loadMoreAnswers}
+            type="button"
+            class="btn btn-outline-primary mx-2 rounded-pill"
+            ><i class="bi bi-plus" />See More</button
+          >
+        </div>
+      {/if}
     </div>
   </div>
 </div>
@@ -797,58 +638,6 @@
   </div>
 </div>
 
-<div
-  class="modal fade"
-  id="explore"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          <i class="bi bi-binoculars" /> Explore on Eli5
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-
-      <div class="modal-body">
-        <div class="container">
-          <div class="row text-center">
-            {#each explore as tag}
-              <div
-                id={tag.tag}
-                on:click={chooseExploreTag}
-                on:keypress={null}
-                data-bs-dismiss="modal"
-                class="col m-1 p-2 border border-1 rounded shadow-sm"
-              >
-                {tag.tag}
-              </div>
-            {/each}
-          </div>
-        </div>
-      </div>
-
-      <div class="card-footer">
-        <div class="container mb-2">
-          <img
-            src="/assets/images/explore.png"
-            class="img-fluid"
-            alt="noanswer"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Write Elif Modal -->
 <div
   class="modal fade"
@@ -889,7 +678,7 @@
           <label for="floatingTextarea2">Explain like I’m five</label>
         </div> -->
 
-        <TipTapEditor />
+        <!-- <TipTapEditor /> -->
 
         <div class="modal-footer">
           <button
@@ -932,31 +721,6 @@
   </div>
 </div>
 
-<!-- Toast messages -->
-
-<!-- <div class="toast-container position-fixed top-0 end-0 p-3">
-  <div
-    id="liveToast"
-    class="toast"
-    role="alert"
-    aria-live="assertive"
-    aria-atomic="true"
-  >
-    <div class="toast-header">
-      <strong class="me-auto"
-        ><i class="bi bi-clipboard-check" /> Link Copied</strong
-      >
-      <small />
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="toast"
-        aria-label="Close"
-      />
-    </div>
-    <div class="toast-body">https://www.eli5.club successfully copied!</div>
-  </div>
-</div> -->
 <style>
   .tags {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
