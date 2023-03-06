@@ -86,18 +86,18 @@
     </div>
     <div class="col-sm-6">
       <!-- New design start -->
-      <div class="container">
+      <div class="container px-0">
         <!-- Desktop -->
-        <div
-          class=" contianer my-3"
-          role="group"
-          aria-label="Basic radio toggle button group"
-          style="max-width: 70%"
-        >
+        <div class="d-flex flex-nowrap justify-content-start overflow-auto">
           <a
             href="/explore"
-            class="btn btn-outline-secondary mx-1 rounded-pill explore text-decoration-none"
+            class="btn btn-outline-secondary mx-1 my-1 rounded-pill explore text-decoration-none"
             >Explore</a
+          >
+          <a
+            href="/org"
+            class="btn btn-outline-warning mx-1 my-1 rounded-pill text-decoration-none"
+            >🔥 Engineering College Bikaner</a
           >
 
           <!-- {#each allTags as tag}
