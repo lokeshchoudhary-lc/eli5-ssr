@@ -2,6 +2,7 @@
   import axios from 'axios';
   import { onMount } from 'svelte';
   import { profanity } from '@2toad/profanity';
+<<<<<<< Updated upstream:src/routes/[tag]/[question]/page.svelte
   import { link, replace } from 'svelte-spa-router';
   import {
     textEditorHtml,
@@ -9,6 +10,13 @@
     userChoosenQuestionState,
     noAnswerContent,
   } from './store';
+=======
+  import Right from '$lib/right.svelte';
+  import Left from '$lib/left.svelte';
+  import Signup from '$lib/signup.svelte';
+  import Nav from '$lib/navbar.svelte';
+  // import { textEditorHtml } from './store';
+>>>>>>> Stashed changes:src/routes/[tag]/[question]/+page.svelte
 
   import Answers from './components/Answers.svelte';
   import TipTapEditor from './components/TipTapEditor.svelte';
@@ -314,25 +322,8 @@
   <title>Feed</title>
 </svelte:head>
 
-<!-- Mobile Bootom NavBar -->
-<nav
-  class="navbar navbar-light bg-light fixed-bottom d-lg-none px-4 py-2 shadow-lg border-top rounded"
->
-  <a on:click={previousQuestion} href={null} class="btn btn-primary border-0"
-    ><i class="bi bi-arrow-left fs-4" /></a
-  >
-  <a
-    href={null}
-    class="btn btn-outline-primary border-0"
-    data-bs-toggle="modal"
-    data-bs-target="#suggest"
-    ><i class="bi bi-plus-circle fs-2" style="color: #0d6efd" /></a
-  >
-  <a on:click={nextQuestion} href={null} class="btn btn-primary border-0"
-    ><i class="bi bi-arrow-right fs-4" /></a
-  >
-</nav>
 
+<<<<<<< Updated upstream:src/routes/[tag]/[question]/page.svelte
 <div class="container">
   <nav class="navbar navbar-light border-bottom border-light">
     <div class="container justify-content-start">
@@ -426,130 +417,294 @@
     >
   </div>
 </div>
+=======
 
-<div class="container mt-3">
-  <div class="row mb-5">
-    <div class="col-sm-8 mb-4">
-      <!-- Deskptop -->
-      <div
-        class="container p-2 shadow-sm rounded d-none d-lg-block"
-        style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
-      >
-        <div class="row align-items-center">
-          <div class="col-1 text-center fs-4">
-            <a on:click={previousQuestion} class="btn btn-primary" href={null}
-              ><i class="bi bi-arrow-left" /></a
-            >
+<Nav />
+>>>>>>> Stashed changes:src/routes/[tag]/[question]/+page.svelte
+
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-sm-3">
+      <Left />
+    </div>
+    <div class="col-sm-6">
+
+      <h4># {userChoosenTag} <button class="btn btn-outline-primary"><i class="bi bi-share-fill"></i></button></h4> 
+
+          <!-- Mobile Bootom NavBar -->
+          <nav
+          class="navbar navbar-light bg-light fixed-bottom d-lg-none px-4 py-2 shadow-lg border-top rounded"
+          >
+          <a on:click={previousQuestion} href={null} class="btn btn-primary border-0"
+            ><i class="bi bi-arrow-left fs-4" /></a
+          >
+          <a
+            href={null}
+            class="btn btn-outline-primary border-0"
+            data-bs-toggle="modal"
+            data-bs-target="#suggest"
+            ><i class="bi bi-plus-circle fs-2" style="color: #0d6efd" /></a
+          >
+          <a on:click={nextQuestion} href={null} class="btn btn-primary border-0"
+            ><i class="bi bi-arrow-right fs-4" /></a
+          >
+          </nav>
+
+          <div class="container">
+          <!-- Desktop -->
+          <div
+            class="container mt-3 d-none d-lg-block overflow-auto"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            
+           
           </div>
-          <div class="col-7">
-            <p class="h5">{selectedQuestion} ?</p>
-            <span class="badge text-bg-primary">Explain like I'm five</span>
+
+          <!-- Mobile overflow-auto -->
+          <div
+            class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            
+            
           </div>
-          <div class="col-3 text-end">
-            <button
-              type="button"
-              class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
-              data-bs-toggle="modal"
-              data-bs-target={boolAnswered ? '' : '#writeelif'}
-              ><i class="bi bi-pen" /> Eli5</button
-            >
           </div>
-          <div class="col-1 text-center fs-4">
-            <a on:click={nextQuestion} class="btn btn-primary" href={null}
-              ><i class="bi bi-arrow-right" /></a
-            >
-          </div>
-        </div>
-      </div>
-      <!-- Mobile -->
-      <div
-        class="container p-2 shadow-sm rounded d-lg-none"
-        style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
-      >
-        <div class="row align-items-center">
-          <div class="col-10">
-            <b>{selectedQuestion} ?</b>
-            <span class="badge text-bg-primary">Explain like I'm five</span>
-          </div>
-          <div class="col-2 text-end">
-            <button
-              type="button"
-              class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
-              data-bs-toggle="modal"
-              data-bs-target={boolAnswered ? '' : '#writeelif'}
-              ><i class="bi bi-pen" />
-            </button>
-          </div>
-        </div>
-      </div>
-      <!-- user answer for the above question -->
-      {#if userAnswer.answer !== undefined}
-        <div class="card border-success mt-2 shadow-sm rounded">
-          <div class="card-header bg-white border-light">
-            <img
-              src={profileUrl + 'pic' + profilePictureCode + '.png'}
-              alt=""
-              height="30"
-            />
-            <b class="small">{userAnswer.answeredBy}</b> &emsp;
-            <span class="badge rounded-pill bg-success">Your Answer</span>
-          </div>
-          <div class="card-body text-secondary my-0 py-0">
-            <p class="card-text m-0 py-0 small text-secondary">
-              {@html userAnswer.answer}
-            </p>
-          </div>
-          <div class="card-body text-secondary my-1 py-0">
-            <input
-              type="button"
-              class="btn-check"
-              id={userAnswer.id}
-              autocomplete="off"
-            />
-            <small class="text-muted">{userAnswer.likeNumber} likes</small> &ensp;
-          </div>
-        </div>
-      {/if}
-      <!-- end here user answer  -->
-      {#if noAnswer != true}
-        <div class="container mt-3">
-          <div class="row align-items-center">
-            <div class="col-2 d-none d-lg-block">Sort by</div>
-            <div class="col-10">
+
+          <div class="container mt-3">
+          <div class="row mb-5">
+            <div class="col mb-4">
+              <!-- Deskptop -->
               <div
-                class="btn-group"
-                role="group"
-                aria-label="Basic radio toggle button group"
+                class="container p-1 shadow-sm rounded d-none d-lg-block"
+                style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
               >
-                <input
-                  type="radio"
-                  on:change={chooseSort}
-                  class="btn-check"
-                  name="radio"
-                  id="radio1"
-                  value="trending"
-                  autocomplete="off"
-                  checked
-                />
-                <label class="btn btn-outline-primary" for="radio1"
-                  >Trending</label
-                >
+                <div class="row align-items-center">
+                  <div class="col text-center fs-6">
+                    <a on:click={previousQuestion} class="btn btn-primary" href={null}
+                      ><i class="bi bi-arrow-left" /></a
+                    >
+                  </div>
+                  <div class="col-6 px-0">
+                    <p class="fs-5 my-0">{selectedQuestion} ?</p>
+                    <span class="badge text-bg-primary my-0">Explain like I'm five</span>
+                  </div>
+                  <div class="col text-end">
+                    <button
+                      type="button"
+                      class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
+                      data-bs-toggle="modal"
+                      data-bs-target={boolAnswered ? '' : '#writeelif'}
+                      ><i class="bi bi-pen" /></button
+                    >
+                  </div>
+                  <div class="col text-center fs-4">
+                    <a on:click={nextQuestion} class="btn btn-primary" href={null}
+                      ><i class="bi bi-arrow-right" /></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Mobile -->
+              <div
+                class="container p-2 shadow-sm rounded d-lg-none"
+                style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
+              >
+                <div class="row align-items-center">
+                  <div class="col-10 pe-0">
+                    <p class="fs-6">{selectedQuestion} ?</p>
+                    <span class="badge text-bg-primary">Explain like I'm five</span>
+                  </div>
+                  <div class="col-2 px-0 text-center">
+                    <button
+                      type="button"
+                      class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
+                      data-bs-toggle="modal"
+                      data-bs-target={boolAnswered ? '' : '#writeelif'}
+                      ><i class="bi bi-pen" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- user answer for the above question -->
+              {#if userAnswer.answer !== undefined}
+                <div class="card border-success mt-2 shadow-sm rounded">
+                  <div class="card-header bg-white border-light">
+                    <img
+                      src={profileUrl + 'pic' + profilePictureCode + '.png'}
+                      alt=""
+                      height="30"
+                    />
+                    <b class="small">{userAnswer.answeredBy}</b> &emsp;
+                    <span class="badge rounded-pill bg-success">Your Answer</span>
+                  </div>
+                  <div class="card-body text-secondary my-0 py-0">
+                    <p class="card-text m-0 py-0 small text-secondary">
+                      {@html userAnswer.answer}
+                    </p>
+                  </div>
+                  <div class="card-body text-secondary my-1 py-0">
+                    <input
+                      type="button"
+                      class="btn-check"
+                      id={userAnswer.id}
+                      autocomplete="off"
+                    />
+                    <small class="text-muted">{userAnswer.likeNumber} likes</small> &ensp;
+                  </div>
+                </div>
+              {/if}
+              <!-- end here user answer  -->
+              {#if noAnswer != true}
+                <div class="container mt-3">
+                  <div class="row align-items-center">
+                    <div class="col-1 d-none d-lg-block"><i class="bi bi-filter fs-4 text-primary"></i></div>
+                    <div class="col-10">
+                      <div
+                        class="btn-group"
+                        role="group"
+                        aria-label="Basic radio toggle button group"
+                      >
+                        <input
+                          type="radio"
+                          on:change={chooseSort}
+                          class="btn-check"
+                          name="radio"
+                          id="radio1"
+                          value="trending"
+                          autocomplete="off"
+                          checked
+                        />
+                        <label class="btn btn-outline-primary" for="radio1"
+                          >Trending</label
+                        >
 
-                <input
-                  type="radio"
-                  on:change={chooseSort}
-                  class="btn-check"
-                  name="radio"
-                  id="radio3"
-                  value="lastest"
-                  autocomplete="off"
+                        <input
+                          type="radio"
+                          on:change={chooseSort}
+                          class="btn-check"
+                          name="radio"
+                          id="radio3"
+                          value="lastest"
+                          autocomplete="off"
+                        />
+                        <label class="btn btn-outline-primary" for="radio3"
+                          >Latest</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {/if}
+
+              {#if noAnswer == true}
+                <div class="containe pt-2">
+                  <img
+                    src="/assets/images/noanswer.png"
+                    class="img-fluid"
+                    alt="noanswer"
+                  />
+                </div>
+              {/if}
+
+              {#each answers as answer}
+                <div class="card border-light mt-4 shadow-sm rounded">
+                  <div class="card-header bg-white border-light">
+                    <img
+                      src={profileUrl + 'pic' + answer.profilePictureCode + '.png'}
+                      alt=""
+                      height="30"
+                    />
+                    <b class="small">{answer.answeredBy}</b> &emsp;
+                    <small class="text-muted">{answer.createdAt}</small>
+                  </div>
+                  <div class="card-body text-secondary pb-1">
+                    <p class="card-text small text-secondary">
+                      {@html answer.answer}
+                    </p>
+                  </div>
+                  <div class="card-body text-secondary pt-0">
+                    <input type="button" class="btn-check" id={answer.id} />
+                    <label
+                      style="border-radius: 100%;"
+                      class="btn btn-outline-primary"
+                      for={answer.id}
+                      id={answer.id}
+                      on:click={toggleLike}
+                      on:keydown={null}><i class={answer.likeClass} /></label
+                    > <small class="text-muted">{answer.likeNumber} likes</small> &ensp;
+                  </div>
+                </div>
+              {/each}
+
+              {#if loadMore != false}
+                <div class="container text-center mt-3 mb-4">
+                  <button
+                    on:click={loadMoreAnswers}
+                    type="button"
+                    class="btn btn-outline-primary mx-2 rounded-pill"
+                    ><i class="bi bi-plus" />See More</button
+                  >
+                </div>
+              {/if}
+            </div>
+          </div>
+          </div>
+
+          <!-- Suggest question -->
+
+          <div
+          class="modal fade"
+          id="suggest"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+          >
+          <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Share your thoughts
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
                 />
-                <label class="btn btn-outline-primary" for="radio3"
-                  >Latest</label
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label"
+                      >What do you want to learn as five year old ?</label
+                    >
+                    <div class="mb-3 mt-1">
+                      <label for="message-text" class="col-form-label">Question:</label>
+                      <textarea
+                        class="form-control"
+                        id="message-text"
+                        bind:value={textAreaAskQuestion}
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                  >Close</button
+                >
+                <button
+                  on:click={askQuestion}
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal">Send message</button
                 >
               </div>
             </div>
           </div>
+<<<<<<< Updated upstream:src/routes/[tag]/[question]/page.svelte
         </div>
       {/if}
 
@@ -742,61 +897,100 @@
     </div>
   </div>
 </div>
+=======
+          </div>
 
-<!-- Suggest question -->
+          <!-- Write Elif Modal -->
+          <div
+          class="modal fade"
+          id="writeelif"
+          tabindex="-1"
+          aria-labelledby="writeeliflabel"
+          aria-hidden="true"
+          >
+          <div class="modal-dialog modal-fullscreen-sm-down">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img
+                  src={profileUrl + 'pic' + profilePictureCode + '.png'}
+                  alt=""
+                  height="30"
+                />
+                <h6 class="modal-title mx-1 ms-2" id="exampleModalLabel">
+                  {selectedQuestion} ?
+                </h6>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                />
+              </div>
+              <div class="modal-body">
+                <!-- <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="floatingTextarea2"
+                    bind:value={textAreaAnswer}
+                    style="height: 200px"
+                    maxlength="2000"
+                  />
+                  
+                  <label for="floatingTextarea2">Explain like I’m five</label>
+                </div> -->
+>>>>>>> Stashed changes:src/routes/[tag]/[question]/+page.svelte
 
-<div
-  class="modal fade"
-  id="suggest"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Share your thoughts
-        </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label"
-              >What do you want to learn as five year old ?</label
-            >
-            <div class="mb-3 mt-1">
-              <label for="message-text" class="col-form-label">Question:</label>
-              <textarea
-                class="form-control"
-                id="message-text"
-                bind:value={textAreaAskQuestion}
-              />
+                <!-- <TipTapEditor /> -->
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                    id={selectedQuestionId}
+                    on:click={submitAnswer}>Eli5 it</button
+                  >
+                </div>
+                <div
+                  class="alert alert-primary alert-dismissible fade show mt-3"
+                  role="alert"
+                  style=" border-style: solid; border-color: #3366FF;"
+                >
+                  <strong>Approach to write the Answer</strong>
+
+                  <ul>
+                    <li>State it: State the idea clearly, in a few sentences.</li>
+                    <li>
+                      Elaborate: Explain the idea further in your own words. Elaborate
+                      on the concept in a paragraph or less.
+                    </li>
+                    <li>
+                      Exemplify: Provide concrete examples (and counter-examples, if
+                      necessary).
+                    </li>
+                    <li>Summarise: Summarise your explanation.</li>
+                  </ul>
+
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-          >Close</button
-        >
-        <button
-          on:click={askQuestion}
-          type="button"
-          class="btn btn-primary"
-          data-bs-dismiss="modal">Send message</button
-        >
-      </div>
+          </div>
+    </div>
+    <div class="col-sm-3">
+      <Right />
     </div>
   </div>
-</div>
+</div>   
 
+<<<<<<< Updated upstream:src/routes/[tag]/[question]/page.svelte
 <div
   class="modal fade"
   id="explore"
@@ -931,6 +1125,8 @@
     </div>
   </div>
 </div>
+=======
+>>>>>>> Stashed changes:src/routes/[tag]/[question]/+page.svelte
 
 <!-- Toast messages -->
 

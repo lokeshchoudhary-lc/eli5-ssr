@@ -83,6 +83,7 @@
 
     <div class="col-sm-6">
       <!-- New design start -->
+<<<<<<< Updated upstream
 
       <div class="container">
         <!-- Desktop -->
@@ -115,12 +116,30 @@
             >
           {/if} -->
         </div>
+=======
+      <div class="container px-0">
+        <!-- Desktop -->
+        <div class="d-flex flex-nowrap justify-content-start overflow-auto">
+          <a
+            href="/explore"
+            class="btn btn-outline-secondary mx-1 my-1 rounded-pill explore text-decoration-none"
+            >Explore</a
+          >
+          <a
+            href="/org"
+            class="btn btn-outline-warning mx-1 my-1 rounded-pill text-decoration-none"
+            >🔥 Engineering College Bikaner</a
+          >
+        </div>  
+
+>>>>>>> Stashed changes
         <!-- Mobile overflow-auto -->
         <div
           class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
           role="group"
           aria-label="Basic radio toggle button group"
         >
+<<<<<<< Updated upstream
          
           <button
             type="button"
@@ -128,6 +147,10 @@
             data-bs-toggle="modal"
             data-bs-target="#explore">Explore</button
           >
+=======
+          
+
+>>>>>>> Stashed changes
           <!-- {#each allTags as tag}
             <a href="/" class="btn btn-outline-primary mx-2">{tag.tag}</a>
           {/each}
