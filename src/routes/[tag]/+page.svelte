@@ -60,7 +60,7 @@
       </h4>
 
       <div class="container mt-3 mb-3">
-        <div class="container px-2 pt-2" id="icon-grid">
+        <div class="container px-2 pt-0" id="icon-grid">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-2 p-0">
             <div
               class="col d-flex align-items-start p-2 border border-primary shadow-sm text-primary rounded my-1 mx-1 mx-1 stats"

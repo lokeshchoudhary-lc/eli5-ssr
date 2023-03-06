@@ -31,7 +31,7 @@
         >
       </p>
 
-      <div class="row mt-3">
+      <div class="row mt-3 d-md-none">
         <div class="col">300 <i class="bi bi-pen" /></div>
         <div class="col">60 <i class="bi bi-calendar-day" /></div>
         <div class="col">5K <i class="bi bi-heart-fill" /></div>
@@ -43,6 +43,49 @@
               <li class="list-group-item">5K <i class="bi bi-heart-fill"></i></li>
               <li class="list-group-item">100 <i class="bi bi-patch-question"></i></li>
             </ul> -->
+      
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                  <a class="nav-link active" aria-current="page" href="#">300 <i class="bi bi-pen" /></a>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="nav-link active" aria-current="page" href="#">60 <i class="bi bi-calendar-day" /></a>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="nav-link active" aria-current="page" href="#">5K <i class="bi bi-heart-fill" /></a>
+                </li>
+                <li class="nav-item mx-1">
+                  <a class="nav-link active" aria-current="page" href="#">100 <i class="bi bi-patch-question" /></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ask Question</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Explore</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Leaderboard</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    More
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">How it works</a></li>
+                    <li><a class="dropdown-item" href="#">Share with friends</a></li>
+                    <li><a class="dropdown-item" href="#">Need help</a></li>
+                    <li><a class="dropdown-item text-primary" href="#">Rules</a></li>
+                    <li><a class="dropdown-item text-primary" href="#">FAQ</a></li>
+                    <li><a class="dropdown-item text-primary" href="#">Privacy Policy</a></li>
+                    <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
       <ul
         class="navbar-nav mt-3 mb-2 border-bottom border-top border-light d-block d-md-none"

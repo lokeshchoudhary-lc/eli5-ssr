@@ -119,34 +119,7 @@
             >
           {/if} -->
         </div>
-        <!-- Mobile overflow-auto -->
-        <div
-          class="d-flex justify-content-start mt-3 d-lg-none overflow-auto tags"
-          role="group"
-          aria-label="Basic radio toggle button group"
-        >
-          <a
-            href="/explore"
-            class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector text-decoration-none"
-            >Explore</a
-          >
-
-          <!-- {#each allTags as tag}
-            <input type="button" class="btn-check" id={tag.tag} />
-              <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label>
-            <a href={`/${tag.tag}`} class="btn btn-outline-primary mx-2"
-              >{tag.tag}</a
-            >
-          {/each}
-          {#if loadMore != false}
-            <button
-              type="button"
-              on:click={loadMoreTags}
-              class="btn btn-outline-primary mx-1 rounded-pill explore"
-              >More..</button
-            >
-          {/if} -->
-        </div>
+        
       </div>
 
       <p class="fw-normal"><i class="bi bi-{icon} fs-4" /> {greet}</p>

@@ -29,7 +29,7 @@
         >
       </div>
 
-      <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+      <ul class="nav nav-tabs d-flex flex-nowrap mt-2 overflow-auto" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button
             class="nav-link active"
@@ -102,6 +102,18 @@
             aria-selected="false">Travel</button
           >
         </li>
+        <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="contact-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#travel"
+              type="button"
+              role="tab"
+              aria-controls="contact"
+              aria-selected="false">Travel</button
+            >
+          </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div
