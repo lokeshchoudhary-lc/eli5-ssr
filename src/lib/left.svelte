@@ -25,3 +25,9 @@
 <div class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
   <img src="/assets/images/ask.png" class="img-fluid" alt="noanswer" />
 </div>
+<<<<<<< Updated upstream
+=======
+</div>
+
+</div>
+>>>>>>> Stashed changes

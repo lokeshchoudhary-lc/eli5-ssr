@@ -86,6 +86,10 @@
     </div>
     <div class="col-sm-6">
       <!-- New design start -->
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
       <div class="container">
         <!-- Desktop -->
         <div
@@ -125,12 +129,22 @@
           role="group"
           aria-label="Basic radio toggle button group"
         >
+<<<<<<< Updated upstream
           <a
             href="/explore"
             class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector text-decoration-none"
             >Explore</a
           >
 
+=======
+         
+          <button
+            type="button"
+            class="btn btn-outline-secondary mx-1 rounded-pill explore css-selector"
+            data-bs-toggle="modal"
+            data-bs-target="#explore">Explore</button
+          >
+>>>>>>> Stashed changes
           <!-- {#each allTags as tag}
             <input type="button" class="btn-check" id={tag.tag} />
               <label class="btn btn-outline-primary mx-2" for={tag.tag}>{tag.tag}</label>
