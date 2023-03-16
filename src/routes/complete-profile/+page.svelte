@@ -1,42 +1,26 @@
 <script>
   import { onMount } from 'svelte';
-  import { replace } from 'svelte-spa-router';
-  import { firstName, email } from './store';
-  import axios from 'axios';
+  import { goto } from '$app/navigation';
+  import TempNavBar from '$lib/temp_navbar.svelte';
 
-  import { adjectivesList } from './adjectivesList';
-  import NavBar from './components/NavBar.svelte';
+  import { firstName, email, loginState } from '$lib/store';
+  import { adjectivesList } from '$lib/adjectivesList';
+  import axios from 'axios';
 
   let gmail = '';
   let username = '';
   let uniqueAlias = '';
   let selectedPic = '';
 
-  firstName.subscribe((value) => {
-    username = value;
-  });
-  email.subscribe((value) => {
-    gmail = value;
-  });
-
   function onChange(event) {
     selectedPic = event.currentTarget.value;
-  }
-
-  function setCookie(name, value, days) {
-    var expires = '';
-    if (days) {
-      var date = new Date();
-      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-      expires = '; expires=' + date.toUTCString();
-    }
-    document.cookie = name + '=' + (value || '') + expires + '; path=/';
   }
 
   async function onSubmit(event) {
     event.preventDefault();
 
     if (selectedPic === '') {
+      //TODO:TOAST
       alert('Please select a picture');
       return;
     }
@@ -48,14 +32,25 @@
         uniqueAlias: uniqueAlias,
         profilePictureCode: selectedPic,
       })
-      .then(function (response) {})
+      .then(function (response) {
+        loginState.set(true);
+        //set cookie
+        document.cookie =
+          'loginState' +
+          '=' +
+          '1' +
+          ';max-age= 604800' +
+          '; path=/' +
+          ';samesite=strict';
+
+        goto('/', { replaceState: true });
+      })
       .catch(function (error) {
+        // uniqueAlias exists already ,  generate new
         if (error.response.status == 400) {
           generateUniqueAlias();
         }
       });
-    setCookie('loginState', 'true', 7);
-    replace('/homeFeed');
   }
 
   function generate(n) {
@@ -80,16 +75,18 @@
     uniqueAlias = adjective + '-' + username + '#' + randomNumber;
   }
 
-  // async function googleAuth() {
-  //   try {
-  //     const response = await axios.get('/auth/google', {
-  //       withCredentials: true,
-  //     });
-  //     console.log(response);
-  //   } catch (error) {}
-  // }
-
   onMount(async () => {
+    firstName.subscribe((value) => {
+      username = value;
+    });
+
+    email.subscribe((value) => {
+      gmail = value;
+    });
+
+    // if (username == null && gmail == null) {
+    // goto('/', { replaceState: true });
+    // }
     generateUniqueAlias();
   });
 </script>
@@ -98,11 +95,12 @@
   <title>Complete Profile</title>
 </svelte:head>
 
-<NavBar />
+<TempNavBar />
 
 <div class="container">
   <form>
-    <legend class="small">Complete your profile and start explaining. </legend>
+    <!-- //TODO:CSS:Make This text big but not too big -->
+    <legend class="">Complete your profile and start explaining. </legend>
 
     <div class="alert alert-primary d-flex align-items-center" role="alert">
       <i class="bi bi-check-circle" />

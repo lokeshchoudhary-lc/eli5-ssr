@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { Editor } from '@tiptap/core';
   import StarterKit from '@tiptap/starter-kit';
-  // import { textEditorHtml } from '../store';
+  import { textEditorHtml } from '$lib/store';
 
   let element;
   let editor;
@@ -21,7 +21,7 @@
       onTransaction: () => {
         // force re-render so `editor.isActive` works as expected
         editor = editor;
-        // textEditorHtml.set(editor);
+        textEditorHtml.set(editor);
       },
     });
   });

@@ -3,23 +3,31 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { profanity } from '@2toad/profanity';
-  // import { textEditorHtml } from './store';
+  import {
+    textEditorHtml,
+    loginState,
+    profilePictureCode,
+    streak,
+    totalAnswers,
+  } from '$lib/store';
 
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
   import Nav from '$lib/navbar.svelte';
 
   // import Answers from './components/Answers.svelte';
-  // import TipTapEditor from '../../../lib/TipTapEditor.svelte';
+  import TipTapEditor from '$lib/TipTapEditor.svelte';
 
   export let data;
 
   let textAreaAnswer = '';
   let textAreaAskQuestion = '';
-  let boolAnswered = false;
+  let login;
+  let usertotalAnswers;
+  let userProfilePictureCode;
+  let boolAnswered;
 
   let profileUrl = '/assets/images/profile/';
-  let profilePictureCode = 1; //change it when user loggedIn
 
   let userAnswer = {};
 
@@ -214,12 +222,14 @@
         answer: textAreaAnswer,
         questionId: id,
       })
-      .then(function (response) {
+      .then(async function (response) {
         // console.log(response);
         textAreaAnswer = '';
         boolAnswered = true;
         userAnswer = response.data.userAnswer;
-        streak = response.data.streak;
+        streak.set(response.data.streak);
+        totalAnswers.set(usertotalAnswers + 1);
+        await getAnswers();
       })
       .catch(function (error) {
         console.log(error);
@@ -253,8 +263,11 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
-        //TODO:check if user is loggedin
-        // await getUserAnswer(selectedQuestionId);
+        //check if user is loggedin
+        if (login == true) {
+          await getUserAnswer(selectedQuestionId);
+        }
+
         await getAnswers();
       } else {
         const response = await axios.get(
@@ -276,8 +289,11 @@
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
 
-        //TODO:check if user is loggedin
-        // await getUserAnswer(selectedQuestionId);
+        //check if user is loggedin
+        if (login == true) {
+          await getUserAnswer(selectedQuestionId);
+        }
+
         await getAnswers();
       }
     } catch (error) {
@@ -297,8 +313,11 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
-        //TODO:check if user is loggedin
-        // await getUserAnswer(selectedQuestionId);
+        //check if user is loggedin
+        if (login == true) {
+          await getUserAnswer(selectedQuestionId);
+        }
+
         await getAnswers();
       } else {
         const response = await axios.get(
@@ -319,8 +338,11 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
-        //TODO:check if user is loggedin
-        // await getUserAnswer(selectedQuestionId);
+        //check if user is loggedin
+        if (login == true) {
+          await getUserAnswer(selectedQuestionId);
+        }
+
         await getAnswers();
       }
     } catch (error) {
@@ -342,6 +364,23 @@
   }
 
   onMount(async () => {
+    profilePictureCode.subscribe((value) => {
+      userProfilePictureCode = value;
+    });
+
+    totalAnswers.subscribe((value) => {
+      usertotalAnswers = value;
+    });
+
+    loginState.subscribe((value) => {
+      login = value;
+    });
+
+    if (login == true) {
+      console.log('login true hua');
+      await getUserAnswer(selectedQuestionId);
+    }
+
     // sortType = 'trending';
     // await getUserAnswer(selectedQuestionId);
 
@@ -364,22 +403,26 @@
     </div>
 
     <div class="col-sm-6">
-
       <h4>
         # {userChoosenTag}
         <button class="btn btn-outline-primary"
           ><i class="bi bi-share-fill" /></button
         >
-        <button class="btn btn-outline-primary" data-bs-toggle="modal"
-        data-bs-target="#suggest"
+        <button
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#suggest"
           ><i class="bi bi-question-circle" /> Ask Question</button
         >
       </h4>
 
-            <nav
+      <nav
         class="navbar navbar-light bg-light fixed-bottom d-lg-none px-4 py-2 shadow-lg border-top rounded"
       >
-        <a on:click={previousQuestion} href={null} class="btn btn-primary border-0"
+        <a
+          on:click={previousQuestion}
+          href={null}
+          class="btn btn-primary border-0"
           ><i class="bi bi-arrow-left fs-4" /></a
         >
         <a
@@ -423,8 +466,10 @@
             >
               <div class="row align-items-center py-1">
                 <div class="col-2 text-center fs-2 px-0">
-                  <a on:click={previousQuestion} class="btn btn-primary" href={null}
-                    ><i class="bi bi-arrow-left" /></a
+                  <a
+                    on:click={previousQuestion}
+                    class="btn btn-primary"
+                    href={null}><i class="bi bi-arrow-left" /></a
                   >
                 </div>
                 <div class="col-5">
@@ -432,13 +477,25 @@
                   <!-- <span class="badge text-bg-primary">Explain like I'm five</span> -->
                 </div>
                 <div class="col-3 text-end">
-                  <button
-                    type="button"
-                    class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
-                    data-bs-toggle="modal"
-                    data-bs-target={boolAnswered ? '' : '#writeelif'}
-                    ><i class="bi bi-pen" /> Eli5</button
-                  >
+                  {#if login == false}
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#OpenWriteLoginModal"
+                      ><i class="bi bi-pen" /> Eli5</button
+                    >
+                  {:else}
+                    <button
+                      type="button"
+                      class={boolAnswered
+                        ? 'btn btn-disable'
+                        : 'btn btn-primary'}
+                      data-bs-toggle="modal"
+                      data-bs-target={boolAnswered ? '' : '#writeelif'}
+                      ><i class="bi bi-pen" /> Eli5</button
+                    >
+                  {/if}
                 </div>
                 <div class="col-2 text-center fs-2 px-0">
                   <a on:click={nextQuestion} class="btn btn-primary" href={null}
@@ -455,7 +512,9 @@
               <div class="row align-items-center">
                 <div class="col-9">
                   <b>{selectedQuestion} ?</b>
-                  <span class="badge text-bg-primary">Explain like I'm five</span>
+                  <span class="badge text-bg-primary"
+                    >Explain like I'm five</span
+                  >
                 </div>
                 <div class="col-3 text-end">
                   <button
@@ -473,7 +532,7 @@
               <div class="card border-success mt-2 shadow-sm rounded">
                 <div class="card-header bg-white border-light">
                   <img
-                    src={profileUrl + 'pic' + profilePictureCode + '.png'}
+                    src={profileUrl + 'pic' + userProfilePictureCode + '.png'}
                     alt=""
                     height="30"
                   />
@@ -492,7 +551,8 @@
                     id={userAnswer.id}
                     autocomplete="off"
                   />
-                  <small class="text-muted">{userAnswer.likeNumber} likes</small> &ensp;
+                  <small class="text-muted">{userAnswer.likeNumber} likes</small
+                  > &ensp;
                 </div>
               </div>
             {/if}
@@ -552,7 +612,10 @@
               <div class="card border-light mt-4 shadow-sm rounded">
                 <div class="card-header bg-white border-light">
                   <img
-                    src={profileUrl + 'pic' + answer.profilePictureCode + '.png'}
+                    src={profileUrl +
+                      'pic' +
+                      answer.profilePictureCode +
+                      '.png'}
                     alt=""
                     height="30"
                   />
@@ -597,10 +660,9 @@
       <Right />
     </div>
   </div>
-</div>      
+</div>
 
 <!-- Mobile Bootom NavBar -->
-
 
 <!-- Suggest question -->
 
@@ -656,88 +718,77 @@
   </div>
 </div>
 
-<!-- Write Elif Modal -->
-<div
-  class="modal fade"
-  id="writeelif"
-  tabindex="-1"
-  aria-labelledby="writeeliflabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <img
-          src={profileUrl + 'pic' + profilePictureCode + '.png'}
-          alt=""
-          height="30"
-        />
-        <h6 class="modal-title mx-1 ms-2" id="exampleModalLabel">
-          {selectedQuestion} ?
-        </h6>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-      <div class="modal-body">
-        <!-- <div class="form-floating">
-          <textarea
-            class="form-control"
-            placeholder="Leave a comment here"
-            id="floatingTextarea2"
-            bind:value={textAreaAnswer}
-            style="height: 200px"
-            maxlength="2000"
+{#if login == true}
+  <!-- Write Elif Modal -->
+  <div
+    class="modal fade"
+    id="writeelif"
+    tabindex="-1"
+    aria-labelledby="writeeliflabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <img
+            src={profileUrl + 'pic' + userProfilePictureCode + '.png'}
+            alt=""
+            height="30"
           />
-          
-          <label for="floatingTextarea2">Explain like I’m five</label>
-        </div> -->
-
-        <!-- <TipTapEditor /> -->
-
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-dismiss="modal"
-            id={selectedQuestionId}
-            on:click={submitAnswer}>Eli5 it</button
-          >
-        </div>
-        <div
-          class="alert alert-primary alert-dismissible fade show mt-3"
-          role="alert"
-          style=" border-style: solid; border-color: #3366FF;"
-        >
-          <strong>Approach to write the Answer</strong>
-
-          <ul>
-            <li>State it: State the idea clearly, in a few sentences.</li>
-            <li>
-              Elaborate: Explain the idea further in your own words. Elaborate
-              on the concept in a paragraph or less.
-            </li>
-            <li>
-              Exemplify: Provide concrete examples (and counter-examples, if
-              necessary).
-            </li>
-            <li>Summarise: Summarise your explanation.</li>
-          </ul>
-
+          <h6 class="modal-title mx-1 ms-2" id="exampleModalLabel">
+            {selectedQuestion} ?
+          </h6>
           <button
             type="button"
             class="btn-close"
-            data-bs-dismiss="alert"
+            data-bs-dismiss="modal"
             aria-label="Close"
           />
+        </div>
+        <div class="modal-body">
+          <TipTapEditor />
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              id={selectedQuestionId}
+              on:click={submitAnswer}>Eli5 it</button
+            >
+          </div>
+          <div
+            class="alert alert-primary alert-dismissible fade show mt-3"
+            role="alert"
+            style=" border-style: solid; border-color: #3366FF;"
+          >
+            <strong>Approach to write the Answer</strong>
+
+            <ul>
+              <li>State it: State the idea clearly, in a few sentences.</li>
+              <li>
+                Elaborate: Explain the idea further in your own words. Elaborate
+                on the concept in a paragraph or less.
+              </li>
+              <li>
+                Exemplify: Provide concrete examples (and counter-examples, if
+                necessary).
+              </li>
+              <li>Summarise: Summarise your explanation.</li>
+            </ul>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+{/if}
 
 <style>
   .tags {

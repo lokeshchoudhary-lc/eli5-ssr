@@ -94,11 +94,13 @@
             class="btn btn-outline-secondary mx-1 my-1 rounded-pill explore text-decoration-none"
             >Explore</a
           >
-          <a
+
+          <!-- activate it later (CA) -->
+          <!-- <a
             href="/org"
             class="btn btn-outline-warning mx-1 my-1 rounded-pill text-decoration-none"
             >🔥 Engineering College Bikaner</a
-          >
+          > -->
 
           <!-- {#each allTags as tag}
             <input type="button" class="btn-check" id={tag.tag} />
@@ -119,7 +121,6 @@
             >
           {/if} -->
         </div>
-        
       </div>
 
       <p class="fw-normal"><i class="bi bi-{icon} fs-4" /> {greet}</p>

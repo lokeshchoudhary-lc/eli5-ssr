@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup">
     Signup
   </button>
@@ -26,9 +29,7 @@
         />
       </div>
       <div class="modal-body">
-        <button type="button" class="btn btn-primary"
-          >Sign-Up with google</button
-        >
+        <button type="button" class="btn btn-primary">Continue</button>
       </div>
       <div class="modal-footer">
         <a class="link-dark" href="/rules">Rules</a>
