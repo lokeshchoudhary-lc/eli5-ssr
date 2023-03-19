@@ -1,8 +1,6 @@
 import { error, json, redirect } from '@sveltejs/kit';
 import { OAuth2Client } from 'google-auth-library';
 import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public';
-import { BaseUrl } from '$lib/vars';
-import axios from 'axios';
 
 async function getGoogleUserFromJWT(token) {
   try {

@@ -11,13 +11,15 @@
   } from '$lib/store';
   import { profileUrl } from '$lib/vars';
 
-  let login;
-  let userFirstName;
-  let userProfilePictureCode;
+  export let data;
+
+  let login = data.loginedIn;
+  let userFirstName = data.userDetails?.firstName;
+  let userProfilePictureCode = data.userDetails?.profilePictureCode;
   let userRank = 100;
-  let userTotalAnswers;
-  let userTotalLikes;
-  let userStreak;
+  let userTotalAnswers = data.userDetails?.totalAnswers;
+  let userTotalLikes = data.userDetails?.totalLikes;
+  let userStreak = data.userDetails?.streak;
 
   function eraseCookie(name) {
     document.cookie =
@@ -30,6 +32,7 @@
       .then(function (response) {
         eraseCookie('loginState');
         loginState.set(false);
+        //redirect to home ?
       })
       .catch(function (error) {
         console.log(error);
@@ -37,24 +40,23 @@
   }
 
   onMount(async () => {
-    loginState.subscribe((value) => {
-      login = value;
-    });
-    firstName.subscribe((value) => {
-      userFirstName = value;
-    });
-    profilePictureCode.subscribe((value) => {
-      userProfilePictureCode = value;
-    });
-    streak.subscribe((value) => {
-      userStreak = value;
-    });
-    totalAnswers.subscribe((value) => {
-      userTotalAnswers = value;
-    });
-    totalLikes.subscribe((value) => {
-      userTotalLikes = value;
-    });
+    if (login == true) {
+      loginState.set(login);
+      streak.set(userStreak);
+      totalAnswers.set(userTotalAnswers);
+
+      loginState.subscribe((value) => {
+        login = value;
+      });
+
+      streak.subscribe((value) => {
+        userStreak = value;
+      });
+
+      totalAnswers.subscribe((value) => {
+        userTotalAnswers = value;
+      });
+    }
   });
 </script>
 

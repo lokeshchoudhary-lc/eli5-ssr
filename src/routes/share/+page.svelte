@@ -3,11 +3,13 @@
   import Left from '$lib/left.svelte';
   import Signup from '$lib/signup.svelte';
   import Nav from '$lib/navbar.svelte';
+
+  export let data;
 </script>
 
 <Signup />
 
-<Nav />
+<Nav {data} />
 
 <div class="container mt-2">
   <div class="row">

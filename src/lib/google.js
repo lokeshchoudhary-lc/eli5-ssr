@@ -1,5 +1,6 @@
 import { PUBLIC_GOOGLE_CLIENT_ID } from '$env/static/public';
 import { firstName, email, loginState } from '$lib/store';
+import { websiteUrl } from '$lib/vars';
 import { goto } from '$app/navigation';
 import axios from 'axios';
 
@@ -38,7 +39,11 @@ async function googleCallback(response) {
     const location = await checkEmail(fromEndpoint.email);
     firstName.set(fromEndpoint.firstName);
     email.set(fromEndpoint.email);
-    goto(location);
+    if (location == '/') {
+      window.location.replace(websiteUrl);
+    } else {
+      goto(location);
+    }
   }
 }
 
@@ -47,7 +52,7 @@ async function checkEmail(email) {
     const response = await axios.get(`/userCheck/${email}`);
 
     if (response.data == 'go_to_feed') {
-      loginState.set(true);
+      // loginState.set(true);
 
       //set cookie
       document.cookie =

@@ -4,6 +4,7 @@
   import TempNavBar from '$lib/temp_navbar.svelte';
 
   import { firstName, email, loginState } from '$lib/store';
+  import { websiteUrl } from '$lib/vars';
   import { adjectivesList } from '$lib/adjectivesList';
   import axios from 'axios';
 
@@ -33,7 +34,7 @@
         profilePictureCode: selectedPic,
       })
       .then(function (response) {
-        loginState.set(true);
+        // loginState.set(true);
         //set cookie
         document.cookie =
           'loginState' +
@@ -43,7 +44,8 @@
           '; path=/' +
           ';samesite=strict';
 
-        goto('/', { replaceState: true });
+        // goto('/', { replaceState: true });
+        window.location.replace(websiteUrl);
       })
       .catch(function (error) {
         // uniqueAlias exists already ,  generate new
@@ -84,9 +86,10 @@
       gmail = value;
     });
 
-    // if (username == null && gmail == null) {
-    // goto('/', { replaceState: true });
-    // }
+    if (username == null && gmail == null) {
+      goto('/', { replaceState: true });
+    }
+
     generateUniqueAlias();
   });
 </script>

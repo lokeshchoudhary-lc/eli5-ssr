@@ -8,7 +8,7 @@
   let exploreTags = data.exploreTags.data;
 </script>
 
-<Nav />
+<Nav {data} />
 
 <div class="container mt-2">
   <div class="row">

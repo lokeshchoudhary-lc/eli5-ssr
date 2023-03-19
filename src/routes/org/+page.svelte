@@ -3,11 +3,13 @@
   import Left from '$lib/left.svelte';
   import Signup from '$lib/signup.svelte';
   import Nav from '$lib/navbar.svelte';
+
+  export let data;
 </script>
 
 <Signup />
 
-<Nav />
+<Nav {data} />
 
 <div class="container mt-3">
   <div class="row">
@@ -29,7 +31,11 @@
         >
       </div>
 
-      <ul class="nav nav-tabs d-flex flex-nowrap mt-2 overflow-auto" id="myTab" role="tablist">
+      <ul
+        class="nav nav-tabs d-flex flex-nowrap mt-2 overflow-auto"
+        id="myTab"
+        role="tablist"
+      >
         <li class="nav-item" role="presentation">
           <button
             class="nav-link active"
@@ -103,17 +109,17 @@
           >
         </li>
         <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="contact-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#travel"
-              type="button"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false">Travel</button
-            >
-          </li>
+          <button
+            class="nav-link"
+            id="contact-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#travel"
+            type="button"
+            role="tab"
+            aria-controls="contact"
+            aria-selected="false">Travel</button
+          >
+        </li>
       </ul>
       <div class="tab-content" id="myTabContent">
         <div

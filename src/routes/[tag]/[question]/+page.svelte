@@ -22,9 +22,9 @@
 
   let textAreaAnswer = '';
   let textAreaAskQuestion = '';
-  let login;
-  let usertotalAnswers;
-  let userProfilePictureCode;
+
+  let login = data.loginedIn;
+  let userProfilePictureCode = data.userDetails?.profilePictureCode;
   let boolAnswered;
 
   let profileUrl = '/assets/images/profile/';
@@ -228,7 +228,7 @@
         boolAnswered = true;
         userAnswer = response.data.userAnswer;
         streak.set(response.data.streak);
-        totalAnswers.set(usertotalAnswers + 1);
+        totalAnswers.update((n) => n + 1);
         await getAnswers();
       })
       .catch(function (error) {
@@ -364,21 +364,14 @@
   }
 
   onMount(async () => {
-    profilePictureCode.subscribe((value) => {
-      userProfilePictureCode = value;
-    });
-
-    totalAnswers.subscribe((value) => {
-      usertotalAnswers = value;
-    });
-
-    loginState.subscribe((value) => {
-      login = value;
-    });
-
     if (login == true) {
-      console.log('login true hua');
       await getUserAnswer(selectedQuestionId);
+
+      loginState.set(login);
+
+      loginState.subscribe((value) => {
+        login = value;
+      });
     }
 
     // sortType = 'trending';
@@ -394,7 +387,7 @@
   <title>Feed</title>
 </svelte:head>
 
-<Nav />
+<Nav {data} />
 
 <div class="container mt-2">
   <div class="row">
@@ -528,7 +521,7 @@
               </div>
             </div>
             <!-- user answer for the above question -->
-            {#if userAnswer.answer !== undefined}
+            {#if userAnswer.answer !== undefined && login == true}
               <div class="card border-success mt-2 shadow-sm rounded">
                 <div class="card-header bg-white border-light">
                   <img

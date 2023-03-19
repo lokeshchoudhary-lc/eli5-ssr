@@ -6,7 +6,6 @@
   import Footer from '$lib/footer.svelte';
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
-  import Signup from '$lib/signup.svelte';
   import Nav from '$lib/navbar.svelte';
 
   export let data;
@@ -75,9 +74,7 @@
   <title>Home</title>
 </svelte:head>
 
-<Signup />
-
-<Nav />
+<Nav {data} />
 
 <div class="container mt-3">
   <div class="row">
