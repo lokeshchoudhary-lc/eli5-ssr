@@ -630,6 +630,15 @@
                     on:click={toggleLike}
                     on:keydown={null}><i class={answer.likeClass} /></label
                   > <small class="text-muted">{answer.likeNumber} likes</small> &ensp;
+
+                  <label
+                    style="border-radius: 100%;"
+                    class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                      data-bs-target="#share">
+                    <i class="bi bi-share"></i>
+                  </label> 
+                  <small class="text-muted">Share</small> &ensp;
                 </div>
               </div>
             {/each}
@@ -782,6 +791,47 @@
     </div>
   </div>
 {/if}
+
+
+<div
+  class="modal fade"
+  id="share"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-fullscreen-sm-down">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">
+          Break it down like a funky beat: Share this ELI5!
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        />
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          
+          <div class="card-body">
+            <div class=contianer><img src="/assets/images/profile/pic1.png" width="10%" class="img-fluid"> <span>@ritik_cool</span></div>
+            <h5 class="card-title">Why do we have different timezones within the same country ?</h5>
+            <p class="card-text">Earth is divided into 24 Time zones so a large country can be part of multiple time zones. That is the main reason why some countries have multiple time zones. For example, if a country passes through GMT, 15 degrees east, 30 degrees west then the time zones will be GMT, GMT + 1, GMT -2.</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-primary">Share</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
   .tags {

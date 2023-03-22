@@ -1,5 +1,5 @@
 <div
-  class="card rounded border border-light shadow-sm"
+  class="card rounded border border-light shadow-sm d-none d-lg-block"
   style="background-color: #FAFBFF;"
 >
   <div class="card-body">
@@ -25,7 +25,7 @@
 
     <i class="bi bi-info-circle" />
     <a class="link-dark" href="/rules">Rules</a>
-    <div class="ratio ratio-16x9 mt-3 ">
+    <!-- <div class="ratio ratio-16x9 mt-3 ">
       <iframe
         class="rounded border border-light shadow-sm"
         src="https://www.youtube.com/embed/xOiIk-dmI_Q?controls=0"
@@ -34,6 +34,6 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       />
-    </div>
+    </div> -->
   </div>
 </div>

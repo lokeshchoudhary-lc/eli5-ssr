@@ -59,9 +59,9 @@
         >
       </h4>
 
-      <div class="container mt-3 mb-3">
-        <div class="container px-2 pt-0" id="icon-grid">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-2 p-0">
+      <div class="container my-3">
+        <div class="container pt-0 border-bottom mb-2" id="icon-grid">
+          <div class="row row-cols-1 mt-2 p-0">
             <div
               class="col d-flex align-items-start p-2 border border-primary shadow-sm text-primary rounded my-1 mx-1 mx-1 stats"
             >
@@ -80,28 +80,7 @@
               </div>
             </div>
 
-            <div
-              class="col d-flex align-items-start p-2 border border-primary shadow-sm text-primary rounded my-1 mx-1 stats"
-            >
-              <img
-                alt=""
-                class="image-fluid flex-shrink-0 me-3"
-                src="/assets/images/profile/pic1.png"
-                height="30"
-              />
-              <div>
-                <p>@ritik_singh it top contributor</p>
-              </div>
-            </div>
-
-            <div
-              class="col d-flex align-items-start p-2 border border-primary shadow-sm text-primary rounded my-1 mx-1 stats"
-            >
-              <i class="bi bi-share-fill flex-shrink-0 me-3" />
-              <div>
-                <p>Share with friends</p>
-              </div>
-            </div>
+            
           </div>
         </div>
         <!-- <p class="lead">
