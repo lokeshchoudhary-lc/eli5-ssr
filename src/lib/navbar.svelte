@@ -110,26 +110,25 @@
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-top border-light d-block d-md-none"
         >
           <li class="nav-item mb-2">Ask Question</li>
-          <li class="nav-item mb-2">Home</li>
-          <li class="nav-item mb-2">Explore</li>
-          <li class="nav-item mb-2">Leaderboard</li>
-          <li class="nav-item mb-2">Share with friends</li>
-          <li class="nav-item mb-2">How it works</li>
+          <li onclick="window.location.href='/'" class="nav-item mb-2">Home</li>
+          <li onclick="window.location.href='/explore'" class="nav-item mb-2">Explore</li>
+          <li onclick="window.location.href='/leaderboard'" class="nav-item mb-2">Leaderboard</li>
+          <li onclick="window.location.href='/share'" class="nav-item mb-2">Share with friends</li>
+          <li onclick="window.location.href='/eli5'" class="nav-item mb-2">How it works</li>
         </ul>
 
         <ul
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
         >
-          <li class="nav-item mb-2">Need Help</li>
-          <li class="nav-item mb-2">Logout</li>
+          <li onclick="window.location.href='https://tally.so/r/nW2D4k'" class="nav-item mb-2">Need Help</li>
         </ul>
 
         <ul
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
         >
-          <li class="nav-item mb-2">Privacy Policy</li>
-          <li class="nav-item mb-2">Rules</li>
-          <li class="nav-item mb-2">FAQ</li>
+          <li onclick="window.location.href='/privacy'" class="nav-item mb-2">Privacy Policy</li>
+          <li onclick="window.location.href='/rules'" class="nav-item mb-2">Rules</li>
+          <li onclick="window.location.href='/faq'" class="nav-item mb-2">FAQ</li>
         </ul>
       </div>
     </div>
@@ -224,17 +223,17 @@
                 More
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">How it works</a></li>
+                <li><a class="dropdown-item" href="/eli5">How it works</a></li>
                 <li>
-                  <a class="dropdown-item" href="#">Share with friends</a>
+                  <a class="dropdown-item" href="/share">Share with friends</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Need help</a></li>
+                <li><a class="dropdown-item" href="https://tally.so/r/nW2D4k">Need help</a></li>
                 <li>
-                  <a class="dropdown-item text-primary" href="#">Rules</a>
+                  <a class="dropdown-item text-primary" href="/rules">Rules</a>
                 </li>
-                <li><a class="dropdown-item text-primary" href="#">FAQ</a></li>
+                <li><a class="dropdown-item text-primary" href="/faq">FAQ</a></li>
                 <li>
-                  <a class="dropdown-item text-primary" href="#"
+                  <a class="dropdown-item text-primary" href="/privacy"
                     >Privacy Policy</a
                   >
                 </li>

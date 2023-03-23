@@ -227,7 +227,7 @@
               </div>
               <div class="col-10">
                 <div class="card-body">
-                  <p class="card-text small">
+                  <p class="card-text small text-dark">
                     {question.question}
                   </p>
                 </div>
@@ -277,15 +277,7 @@
         </div>
       </a>
 
-      <!-- Bottom Image start -->
-      <div class="container d-lg-none mb-2">
-        <img
-          src="/assets/images/explore.png"
-          class="img-fluid"
-          alt="noanswer"
-        />
-      </div>
-      <!-- Bottom Image End -->
+     
 
       <!-- New design end -->
     </div>

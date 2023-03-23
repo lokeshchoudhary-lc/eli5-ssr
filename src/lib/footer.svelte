@@ -9,70 +9,58 @@
       >
         <img src="/assets/images/logo.png" class="bi me-2" width="80" />
       </a>
-      <p class="text-muted">&copy; 2023</p>
+      <p class="text-muted">Explaining complex concepts without infringing on intellectual property since forever - Copyright @eli5 &copy; 2023</p>
     </div>
 
     <div class="col mb-3" />
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5>Company</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Home</a>
+          <a href="/" class="nav-link p-0 text-muted">Home</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Features</a>
+          <a href="/about" class="nav-link p-0 text-muted">About</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Pricing</a>
+          <a href="/leaderboard" class="nav-link p-0 text-muted">Leaderboard</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">About</a>
+          <a href="/share" class="nav-link p-0 text-muted">Share with friends</a>
         </li>
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5>Help</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Home</a>
+          <a href="/privacy" class="nav-link p-0 text-muted">Privacy Policy</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Features</a>
+          <a href="/rules" class="nav-link p-0 text-muted">Rules</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Pricing</a>
+          <a href="/eli5" class="nav-link p-0 text-muted">FAQ</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">About</a>
+          <a href="https://tally.so/r/nW2D4k" class="nav-link p-0 text-muted">Help</a>
         </li>
       </ul>
     </div>
 
     <div class="col mb-3">
-      <h5>Section</h5>
+      <h5>Community</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Home</a>
+          <a href="/ca" class="nav-link p-0 text-muted">Community Ambassador</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Features</a>
+          <a href="https://www.youtube.com/@eli5club" class="nav-link p-0 text-muted">Podcast</a>
         </li>
         <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">Pricing</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">FAQs</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="#" class="nav-link p-0 text-muted">About</a>
+          <a href="/suprise" class="nav-link p-0 text-muted">Suprise Me</a>
         </li>
       </ul>
     </div>

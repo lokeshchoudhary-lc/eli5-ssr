@@ -14,6 +14,7 @@
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
   import Nav from '$lib/navbar.svelte';
+  import Footer from '$lib/footer.svelte';
 
   // import Answers from './components/Answers.svelte';
   import TipTapEditor from '$lib/TipTapEditor.svelte';
@@ -451,7 +452,7 @@
 
       <div class="container mt-3">
         <div class="row mb-5">
-          <div class="col-sm mb-4">
+          <div class="col-sm mb-4 px-0">
             <!-- Deskptop -->
             <div
               class="container p-0 shadow-sm rounded d-none d-lg-block"
@@ -719,6 +720,8 @@
     </div>
   </div>
 </div>
+
+<Footer />
 
 {#if login == true}
   <!-- Write Elif Modal -->

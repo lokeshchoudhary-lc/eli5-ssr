@@ -1,11 +1,18 @@
 <script>
   import { onMount } from 'svelte';
+  import Nav from '$lib/navbar.svelte';
+  import Footer from '$lib/footer.svelte'
   import { initializeGoogleAccounts, renderGoogleButton } from '$lib/google';
+
+  export let data;
+
   onMount(() => {
     initializeGoogleAccounts();
     renderGoogleButton();
   });
 </script>
+
+<Nav {data} />
 
 <div class="conatiner p-3">
 
@@ -22,8 +29,10 @@
         </div>
       </div>
       <div class="card-footer bg-white">
-        Not able to sign-in: <a href="#" class="url"> Need help?</a>
+        Not able to sign-in: <a href="https://tally.so/r/nW2D4k" class="url"> Need help?</a>
       </div>
     </div>
 
 </div>
+
+<Footer />

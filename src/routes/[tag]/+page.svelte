@@ -4,6 +4,8 @@
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
   import Nav from '$lib/navbar.svelte';
+  import Footer from '$lib/footer.svelte';
+
   export let data;
 
   $: questions = data.questions;
@@ -137,3 +139,6 @@
     background: #ebf0ff;
   }
 </style>
+
+
+<Footer />
