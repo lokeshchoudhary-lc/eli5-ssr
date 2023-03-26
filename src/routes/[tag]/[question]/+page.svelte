@@ -21,6 +21,7 @@
 
   export let data;
 
+  let reRenderTipTapeditor = false;
   let textAreaAnswer = '';
   let textAreaAskQuestion = '';
 
@@ -38,6 +39,7 @@
   let loadMore = data.loadMore;
   let selectedQuestion = data.question.question;
   let selectedQuestionId = data.question.id;
+  // let userId = data.userDetails.userId;
   $: answers = [];
 
   let nextPage = 1;
@@ -46,6 +48,10 @@
 
   let questionFeed = new Map();
   let counter = 0;
+
+  function copyClipboard() {
+    navigator.clipboard.writeText(window.location.href);
+  }
 
   function findLikeClassAndTime() {
     answers.forEach((answer) => {
@@ -99,9 +105,17 @@
 
   async function getAnswers() {
     try {
-      const response = await axios.get(
-        `/answers/${selectedQuestionId}?sort=${sortType}`
-      );
+      let response;
+      if (login == true) {
+        response = await axios.get(
+          `/answers/${selectedQuestionId}?sort=${sortType}`
+        );
+      } else {
+        response = await axios.get(
+          `/guestAnswers/${selectedQuestionId}?sort=${sortType}`
+        );
+      }
+
       // console.log(response);
       if (response.status == 204) {
         loadMore = false;
@@ -112,6 +126,7 @@
         loadMore = false;
       }
       noAnswer = false;
+
       answers = [...response.data];
       findLikeClassAndTime();
     } catch (error) {
@@ -151,9 +166,7 @@
       let tmp = answeredBy.split('#');
       let name = tmp[0];
       let number = tmp[1];
-      const response = await axios.put(
-        `/like/${answerId}?answeredBy=${name}&number=${number}`
-      );
+      await axios.put(`/like/${answerId}?answeredBy=${name}&number=${number}`);
     } catch (error) {
       console.log(error);
     }
@@ -165,7 +178,7 @@
 
       let name = tmp[0];
       let number = tmp[1];
-      const response = await axios.put(
+      await axios.put(
         `/cancelLike/${answerId}?answeredBy=${name}&number=${number}`
       );
     } catch (error) {
@@ -222,9 +235,11 @@
       .post(`/answer/${id}`, {
         answer: textAreaAnswer,
         questionId: id,
+        tag: userChoosenTag,
       })
       .then(async function (response) {
         // console.log(response);
+        reRenderTipTapeditor = true;
         textAreaAnswer = '';
         boolAnswered = true;
         userAnswer = response.data.userAnswer;
@@ -264,6 +279,7 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
+        answers = [];
         //check if user is loggedin
         if (login == true) {
           await getUserAnswer(selectedQuestionId);
@@ -289,7 +305,7 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
-
+        answers = [];
         //check if user is loggedin
         if (login == true) {
           await getUserAnswer(selectedQuestionId);
@@ -314,6 +330,7 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
+        answers = [];
         //check if user is loggedin
         if (login == true) {
           await getUserAnswer(selectedQuestionId);
@@ -339,6 +356,7 @@
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
         makeUrl(selectedQuestion, selectedQuestionId);
+        answers = [];
         //check if user is loggedin
         if (login == true) {
           await getUserAnswer(selectedQuestionId);
@@ -393,21 +411,23 @@
 <div class="container mt-2">
   <div class="row">
     <div class="col-sm-3">
-      <Left />
+      <Left {data} />
     </div>
 
     <div class="col-sm-6">
       <h4>
         # {userChoosenTag}
-        <button class="btn btn-outline-primary"
+        <button on:click={copyClipboard} class="btn btn-outline-primary"
           ><i class="bi bi-share-fill" /></button
         >
-        <button
-          class="btn btn-outline-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#suggest"
-          ><i class="bi bi-question-circle" /> Ask Question</button
-        >
+        {#if login == true}
+          <button
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#suggest"
+            ><i class="bi bi-question-circle" /> Ask Question</button
+          >
+        {/if}
       </h4>
 
       <nav
@@ -419,13 +439,15 @@
           class="btn btn-primary border-0"
           ><i class="bi bi-arrow-left fs-4" /></a
         >
-        <a
-          href={null}
-          class="btn btn-outline-primary border-0"
-          data-bs-toggle="modal"
-          data-bs-target="#suggest"
-          ><i class="bi bi-plus-circle fs-2" style="color: #0d6efd" /></a
-        >
+        {#if login == true}
+          <a
+            href={null}
+            class="btn btn-outline-primary border-0"
+            data-bs-toggle="modal"
+            data-bs-target="#suggest"
+            ><i class="bi bi-plus-circle fs-2" style="color: #0d6efd" /></a
+          >
+        {/if}
         <a on:click={nextQuestion} href={null} class="btn btn-primary border-0"
           ><i class="bi bi-arrow-right fs-4" /></a
         >
@@ -511,13 +533,25 @@
                   >
                 </div>
                 <div class="col-3 text-end">
-                  <button
-                    type="button"
-                    class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
-                    data-bs-toggle="modal"
-                    data-bs-target={boolAnswered ? '' : '#writeelif'}
-                    ><i class="bi bi-pen" />
-                  </button>
+                  {#if login == false}
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#OpenWriteLoginModal"
+                      ><i class="bi bi-pen" />
+                    </button>
+                  {:else}
+                    <button
+                      type="button"
+                      class={boolAnswered
+                        ? 'btn btn-disable'
+                        : 'btn btn-primary'}
+                      data-bs-toggle="modal"
+                      data-bs-target={boolAnswered ? '' : '#writeelif'}
+                      ><i class="bi bi-pen" />
+                    </button>
+                  {/if}
                 </div>
               </div>
             </div>
@@ -622,24 +656,44 @@
                   </p>
                 </div>
                 <div class="card-body text-secondary pt-0">
-                  <input type="button" class="btn-check" id={answer.id} />
-                  <label
-                    style="border-radius: 100%;"
-                    class="btn btn-outline-primary"
-                    for={answer.id}
-                    id={answer.id}
-                    on:click={toggleLike}
-                    on:keydown={null}><i class={answer.likeClass} /></label
-                  > <small class="text-muted">{answer.likeNumber} likes</small> &ensp;
+                  {#if login == true}
+                    <input type="button" class="btn-check" id={answer.id} />
+                    <label
+                      style="border-radius: 100%;"
+                      class="btn btn-outline-primary"
+                      for={answer.id}
+                      id={answer.id}
+                      on:click={toggleLike}
+                      on:keydown={null}><i class={answer.likeClass} /></label
+                    >
+                    <small class="text-muted">{answer.likeNumber} likes</small>
+                  {:else}
+                    <input type="button" class="btn-check" id={answer.id} />
+                    <label
+                      style="border-radius: 100%;"
+                      class="btn btn-outline-primary"
+                      for={answer.id}
+                      id={answer.id}
+                      data-bs-toggle="modal"
+                      data-bs-target="#OpenWriteLoginModal"
+                      on:keydown={null}><i class={answer.likeClass} /></label
+                    >
+                    <small class="text-muted">{answer.likeNumber} likes</small>
+                  {/if}
 
-                  <label
+                  <!-- like button for answer , that capture png  -->
+                  <!-- start here -->
+                  <!-- &ensp; -->
+                  <!-- <label
                     style="border-radius: 100%;"
                     class="btn btn-outline-primary"
                     data-bs-toggle="modal"
-                      data-bs-target="#share">
-                    <i class="bi bi-share"></i>
-                  </label> 
-                  <small class="text-muted">Share</small> &ensp;
+                    data-bs-target="#share"
+                  >
+                    <i class="bi bi-share" />
+                  </label>
+                  <small class="text-muted">Share</small> &ensp; -->
+                  <!-- end here -->
                 </div>
               </div>
             {/each}
@@ -751,7 +805,9 @@
           />
         </div>
         <div class="modal-body">
-          <TipTapEditor />
+          {#key reRenderTipTapeditor}
+            <TipTapEditor />
+          {/key}
 
           <div class="modal-footer">
             <button
@@ -795,8 +851,9 @@
   </div>
 {/if}
 
+<!-- Answers share button modal  -->
 
-<div
+<!-- <div
   class="modal fade"
   id="share"
   data-bs-backdrop="static"
@@ -820,12 +877,24 @@
       </div>
       <div class="modal-body">
         <div class="card">
-          
           <div class="card-body">
-            <div class=contianer><img src="/assets/images/profile/pic1.png" width="10%" class="img-fluid"> <span>@ritik_cool</span></div>
-            <h5 class="card-title">Why do we have different timezones within the same country ?</h5>
-            <p class="card-text">Earth is divided into 24 Time zones so a large country can be part of multiple time zones. That is the main reason why some countries have multiple time zones. For example, if a country passes through GMT, 15 degrees east, 30 degrees west then the time zones will be GMT, GMT + 1, GMT -2.</p>
-            
+            <div class="contianer">
+              <img
+                src="/assets/images/profile/pic1.png"
+                width="10%"
+                class="img-fluid"
+              /> <span>@ritik_cool</span>
+            </div>
+            <h5 class="card-title">
+              Why do we have different timezones within the same country ?
+            </h5>
+            <p class="card-text">
+              Earth is divided into 24 Time zones so a large country can be part
+              of multiple time zones. That is the main reason why some countries
+              have multiple time zones. For example, if a country passes through
+              GMT, 15 degrees east, 30 degrees west then the time zones will be
+              GMT, GMT + 1, GMT -2.
+            </p>
           </div>
         </div>
       </div>
@@ -834,8 +903,7 @@
       </div>
     </div>
   </div>
-</div>
-
+</div> -->
 <style>
   .tags {
     -ms-overflow-style: none; /* Internet Explorer 10+ */

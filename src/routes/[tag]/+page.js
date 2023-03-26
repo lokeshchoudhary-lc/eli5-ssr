@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const load = async ({ params }) => {
   let userChoosenTag = params.tag;
+  const stats = await axios.get(`${BaseUrl}/tagStats/${userChoosenTag}`);
   const questions = await axios.get(`${BaseUrl}/questions/${userChoosenTag}`);
   let loadMore;
 
@@ -19,7 +20,12 @@ export const load = async ({ params }) => {
     questions.data[i].slug = makeUrl(data.question, data.id);
   });
 
-  return { questions: questions.data, loadMore, userChoosenTag };
+  return {
+    questions: questions.data,
+    loadMore,
+    userChoosenTag,
+    stats: stats.data,
+  };
 };
 
 function makeUrl(q, i) {

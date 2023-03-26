@@ -1,14 +1,24 @@
 <script>
   import axios from 'axios';
+  import { onMount } from 'svelte';
 
   // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
   // axios.defaults.baseURL = 'http://localhost:8080/api/v1';
   axios.defaults.baseURL = 'http://localhost:3000/api/v1';
   axios.defaults.withCredentials = true;
+
+  onMount(() => {
+    // let client = new EventSource(
+    //   'http://localhost:3000/api/v1/sse/leaderboard',
+    //   { withCredentials: true }
+    // );
+    // client.onmessage = function (msg) {
+    //   console.log(JSON.parse(msg.data));
+    // };
+  });
 </script>
 
 <slot />
-
 
 <div
   class="modal fade"
@@ -31,14 +41,19 @@
         />
       </div>
       <div class="modal-body">
-        <lead>Eli5 is a place to share answers and get ♥s.</lead> <br> <br>
-        <button onclick="window.location.href='/auth'" type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal"><i class="bi bi-google"></i> Sign in with Google</button>
+        <lead>Eli5 is a place to share answers and get ♥s.</lead> <br /> <br />
+        <button
+          onclick="window.location.href='/auth'"
+          type="button"
+          class="btn btn-primary btn-lg"
+          data-bs-dismiss="modal"
+          ><i class="bi bi-google" /> Sign in with Google</button
+        >
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
           >Close</button
         >
-        
       </div>
     </div>
   </div>

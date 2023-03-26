@@ -1,22 +1,40 @@
 import { error } from '@sveltejs/kit';
 import { BaseUrl } from '$lib/vars';
-import axios from 'axios';
 
-export const load = async ({ params }) => {
+export const load = async ({ params, fetch, cookies }) => {
   let noAnswerContent;
   let loadMore;
   let sortType = 'trending';
   let userChoosenTag;
   let questionId = decodeUrl(params.question);
+
+  const loginStateCookie = cookies.get('loginState');
+
   if (questionId == '') {
     throw error(404, 'question url is incorrect');
   } else {
-    const question = await axios.get(`${BaseUrl}/question/${questionId}`);
-    userChoosenTag = question.data.tag;
+    const res = await fetch(`${BaseUrl}/question/${questionId}`);
+    const question = await res.json();
+    userChoosenTag = question.tag;
 
-    const response = await axios.get(
-      `${BaseUrl}/answers/${questionId}?sort=${sortType}`
-    );
+    let response;
+    let data;
+
+    if (loginStateCookie) {
+      response = await fetch(
+        `${BaseUrl}/answers/${questionId}?sort=${sortType}`
+      );
+      if (response.status != 204) {
+        data = await response.json();
+      }
+    } else {
+      response = await fetch(
+        `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
+      );
+      if (response.status != 204) {
+        data = await response.json();
+      }
+    }
 
     if (response.status == 204) {
       loadMore = false;
@@ -26,21 +44,22 @@ export const load = async ({ params }) => {
         loadMore,
         userChoosenTag,
         sortType,
-        question: question.data,
+        question: question,
         answers: [],
       };
     }
-    if (response.data.length < 10) {
+    if (data.length < 10) {
       loadMore = false;
     }
     noAnswerContent = false;
+
     return {
       noAnswerContent,
       loadMore,
       userChoosenTag,
       sortType,
-      question: question.data,
-      answers: response.data,
+      question: question,
+      answers: data,
     };
   }
 };

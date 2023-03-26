@@ -11,11 +11,17 @@
   $: questions = data.questions;
   let loadMore = data.loadMore;
   let userChoosenTag = data.userChoosenTag;
+  let likeCount = data.stats.likeCount ? data.stats.likeCount : 0;
+  let answerCount = data.stats.answerCount ? data.stats.answerCount : 0;
   let page = 1;
 
   function makeUrl(q, i) {
     let res = q.trim().replace(/\s/g, '-');
     return res + '--' + i;
+  }
+
+  function copyClipboard() {
+    navigator.clipboard.writeText(window.location.href);
   }
 
   async function loadMoreQuestions() {
@@ -50,13 +56,13 @@
 <div class="container mt-2">
   <div class="row">
     <div class="col-sm-3">
-      <Left />
+      <Left {data} />
     </div>
 
     <div class="col-sm-6">
       <h4>
         # {userChoosenTag}
-        <button class="btn btn-outline-primary"
+        <button on:click={copyClipboard} class="btn btn-outline-primary"
           ><i class="bi bi-share-fill" /></button
         >
       </h4>
@@ -69,7 +75,7 @@
             >
               <i class="bi bi-pen-fill flex-shrink-0 me-3" />
               <div>
-                <p>5K answers for #trending</p>
+                <p>{answerCount} answers for #{userChoosenTag}</p>
               </div>
             </div>
 
@@ -78,11 +84,9 @@
             >
               <i class="bi bi-heart-fill flex-shrink-0 me-3" />
               <div>
-                <p>100K likes for #trending</p>
+                <p>{likeCount} likes for #{userChoosenTag}</p>
               </div>
             </div>
-
-            
           </div>
         </div>
         <!-- <p class="lead">
@@ -134,11 +138,10 @@
   </div>
 </div>
 
+<Footer />
+
 <style>
   .stats:hover {
     background: #ebf0ff;
   }
 </style>
-
-
-<Footer />

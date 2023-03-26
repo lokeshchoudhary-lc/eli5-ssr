@@ -79,7 +79,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-sm-3" id="slide">
-      <Left />
+      <Left {data} />
     </div>
     <div class="col-sm-6">
       <!-- New design start -->
@@ -276,8 +276,6 @@
           </div>
         </div>
       </a>
-
-     
 
       <!-- New design end -->
     </div>
