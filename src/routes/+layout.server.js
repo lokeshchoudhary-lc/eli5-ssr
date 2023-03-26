@@ -15,7 +15,7 @@ export const load = async ({ fetch, cookies }) => {
 
       return { loginedIn, userDetails: data };
     } catch (err) {
-      throw error(404, 'not working', err);
+      throw error(404, err);
     }
     // axios didn't work here don't know why? didn't got cookies
     // const res  = await axios.get(`${BaseUrl}/userDetails`,{ withCredentials: true} )
