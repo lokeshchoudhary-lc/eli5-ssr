@@ -11,6 +11,8 @@ export const load = async ({ fetch, cookies }) => {
     const res = await fetch(`${BaseUrl}/userDetails`);
     const data = await res.json();
 
+    console.log(data)
+
     return { loginedIn, userDetails: data };
   } else {
     return { loginedIn };
