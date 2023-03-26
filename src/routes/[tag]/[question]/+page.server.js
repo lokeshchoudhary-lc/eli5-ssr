@@ -8,7 +8,7 @@ export const load = async ({ params, fetch, cookies }) => {
   let userChoosenTag;
   let questionId = decodeUrl(params.question);
 
-  const loginStateCookie = cookies.get('loginState1');
+  const loginStateCookie = cookies.get('loginState2');
 
   if (questionId == '') {
     throw error(404, 'question url is incorrect');

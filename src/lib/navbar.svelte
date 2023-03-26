@@ -30,7 +30,7 @@
     axios
       .get('/logout')
       .then(function (response) {
-        eraseCookie('loginState1');
+        eraseCookie('loginState2');
         loginState.set(false);
         //redirect to home ?
       })

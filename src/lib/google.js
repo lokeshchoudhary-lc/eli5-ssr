@@ -56,7 +56,7 @@ async function checkEmail(email) {
 
       //set cookie
       document.cookie =
-        'loginState1' +
+        'loginState2' +
         '=' +
         '1' +
         ';max-age= 604800' +
