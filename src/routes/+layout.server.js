@@ -8,15 +8,13 @@ export const load = async ({ fetch, cookies }) => {
 
   if (loginStateCookie) {
     loginedIn = true;
-
-    try {
+    
       const res = await fetch(`${BaseUrl}/userDetails`);
       const data = await res.json();
 
-      return { loginedIn, userDetails: data };
-    } catch (err) {
-      throw error(404, err);
-    }
+      // return { loginedIn, userDetails: data };
+      throw error(404, res);
+  
     // axios didn't work here don't know why? didn't got cookies
     // const res  = await axios.get(`${BaseUrl}/userDetails`,{ withCredentials: true} )
   } else {
