@@ -13,6 +13,7 @@
   axios.defaults.withCredentials = true;
 
   onMount(() => {
+    console.log(print);
     // let client = new EventSource(
     //   'http://localhost:3000/api/v1/sse/leaderboard',
     //   { withCredentials: true }
@@ -22,8 +23,6 @@
     // };
   });
 </script>
-
-<p>{print}</p>
 
 <slot />
 
