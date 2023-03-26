@@ -9,7 +9,9 @@ export const load = async ({ fetch, cookies }) => {
   if (loginStateCookie) {
     loginedIn = true;
 
-    const res = await fetch(`${BaseUrl}/userDetails`);
+    const res = await fetch(`${BaseUrl}/userDetails`, {
+      credentials: 'include',
+    });
     const data = await res.json();
 
     return { loginedIn, userDetails: data };
