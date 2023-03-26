@@ -37,7 +37,7 @@
         // loginState.set(true);
         //set cookie
         document.cookie =
-          'loginState' +
+          'loginState1' +
           '=' +
           '1' +
           ';max-age= 604800' +

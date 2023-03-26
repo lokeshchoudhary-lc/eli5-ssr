@@ -2,7 +2,7 @@ import { BaseUrl } from '$lib/vars';
 
 export const load = async ({ fetch, cookies }) => {
   let loginedIn = false;
-  const loginStateCookie = cookies.get('loginState');
+  const loginStateCookie = cookies.get('loginState1');
 
   if (loginStateCookie) {
     loginedIn = true;
