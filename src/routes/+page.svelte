@@ -74,7 +74,7 @@
   <title>Home</title>
 </svelte:head>
 
-<!-- <Nav {data} /> -->
+<Nav {data} />
 
 <div class="container mt-3">
   <div class="row">
