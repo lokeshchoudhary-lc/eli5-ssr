@@ -228,7 +228,7 @@
               <div class="col-10">
                 <div class="card-body">
                   <p class="card-text small text-dark">
-                    {question.question}
+                    {question.question} ?
                   </p>
                 </div>
               </div>
