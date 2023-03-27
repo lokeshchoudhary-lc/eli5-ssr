@@ -105,7 +105,7 @@
                 <div class="d-flex gap-2 w-100 justify-content-between">
                   <div>
                     <p class="mb-0 opacity-75">
-                      {question.question}
+                      {question.question} ?
                     </p>
                   </div>
                   <small class="text-nowrap"
