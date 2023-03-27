@@ -9,7 +9,7 @@
       to an otherwise complicated question or concept.
     </p>
     <b class="card-text">How can I answer question?</b>
-    <p class="card-text">Just hit EIL5 button follow the basic rule:</p>
+    <p class="card-text">Just hit ELI5 button follow the basic rule:</p>
     <ul>
       <li>State it: State the idea clearly, in a few sentences.</li>
       <li>
