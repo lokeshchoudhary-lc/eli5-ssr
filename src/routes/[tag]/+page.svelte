@@ -11,8 +11,8 @@
   $: questions = data.questions;
   let loadMore = data.loadMore;
   let userChoosenTag = data.userChoosenTag;
-  let likeCount = data.stats.likeCount ? data.stats.likeCount : 0;
-  let answerCount = data.stats.answerCount ? data.stats.answerCount : 0;
+  let likeCount = data.stats?.likeCount ? data.stats.likeCount : 0;
+  let answerCount = data.stats?.answerCount ? data.stats.answerCount : 0;
   let page = 1;
 
   function makeUrl(q, i) {
