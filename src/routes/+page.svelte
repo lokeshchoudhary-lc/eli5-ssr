@@ -253,7 +253,7 @@
               alt=""
               height="30"
             />
-            {bestAnswer.answeredBy} &ensp;
+            <p class="text-dark">{bestAnswer.answeredBy} &ensp;</p>
             <i style="color: #3366FF;" class="bi bi-heart-fill fs-6" />
             <small class="text-muted"> {bestAnswer.likeNumber} likes</small>
           </h5>
@@ -262,7 +262,7 @@
               ><span class="badge rounded-pill text-bg-primary">Question</span
               ></small
             >
-            <h5 class="card-title fs-6 border-bottom py-2">
+            <h5 class="card-title fs-6 border-bottom py-2 text-dark">
               {bestAnswer.question}?
             </h5>
             <p class="card-text text-secondary">

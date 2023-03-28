@@ -206,19 +206,19 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav text-light">
             <li class="nav-item mx-1 ">
-              <a class="nav-link active text-light" aria-current="page" href="#"
-                >{userTotalAnswers} <i class="bi bi-pen" /></a
-              >
+              <p class="nav-link active text-light">
+                {userTotalAnswers} <i class="bi bi-pen" />
+              </p>
             </li>
             <li class="nav-item mx-1">
-              <a class="nav-link active text-light" aria-current="page" href="#"
-                >{userStreak} <i class="bi bi-calendar-day" /></a
-              >
+              <p class="nav-link active text-light">
+                {userStreak} <i class="bi bi-calendar-day" />
+              </p>
             </li>
             <li class="nav-item mx-1">
-              <a class="nav-link active text-light" aria-current="page" href="#"
-                >{userTotalLikes} <i class="bi bi-heart-fill" /></a
-              >
+              <p class="nav-link active text-light">
+                {userTotalLikes} <i class="bi bi-heart-fill" />
+              </p>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-light" aria-current="page" href="/"
@@ -237,7 +237,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-light"
-                href="#"
+                href={null}
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -258,7 +258,7 @@
                   <a class="dropdown-item text-primary" href="/rules">Rules</a>
                 </li>
                 <li>
-                  <a class="dropdown-item text-primary" href="/faq">FAQ</a>
+                  <a class="dropdown-item text-primary" href="/eli5">FAQ</a>
                 </li>
                 <li>
                   <a class="dropdown-item text-primary" href="/privacy"
@@ -284,19 +284,19 @@
             <a class="nav-link text-light" href="#">Ask Question</a>
           </li> -->
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Home</a>
+            <a class="nav-link text-light" href="/">Home</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Explore</a>
+            <a class="nav-link text-light" href="/explore">Explore</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Leaderboard</a>
+            <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
           </li>
           <!-- <li class="nav-item mb-2">
             <a class="nav-link text-light" href="#">Share with friends</a>
           </li> -->
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">How it works</a>
+            <a class="nav-link text-light" href="/eli5">How it works</a>
           </li>
         </ul>
 
@@ -304,7 +304,9 @@
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
         >
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Need Help</a>
+            <a class="nav-link text-light" href="https://tally.so/r/nW2D4k"
+              >Need Help</a
+            >
           </li>
           <li class="nav-item mb-2">
             <a on:click={logout} class="nav-link text-light" href={null}
@@ -317,13 +319,13 @@
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
         >
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Privacy Policy</a>
+            <a class="nav-link text-light" href="/privacy">Privacy Policy</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">Rules</a>
+            <a class="nav-link text-light" href="/rules">Rules</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="#">FAQ</a>
+            <a class="nav-link text-light" href="/eli5">FAQ</a>
           </li>
         </ul>
       </div>
