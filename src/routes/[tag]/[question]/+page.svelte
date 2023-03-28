@@ -403,7 +403,11 @@
 </script>
 
 <svelte:head>
-  <title>Feed</title>
+  <title>{selectedQuestion}? Eli5</title>
+  <meta
+    name="description"
+    content="Looking for answers to your burning questions? Our comprehensive collection of questions and answers covers a wide range of topics and is designed to provide you with the information you need in a straightforward and easy-to-understand format. Question: {selectedQuestion}"
+  />
 </svelte:head>
 
 <Nav {data} />
