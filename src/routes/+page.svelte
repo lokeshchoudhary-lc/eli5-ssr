@@ -70,9 +70,9 @@
   });
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
   <title>Home</title>
-</svelte:head>
+</svelte:head> -->
 
 <Nav {data} />
 
