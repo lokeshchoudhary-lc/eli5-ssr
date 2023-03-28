@@ -65,9 +65,10 @@ export const load = async ({ params, fetch, cookies }) => {
 };
 
 function decodeUrl(url) {
-  let res = url.split('--');
-  if (res.length > 1) {
-    return res[1];
+  if (url.length >= 24) {
+    let res = url.slice(-24);
+    return res;
+  } else {
+    return '';
   }
-  return '';
 }
