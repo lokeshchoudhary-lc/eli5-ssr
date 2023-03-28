@@ -51,6 +51,17 @@
   }
 </script>
 
+<svelte:head>
+  <title
+    >ELi5 #{userChoosenTag}: Simplifying {userChoosenTag} Topics for All Enthusiasts</title
+  >
+  <!-- Get clear, concise explanations of -->
+  <meta
+    name="description"
+    content="Get clear, concise explanations of #{userChoosenTag}. Our ELi5 (Explain Like I'm 5) format breaks down complex {userChoosenTag} topics into simple explanations, making it easy for all to understand."
+  />
+</svelte:head>
+
 <Nav {data} />
 
 <div class="container mt-2">
