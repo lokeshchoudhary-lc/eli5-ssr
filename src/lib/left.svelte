@@ -15,14 +15,14 @@
   </div>
 
   <div onclick="location.href = '/explore';" class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
-    <img src="/assets/images/explore.png" class="img-fluid" alt="noanswer" />
+    <img src="/assets/images/explore.webp" class="img-fluid" alt="noanswer" />
   </div>
 
   <div onclick="location.href = '/share';" class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
-    <img src="/assets/images/share.png" class="img-fluid" alt="noanswer" />
+    <img src="/assets/images/share.webp" class="img-fluid" alt="noanswer" />
   </div>
 
   <div onclick="location.href = '/eli5';" class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
-    <img src="/assets/images/ask.png" class="img-fluid" alt="noanswer" />
+    <img src="/assets/images/ask.webp" class="img-fluid" alt="noanswer" />
   </div>
 </div>

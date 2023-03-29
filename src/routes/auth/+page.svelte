@@ -20,7 +20,7 @@
       <div class="card-body">
 
         <img
-          src="/assets/images/signin.png"
+          src="/assets/images/signin.webp"
           alt=""
           class="img-fluid"
         />

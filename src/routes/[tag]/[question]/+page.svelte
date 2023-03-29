@@ -595,7 +595,7 @@
             {#if noAnswer == true}
               <div class="containe pt-2">
                 <img
-                  src="/assets/images/noanswer.png"
+                  src="/assets/images/noanswer.webp"
                   class="img-fluid"
                   alt="noanswer"
                 />

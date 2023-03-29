@@ -7,7 +7,7 @@
         href="/"
         class="d-flex align-items-center mb-3 link-dark text-decoration-none"
       >
-        <img src="/assets/images/logo.png" class="bi me-2" width="80" />
+        <img src="/assets/images/logo.webp" class="bi me-2" width="80" />
       </a>
       <p class="text-muted">Explaining complex concepts without infringing on intellectual property since forever - Copyright @eli5 &copy; 2023</p>
     </div>

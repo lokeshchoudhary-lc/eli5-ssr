@@ -69,7 +69,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img
-          src="/assets/images/navlogo.png"
+          src="/assets/images/navlogo.webp"
           alt="Logo"
           height="40"
           class="d-inline-block align-text-top"
