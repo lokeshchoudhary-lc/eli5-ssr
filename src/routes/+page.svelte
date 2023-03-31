@@ -70,9 +70,59 @@
   });
 </script>
 
-<!-- <svelte:head>
-  <title>Home</title>
-</svelte:head> -->
+<svelte:head>
+  <title>Eli5 - Learn and Share Knowledge in a Fun and Engaging Way!</title>
+  <meta
+    name="description"
+    content="Eli5 is a social platform that encourages you to showcase your
+  expertise and learn new things every day. Join our community to explore the
+  world of knowledge in a fun and engaging way!"
+  />
+  <!-- Google / Search Engine Tags -->
+  <meta
+    itemprop="name"
+    content="Eli5 - Learn and Share Knowledge in a Fun and Engaging Way!"
+  />
+  <meta
+    itemprop="description"
+    content="Eli5 is a social platform that encourages you to showcase your expertise and learn new things every day. Join our community to explore the world of knowledge in a fun and engaging way!"
+  />
+  <meta
+    itemprop="image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://eli5.club/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="Eli5 - Learn and Share Knowledge in a Fun and Engaging Way!"
+  />
+  <meta
+    property="og:description"
+    content="Eli5 is a social platform that encourages you to showcase your expertise and learn new things every day. Join our community to explore the world of knowledge in a fun and engaging way!"
+  />
+  <meta
+    property="og:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="EEli5 - Learn and Share Knowledge in a Fun and Engaging Way!"
+  />
+  <meta
+    name="twitter:description"
+    content="Eli5 is a social platform that encourages you to showcase your expertise and learn new things every day. Join our community to explore the world of knowledge in a fun and engaging way!"
+  />
+  <meta
+    name="twitter:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
+</svelte:head>
 
 <Nav {data} />
 

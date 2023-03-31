@@ -20,6 +20,10 @@
 
     <div class="col-sm-6">
       <h4>Leaderboard</h4>
+      <h6>
+        Check out our leaderboard! It's where we showcase the top 100 users who
+        are absolutely crushing it in this community.
+      </h6>
       <table class="table p-0 m-0" style=" font-size: small;">
         <thead style="background-color:#FAFBFF;">
           <tr>

@@ -60,6 +60,48 @@
     name="description"
     content="Get clear, concise explanations of #{userChoosenTag}. Our ELi5 (Explain Like I'm 5) format breaks down complex {userChoosenTag} topics into simple explanations, making it easy for all to understand."
   />
+  <!-- Google / Search Engine Tags -->
+  <meta
+    itemprop="name"
+    content="ELi5 #{userChoosenTag}: Simplifying {userChoosenTag} Topics for All Enthusiasts"
+  />
+  <meta
+    itemprop="description"
+    content="Get clear, concise explanations of #{userChoosenTag}. Our ELi5 (Explain Like I'm 5) format breaks down complex {userChoosenTag} topics into simple explanations, making it easy for all to understand."
+  />
+  <meta
+    itemprop="image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://eli5.club/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="ELi5 #{userChoosenTag}: Simplifying {userChoosenTag} Topics for All Enthusiasts"
+  />
+  <meta
+    property="og:description"
+    content="Get clear, concise explanations of #{userChoosenTag}. Our ELi5 (Explain Like I'm 5) format breaks down complex {userChoosenTag} topics into simple explanations, making it easy for all to understand."
+  />
+  <meta
+    property="og:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="ELi5 #{userChoosenTag}: Simplifying {userChoosenTag} Topics for All Enthusiasts"
+  />
+  <meta
+    name="twitter:description"
+    content="Get clear, concise explanations of #{userChoosenTag}. Our ELi5 (Explain Like I'm 5) format breaks down complex {userChoosenTag} topics into simple explanations, making it easy for all to understand."
+  />
+  <meta
+    name="twitter:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+  />
 </svelte:head>
 
 <Nav {data} />

@@ -6,7 +6,8 @@ export const load = async ({ params, fetch, cookies }) => {
   let loadMore;
   let sortType = 'trending';
   let userChoosenTag;
-  let questionId = decodeUrl(params.question);
+  let questionUrl = params.question;
+  let questionId = decodeUrl(questionUrl);
 
   const loginStateCookie = cookies.get('loginState2');
 
@@ -46,6 +47,7 @@ export const load = async ({ params, fetch, cookies }) => {
         sortType,
         question: question,
         answers: [],
+        questionUrl,
       };
     }
     if (data.length < 10) {
@@ -60,6 +62,7 @@ export const load = async ({ params, fetch, cookies }) => {
       sortType,
       question: question,
       answers: data,
+      questionUrl,
     };
   }
 };
