@@ -459,18 +459,18 @@
             '@context': 'http://schema.org',
             '@type': 'Question',
             name: selectedQuestion,
-            acceptedAnswer: [
-              {
-                '@type': 'Answer',
-                upvoteCount: data.answers[0].likeNumber,
-                text: data.answers[0].answer,
-                url: `https://eli5.club/${questionUrl}`,
-                author: {
-                  '@type': 'Person',
-                  name: data.answers[0].answeredBy,
-                },
+            text: selectedQuestion,
+            answerCount: 1,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              upvoteCount: data.answers[0].likeNumber,
+              text: data.answers[0].answer,
+              url: `https://eli5.club/${questionUrl}`,
+              author: {
+                '@type': 'Person',
+                name: data.answers[0].answeredBy,
               },
-            ],
+            },
           },
         },
         {
