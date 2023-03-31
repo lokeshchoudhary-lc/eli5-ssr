@@ -407,13 +407,13 @@
   <title>{selectedQuestion}? Eli5</title>
   <meta
     name="description"
-    content="Question: {selectedQuestion} Looking for answers to your questions? We have information you need in a asy-to-understand format."
+    content="Question: {selectedQuestion}? Looking for answers to your questions? We have information you need in a easy-to-understand format."
   />
   <!-- Google / Search Engine Tags -->
   <meta itemprop="name" content="{selectedQuestion}? Eli5" />
   <meta
     itemprop="description"
-    content="Question: {selectedQuestion} Looking for answers to your questions? We have information you need in a asy-to-understand format."
+    content="Question: {selectedQuestion}? Looking for answers to your questions? We have information you need in a easy-to-understand format."
   />
   <meta
     itemprop="image"
@@ -426,7 +426,7 @@
   <meta property="og:title" content="{selectedQuestion}? Eli5" />
   <meta
     property="og:description"
-    content="Question: {selectedQuestion} Looking for answers to your questions? We have information you need in a asy-to-understand format."
+    content="Question: {selectedQuestion}? Looking for answers to your questions? We have information you need in a easy-to-understand format."
   />
   <meta
     property="og:image"
@@ -438,7 +438,7 @@
   <meta name="twitter:title" content="{selectedQuestion}? Eli5" />
   <meta
     name="twitter:description"
-    content="Question: {selectedQuestion} Looking for answers to your questions? We have information you need in a asy-to-understand format."
+    content="Question: {selectedQuestion}? Looking for answers to your questions? We have information you need in a easy-to-understand format."
   />
   <meta
     name="twitter:image"
