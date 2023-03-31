@@ -445,14 +445,16 @@
     content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284821/Frame_17_dvf6ds.png"
   />
   <!-- can add : dateCreated , answerCount , more than one acceptedAnswer when data.answers have more -->
+
   {#if data.answers.length > 0}
-    <script type="application/ld+json">
+    {@html `<script type="application/ld+json">${JSON.stringify(
       [
         {
           '@context': 'http://schema.org/',
           '@type': 'QAPage',
           name: selectedQuestion,
-          image: '',
+          image:
+            'https://res.cloudinary.com/djffn8uxx/image/upload/v1680284821/Frame_17_dvf6ds.png',
           mainEntity: {
             '@context': 'http://schema.org',
             '@type': 'Question',
@@ -481,8 +483,10 @@
             item: `https://eli5.club/${userChoosenTag}`,
           },
         },
-      ];
-    </script>
+      ],
+      null,
+      2
+    )}</script>`}
   {/if}
 </svelte:head>
 
