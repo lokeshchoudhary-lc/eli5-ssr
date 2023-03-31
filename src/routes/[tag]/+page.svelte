@@ -71,7 +71,7 @@
   />
   <meta
     itemprop="image"
-    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284824/Frame_15_eekt7s.png"
   />
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://eli5.club/" />
@@ -86,7 +86,7 @@
   />
   <meta
     property="og:image"
-    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284824/Frame_15_eekt7s.png"
   />
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -100,7 +100,7 @@
   />
   <meta
     name="twitter:image"
-    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284822/Frame_16_lenq8r.png"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1680284824/Frame_15_eekt7s.png"
   />
 </svelte:head>
 
