@@ -649,11 +649,11 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button
-                      class="accordion-button"
+                      class="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#collapseOne"
-                      aria-expanded="true"
+                      aria-expanded="false"
                       aria-controls="collapseOne"
                     >
                       <svg
@@ -674,7 +674,7 @@
                   </h2>
                   <div
                     id="collapseOne"
-                    class="accordion-collapse collapse show"
+                    class="accordion-collapse collapse"
                     data-bs-parent="#accordionExample"
                   >
                     <div class="accordion-body">
@@ -908,7 +908,7 @@
 
 <Footer />
 
-{#if login == true}
+
   <!-- Write Elif Modal -->
   <div
     class="modal fade"
@@ -980,7 +980,7 @@
       </div>
     </div>
   </div>
-{/if}
+
 
 <!-- Answers share button modal  -->
 
