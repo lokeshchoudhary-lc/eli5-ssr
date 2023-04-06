@@ -596,7 +596,7 @@
                     type="button"
                     class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
                     data-bs-toggle="modal"
-                    data-bs-target={boolAnswered ? '' : '#writeelif'}
+                    data-bs-target="#writeelif"
                     ><i class="bi bi-pen" /> Eli5Gpt</button
                   >
                 </div>
@@ -635,7 +635,7 @@
                         ? 'btn btn-disable'
                         : 'btn btn-primary'}
                       data-bs-toggle="modal"
-                      data-bs-target={boolAnswered ? '' : '#writeelif'}
+                      data-bs-target="#writeelif"
                       ><i class="bi bi-pen" />
                     </button>
                   {/if}
