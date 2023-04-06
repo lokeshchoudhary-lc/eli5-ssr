@@ -235,7 +235,7 @@
     }
   }
 
-  async function submitAnswer(event) {
+  async function submitGptAnswer(event) {
     textEditorHtml.subscribe((value) => {
       textAreaAnswer = value.getHTML();
     });
@@ -247,20 +247,19 @@
     let id = event.currentTarget.id;
 
     await axios
-      .post(`/answer/${id}`, {
+      .post(`/admin/gptAnswer/${id}`, {
         answer: textAreaAnswer,
         questionId: id,
-        tag: userChoosenTag,
       })
       .then(async function (response) {
         // console.log(response);
         reRenderTipTapeditor = true;
         textAreaAnswer = '';
         boolAnswered = true;
-        userAnswer = response.data.userAnswer;
-        streak.set(response.data.streak);
-        totalAnswers.update((n) => n + 1);
-        await getAnswers();
+        userAnswer = response.data.gptAnswer;
+        // streak.set(response.data.streak);
+        // totalAnswers.update((n) => n + 1);
+        // await getAnswers();
       })
       .catch(function (error) {
         console.log(error);
@@ -593,25 +592,13 @@
                   <!-- <span class="badge text-bg-primary">Explain like I'm five</span> -->
                 </div>
                 <div class="col-3 text-end">
-                  {#if login == false}
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#OpenWriteLoginModal"
-                      ><i class="bi bi-pen" /> Eli5</button
-                    >
-                  {:else}
-                    <button
-                      type="button"
-                      class={boolAnswered
-                        ? 'btn btn-disable'
-                        : 'btn btn-primary'}
-                      data-bs-toggle="modal"
-                      data-bs-target={boolAnswered ? '' : '#writeelif'}
-                      ><i class="bi bi-pen" /> Eli5</button
-                    >
-                  {/if}
+                  <button
+                    type="button"
+                    class={boolAnswered ? 'btn btn-disable' : 'btn btn-primary'}
+                    data-bs-toggle="modal"
+                    data-bs-target={boolAnswered ? '' : '#writeelif'}
+                    ><i class="bi bi-pen" /> Eli5Gpt</button
+                  >
                 </div>
                 <div class="col-2 text-center fs-2 px-0">
                   <a on:click={nextQuestion} class="btn btn-primary" href={null}
@@ -959,7 +946,7 @@
               class="btn btn-primary"
               data-bs-dismiss="modal"
               id={selectedQuestionId}
-              on:click={submitAnswer}>Eli5 it</button
+              on:click={submitGptAnswer}>Eli5Gpt it</button
             >
           </div>
           <div
