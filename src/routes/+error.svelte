@@ -31,7 +31,6 @@
         navigate to the new store location. That's what 404 pages are.
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <!-- TODO : Make anchor tag button -->
         <a href="/" type="button" class="btn btn-primary btn-lg px-4 me-sm-3"
           >Go home</a
         >
@@ -59,9 +58,8 @@
         to home
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-        <!-- TODO : Make anchor tag button -->
-        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3"
-          >Go home</button
+        <a href="/" type="button" class="btn btn-primary btn-lg px-4 me-sm-3"
+          >Go home</a
         >
       </div>
     </div>
