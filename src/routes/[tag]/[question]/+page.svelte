@@ -301,6 +301,7 @@
         }
 
         await getAnswers();
+        await getGptAnswer(selectedQuestionId);
       } else {
         const response = await axios.get(
           `/changeQuestion/${selectedQuestionId}?tag=${userChoosenTag}&page=${nextPage}&action=next`
@@ -327,6 +328,7 @@
         }
 
         await getAnswers();
+        await getGptAnswer(selectedQuestionId);
       }
     } catch (error) {
       console.log(error);
@@ -352,6 +354,7 @@
         }
 
         await getAnswers();
+        await getGptAnswer(selectedQuestionId);
       } else {
         const response = await axios.get(
           `/changeQuestion/${selectedQuestionId}?tag=${userChoosenTag}&page=${backPage}&action=back`
@@ -378,6 +381,7 @@
         }
 
         await getAnswers();
+        await getGptAnswer(selectedQuestionId);
       }
     } catch (error) {
       console.log(error);
