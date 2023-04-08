@@ -33,7 +33,7 @@
             <div class="container my-2">
             <lead class="text-secondary fw-semibold">Eli5'ed bio</lead>
             <p class="card-text fw-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-outline-primary card-link position-absolute top-0 end-0 m-2"><i class="bi bi-pen"></i></a>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#editprofile" data-bs-whatever="@mdo" class="btn btn-outline-primary card-link position-absolute top-0 end-0 m-2"><i class="bi bi-pen"></i></a>
             </div>
           </div>
 
@@ -153,3 +153,51 @@
     </div>
   </div>
   
+<!-- Modal edit profile -->
+  <div class="modal fade" id="editprofile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Explain yourself like I'm five</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="fabulous-ritik-18219">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Eli5 your bio</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+
+            <div class="mb-3"> 
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-instagram"></i></span>
+                    <input type="text" class="form-control" id="instagram" placeholder="Instaram Account">
+                </div>
+            </div>
+            <div class="mb-3"> 
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
+                    <input type="text" class="form-control" id="linkedin" placeholder="Linkedin Account">
+                </div>
+            </div>
+            <div class="mb-3"> 
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-twitter"></i></span>
+                    <input type="text" class="form-control" id="twitter" placeholder="Twitter Account">
+                </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal edit profile end -->
