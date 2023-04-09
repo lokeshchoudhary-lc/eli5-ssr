@@ -175,27 +175,28 @@
             <div class="mb-3"> 
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-instagram"></i></span>
-                    <input type="text" class="form-control" id="instagram" placeholder="Instaram Account">
+                    <input type="text" class="form-control" id="instagram" placeholder="Instaram URL">
                 </div>
             </div>
             <div class="mb-3"> 
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
-                    <input type="text" class="form-control" id="linkedin" placeholder="Linkedin Account">
+                    <input type="text" class="form-control" id="linkedin" placeholder="Linkedin URL">
                 </div>
             </div>
             <div class="mb-3"> 
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-twitter"></i></span>
-                    <input type="text" class="form-control" id="twitter" placeholder="Twitter Account">
+                    <input type="text" class="form-control" id="twitter" placeholder="Twitter URL">
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+              </div>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
-        </div>
+        
       </div>
     </div>
   </div>
