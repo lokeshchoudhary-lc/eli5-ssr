@@ -59,3 +59,9 @@
     </div>
   </div>
 </div>
+
+<div class="fixed-bottom m-2 d-flex justify-content-center text-center shadow-sm mx-auto" style="max-width: 170px;">
+  <button type="button" class="btn btn-primary btn-lg fs-6">
+    <img class="me-2" height="30" src="/assets/images/askq.png" alt="">Ask Question
+  </button>
+</div>
