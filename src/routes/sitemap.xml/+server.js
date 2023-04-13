@@ -10,482 +10,727 @@ export async function GET() {
       xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
       xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
     >
-<url>
+
+    <url>
   <loc>https://eli5.club/</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://eli5.club/auth</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/explore</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/eli5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/What-is-an-offside-rule-in-football--63a28e523abc7f800f80be6c</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-crypto-and-how-it-works--63a28e173abc7f800f80be6b</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Explain-your-startup-idea-like-I-am-five--63a28ee83abc7f800f80be6e</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/What-is-a-recession--63a28f0a3abc7f800f80be6f</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/What-is-Y-Combinator-and-what-is-its-primary-mission--6421600447e05440e4fb7fd0</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/rules</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/about</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/leaderboard</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/privacy</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/ca</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/suprise</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://eli5.club/gaming</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/entertainment</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://eli5.club/newyear</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/science</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://eli5.club/politics</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://eli5.club/health</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://eli5.club/startup</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://eli5.club/producthunt</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://eli5.club/gpt4</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/svb</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/IPL</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/AppleWWDC2023</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/memes</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/anime</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/buildspace</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/surprise</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/economy</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/AI</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/eli5/How-can-I-become-top-in-the-leaderboard--63bafb2ed6347f7b0e0bd186</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/eli5/How-can-I-ask-question-on-Eli5.club--63bafb7ef0eceaf35a26abc5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/eli5/Why-is-ELI5-club-the-place-to-be--63bafb97f0eceaf35a26abc6</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/eli5/What-does-ELI5-mean--63bafba5f0eceaf35a26abc7</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/What-is-the-European-Super-league-that-is-being-proposed--63bafbd778a3149a58d786bc</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/How-many-different-positions-or-roles-are-there-in-football--63bafbeb78a3149a58d786bd</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/Explain-Formula-1-to-me-like-I-am-Five--63bafbfb78a3149a58d786be</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/Why-is-South-African-Cricket-Team-called-Chokers--63bafc0878a3149a58d786bf</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/sports/What-is-the-reason-for-India's-decline-in-Hockey--63bafc1878a3149a58d786c0</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/sports/What-are-the-factors-on-which-'Fifa-Best-Player'-Award-is-given-to-a-footballer-which-i-should-not-miss--6427d46efde2a6f7fc5abf88</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/sports/What-is-the-importance-of-Champions-League-Football--64359945f97bfb2c74521fcf</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-Neuralink-and-Why-its-called-Breakthrough-Technology-for-the-Brain--63bafa91d6347f7b0e0bd180</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-the-beginner's-path-to-start-programming--63bafaaed6347f7b0e0bd181</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/Why-is-everyone-so-hyped-up-about-ChatGPT--63bafad3d6347f7b0e0bd182</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-so-unique-about-Apple-Pencil--63bafae5d6347f7b0e0bd183</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-the-best-backend-tech-stack--63bafaf6d6347f7b0e0bd184</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/technology/What-is-the-difference-between-Frontend-and-Backend--63bafb19d6347f7b0e0bd185</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/technology/What-are-Twitter's-new-paid-plans-for-API-access--6425bfacda4ac932a0d56fc4</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://eli5.club/technology/Can-someone-explain-the-learning-path-for-Competitive-programming-like-I-am-five--6427d347fde2a6f7fc5abf7d</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/What-is-the-reason-for-tech-layoffs-happening-around-the-world--63a28e823abc7f800f80be6d</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Why-is-everyone-hyped-about-'Kaliedoscope'-series--63bafbb5f0eceaf35a26abc8</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Is-Web3-a-bubble-that-will-burst--63bafbc8f0eceaf35a26abc9</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Why-is-Messi-being-labelled-as-'GOAT'--63bafbd9f0eceaf35a26abca</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Intel-Arc-A750-vs.-Nvidia-RTX-3060-:-Which-one-should-be-preferred--63bafbeff0eceaf35a26abcb</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Who-is-the-most-suitable-Wicket-keeper-in-place-of-Rishabh-Pant--63bafc1ff0eceaf35a26abcc</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/How-to-go-to-Shark-Tank-TV-Show--63bafc3cf0eceaf35a26abcd</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/What-is-going-to-happen-in-the-final-arc-of-Pokemon--63bafc51f0eceaf35a26abce</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/trending/Why-there-is-soo-much-buzz-about-mamaearth-IPO--63bafc65f0eceaf35a26abcf</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/What-is-the-current-state-of-the-global-economy,-and-how-is-it-expected-to-perform-in-the-future--63bafcfbf0eceaf35a26abd4</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/What-are-the-different-types-of-financial-instruments-or-products,-such-as-stocks,-bonds,-or-mutual-funds--63bafd0df0eceaf35a26abd5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/How-can-I-save-more-money-or-budget-my-expenses-effectively--63bafd1ff0eceaf35a26abd6</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/How-can-I-learn-more-about-personal-finance-or-financial-planning--63bafd28f0eceaf35a26abd7</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/Can-someone-explain-Inflation-to-me-Like-I-am-five--63bafd38f0eceaf35a26abd8</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/finance/What-is-the-difference-between-an-MLM-and-a-pyramid-scheme--63f49b69fa2d6daf7d9cbd87</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/How-does-Y-Combinator-work-with-startups-and-what-kind-of-support-do-they-offer--6421602f47e05440e4fb7fd1</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/What-types-of-companies-does-Y-Combinator-typically-invest-in,-and-what-criteria-do-they-use-to-make-investment-decisions--6421606d47e05440e4fb7fd2</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/How-does-Y-Combinator-help-startups-to-grow-and-scale,-and-what-kind-of-resources-do-they-provide--6421607d47e05440e4fb7fd3</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/What-are-some-notable-success-stories-from-Y-Combinator's-portfolio,-and-what-can-we-learn-from-them--642161f647e05440e4fb7fd4</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/How-does-Y-Combinator-differ-from-other-venture-capital-firms,-and-what-advantages-does-their-approach-offer--6421621447e05440e4fb7fd5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/How-can-startups-apply-to-be-part-of-Y-Combinator's-program,-and-what-is-the-selection-process-like--6421622847e05440e4fb7fd6</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/YC/How-does-Y-Combinator-work-with-its-network-of-mentors-and-advisors-to-provide-support-to-startups--6421624947e05440e4fb7fd7</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://eli5.club/gaming/Whis-is-better-intel-arc-a770-vs-rtx-3060--63baf90078a3149a58d786af</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/gaming/Let-this-be-fun-banter---your-top-5-console-games-of-all-time--63baf98178a3149a58d786b0</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/gaming/Which-is-the-best-selling-gaming-console-till-now--64359959f97bfb2c74521fd0</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/entertainment/How-can-Captain-America-lift-Mjolnir--63baf9eb78a3149a58d786b2</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/entertainment/What-is-the-difference-in-Harry-Potter-Books-and-Movies---people-always-keep-complaining-about-it--63bafa2f78a3149a58d786b3</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/entertainment/What-is-ICE-format-in-which-Pathaan-is-going-to-be-released--63bafa4978a3149a58d786b4</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/newyear/What-would-be-the-tech-trends-of-2023--63bafa5a78a3149a58d786b5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/entertainment/I-am-a-beginner-in-TV-series.-Can-you-recommend-some-worth-watching-shows--6427d41cfde2a6f7fc5abf84</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/entertainment/Recommend-some-must-listen-songs-which-i-should-not-miss--6427d42bfde2a6f7fc5abf85</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/entertainment/Would-you-choose-the-red-pill-or-blue-pill-and-why--6436de95f99eb100744ff84b</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/science/Why-do-we-have-different-timezones-within-the-same-country--63bafaba78a3149a58d786b7</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/science/Why-does-Covid-19-have-so-many-variants--63bafafe78a3149a58d786b8</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/science/Why-is-ice-sticky-and-slippery--63bafb3478a3149a58d786b9</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/science/What-are-the-mechanics-of-sleeping-in-humans--63bafb4978a3149a58d786ba</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/science/Why-do-people-have-hiccups--63bafbbb78a3149a58d786bb</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/politics/How-political-trends,-impacts-the-global-economy--63bafc2778a3149a58d786c1</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/science/What-is-the-theory-of-relativity-and-why-is-it-important--642b24ffcf7f893af5409513</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/politics/What-is-International-Court-of-Justice--63bafc4378a3149a58d786c2</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/science/If-time-travel-were-possible,-would-changing-the-past-create-a-paradox--6432fa45504f95012133ffce</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/health/What-are-the-best-precautionary-measures-against-COVID-19--63bafc7978a3149a58d786c3</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/science/What-is-gravity-and-why-do-we-always-stay-on-the-ground--64359932f97bfb2c74521fce</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/health/What-are-healthy-habits-to-include-in-my-lifestyle--63bafc9778a3149a58d786c4</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/What-is-meant-by-the-term-'unicorn'-startup--6427d1b1fde2a6f7fc5abf70</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/startup/How-is-a-startup-valued--63bafcc078a3149a58d786c5</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/How-are-companies-having-high-valuations-but-still-not-profitable--6427d1e8fde2a6f7fc5abf71</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/startup/What-are-the-most-important-skills-for-a-startup-founder-to-have--63bafcd578a3149a58d786c6</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/What-are-the-skills-required-to-become-a-startup-founder--6427d1effde2a6f7fc5abf72</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/startup/What-is-Funding-Winter--63bafcea78a3149a58d786c7</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/What-are-the-best-practices-for-an-early-stage-startup--6427d20ffde2a6f7fc5abf74</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/startup/How-to-take-forward-my-startup-idea-to-a-reality--63bafcfb78a3149a58d786c8</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/What-are-the-common-mistakes-to-avoid-for-an-early-stage-startup--6427d21dfde2a6f7fc5abf75</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://eli5.club/startup/What-the-metrics-to-keep-in-mind-while-growing-your-business--63bafd0b78a3149a58d786c9</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://eli5.club/startup/What-exactly-does-a-unicorn-startup-mean--63bafd1e78a3149a58d786ca</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://eli5.club/producthunt/What-is-NoCode,-Suggest-some-cool-NoCode-Platforms--63bafc79f0eceaf35a26abd0</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://eli5.club/producthunt/Which-is-the-best-productivity-tool-to-help-you-in-daily-life--63bafc8bf0eceaf35a26abd1</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://eli5.club/producthunt/Explain-your-product-idea-Like-I-am-five--63bafcacf0eceaf35a26abd2</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://eli5.club/producthunt/Explain-Producthunt-to-me-Like-I-am-five--63bafcccf0eceaf35a26abd3</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <loc>https://eli5.club/startups/What-are-the-reasons-for-startup-funding-plunging-by-75-percent--6436dec9f99eb100744ff84d</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/svb/What-Happened-With-Silicon-Valley-Bank--642179c547e05440e4fb7fd9</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://eli5.club/svb/How-SVB's-Collapse-Will-Impact-Indian-Economy--64217a6647e05440e4fb7fda</loc>
-  <lastmod>2023-03-29T14:16:37+00:00</lastmod>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
   <priority>0.51</priority>
 </url>
-
+<url>
+  <loc>https://eli5.club/IPL/Lets-hear-opinions-Who-will-win-the-IPL-2023--6427d44cfde2a6f7fc5abf86</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/IPL/What-is-the-new-impact-player-rule-for-IPL-2023--6427d45efde2a6f7fc5abf87</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/AppleWWDC2023/What-is-the-date-for-Apple's-annual-event,-WWDC-2023,-and-what-can-we-expect-to-see-in-it--6425d289da4ac932a0d56fc8</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/How-does-one-create-a-healthy-and-balanced-lifestyle--6427dc6bfde2a6f7fc5abf89</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/How-much-should-i-excercise-to-lead-healthy-lifestyle--6427dc88fde2a6f7fc5abf8a</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/What-are-some-of-the-latest-fashion-trends-to-be-followed--6427dcaffde2a6f7fc5abf8b</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/What-are-the-top-tourist-destinations-to-visit-in-India---there's-so-much-to-choose-from--6427dcd0fde2a6f7fc5abf8c</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/Why-should-we-drink-water--64359967f97bfb2c74521fd1</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/lifestyle/Why-do-some-foods-taste-sweet-and-others-taste-sour--6436deb1f99eb100744ff84c</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/memes/Who-invented-the-term-&quot;meme&quot;-and-what-does-it-mean--6432f724504f95012133ffcd</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career/What-are-the-most-in-demand-skillsets-in-the-current-job-market--6427d2c1fde2a6f7fc5abf77</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career/Should-I-pursue-UPSC-and-other-services-because-I-heard-some-of-my-peers-discussing-about-it--6427d2d6fde2a6f7fc5abf78</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career/Would-getting-a-masters-degree-help-me-in-career-advancement--6427d2dffde2a6f7fc5abf79</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career/I-want-to-focus-on-my-own-startup-but-my-peers-are-preparing-for-jobs-or-higher-studies.-Is-my-decision-correct--6427d2eefde2a6f7fc5abf7a</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/career/Can-I-use-this-platform-to-enhance-my-career--6427d31ffde2a6f7fc5abf7c</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/anime/Let's-hear-opinions---what-are-the-top-animes--6427d3edfde2a6f7fc5abf83</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/anime/What-is-the-difference-between-anime-and-manga--6427e09efde2a6f7fc5abf8e</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/anime/Why-demon-slayer-is-so-popular--6432f54be534539447e08cd2</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/anime/What-exactly-are-the-big-4-in-anime--6436dee4f99eb100744ff84e</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/buildspace/Explain-what-you-are-building-as-if-I-am-five-years-old--6429300290cee4b1fd696a69</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-is-Web3-and-how-is-it-different-from-Web2--6429333d90cee4b1fd696a6b</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/How-do-Web3-technologies-like-blockchain-and-smart-contracts-enable-decentralized-applications-(dApps)-and-what-are-some-examples-of-successful-dApps--6429337490cee4b1fd696a6c</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-are-non-fungible-tokens-(NFTs)-and-why-are-they-becoming-so-popular-in-the-art-and-gaming-industries--6429338090cee4b1fd696a6d</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-are-decentralized-autonomous-organizations-(DAOs)-and-how-do-they-operate--6429338e90cee4b1fd696a6e</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/How-is-Web3-revolutionizing-finance-through-decentralized-finance-(DeFi)-and-what-are-some-of-the-most-popular-DeFi-protocols--642933c790cee4b1fd696a70</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/How-can-Web3-be-used-to-promote-digital-privacy-and-security--642933d590cee4b1fd696a71</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-are-some-of-the-ethical-concerns-associated-with-Web3-technologies,-such-as-decentralization-and-blockchain-governance--642933df90cee4b1fd696a72</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/How-is-Web3-impacting-traditional-industries-like-real-estate,-supply-chain-management,-and-healthcare--642933e890cee4b1fd696a73</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-are-some-of-the-challenges-that-Web3-faces-in-terms-of-adoption-and-mainstream-acceptance--642933f490cee4b1fd696a74</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/web3/What-are-some-of-the-promising-Web3-projects-that-are-currently-being-developed-or-in-the-works--642933fc90cee4b1fd696a75</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/surprise/Why-It's-Quicker-To-Fly-East-Than-West--64345cc34714e769083f63e1</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/surprise/How-can-someone-get-featured-in-time-square--64345da24714e769083f63e3</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/economy/So,-I-should-be-putting-my-cash-under-a-mattress-right-now,-correct--64345dc54714e769083f63e4</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/AI/Why-AI-probably-won%E2%80%99t-take-our-jobs--64345e504714e769083f63e7</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/How-can-I-protect-my-computer-and-data-from-malware-and-other-cyber-attacks--643706e79f9212e971262196</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/What-are-the-most-common-types-of-cyber-attacks,-and-how-can-I-defend-against-them--6437070d9f9212e971262197</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/How-do-I-create-a-strong-password,-and-how-often-should-I-change-it--6437071a9f9212e971262198</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/How-can-I-stay-safe-while-using-public-Wi-Fi-networks--643707259f9212e971262199</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/What-are-the-risks-associated-with-using-social-media,-and-how-can-I-protect-my-privacy-online--6437072d9f9212e97126219a</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/How-do-I-recognize-and-avoid-phishing-scams--643707369f9212e97126219b</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://eli5.club/cybersecurity/How-can-I-keep-my-mobile-devices-secure--6437073e9f9212e97126219c</loc>
+  <lastmod>2023-04-13T16:16:33+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
 
 </urlset>
 
