@@ -35,14 +35,6 @@
       })
       .then(function (response) {
         // loginState.set(true);
-        //set cookie
-        document.cookie =
-          'loginState2' +
-          '=' +
-          '1' +
-          ';max-age= 604800' +
-          '; path=/' +
-          ';samesite=strict';
 
         // goto('/', { replaceState: true });
         window.location.replace(websiteUrl);
@@ -74,7 +66,7 @@
     let adjective =
       adjectivesList[Math.floor(Math.random() * adjectivesList.length)];
     const randomNumber = generate(6);
-    uniqueAlias = adjective + '-' + username + '#' + randomNumber;
+    uniqueAlias = adjective + '-' + username + ':' + randomNumber;
   }
 
   onMount(async () => {
@@ -112,7 +104,7 @@
 
     <div class="input-group mb-3">
       <span
-        class="input-group-text "
+        class="input-group-text"
         id="basic-addon1"
         on:click={generateUniqueAlias}
         on:keydown={null}><i class="bi bi-arrow-repeat" /></span

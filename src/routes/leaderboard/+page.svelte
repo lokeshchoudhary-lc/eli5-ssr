@@ -1,13 +1,11 @@
 <script>
   import Right from '$lib/right.svelte';
   import Left from '$lib/left.svelte';
-  import Signup from '$lib/signup.svelte';
   import Nav from '$lib/navbar.svelte';
 
   import { profileUrl } from '../../lib/vars';
   export let data;
   let leaderboard = data.leaderboard.data;
-  console.log(leaderboard);
 </script>
 
 <Nav {data} />

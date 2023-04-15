@@ -23,10 +23,10 @@
 
   let reRenderTipTapeditor = false;
   let textAreaAnswer = '';
-  let textAreaAskQuestion = '';
 
   let login = data.loginedIn;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;
+  let userUniqueAlias = data.userDetails?.uniqueAlias;
   let boolAnswered;
 
   let profileUrl = '/assets/images/profile/';
@@ -165,10 +165,7 @@
 
   async function likeAnswer(answerId, answeredBy) {
     try {
-      let tmp = answeredBy.split('#');
-      let name = tmp[0];
-      let number = tmp[1];
-      await axios.put(`/like/${answerId}?answeredBy=${name}&number=${number}`);
+      await axios.put(`/like/${answerId}?answeredBy=${answeredBy}`);
     } catch (error) {
       console.log(error);
     }
@@ -176,13 +173,7 @@
 
   async function cancellikeAnswer(answerId, answeredBy) {
     try {
-      let tmp = answeredBy.split('#');
-
-      let name = tmp[0];
-      let number = tmp[1];
-      await axios.put(
-        `/cancelLike/${answerId}?answeredBy=${name}&number=${number}`
-      );
+      await axios.put(`/cancelLike/${answerId}?answeredBy=${answeredBy}`);
     } catch (error) {
       console.log(error);
     }
@@ -387,19 +378,6 @@
       console.log(error);
     }
   }
-  async function askQuestion() {
-    try {
-      if (textAreaAskQuestion == '') {
-        return;
-      }
-      await axios.post('/question/ask', {
-        question: textAreaAskQuestion,
-      });
-      textAreaAskQuestion = '';
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   onMount(async () => {
     if (login == true) {
@@ -488,7 +466,7 @@
               url: `https://eli5.club/${questionUrl}`,
               author: {
                 '@type': 'Person',
-                name: data.answers[0].answeredBy,
+                name: data.answers[0].answeredByName,
               },
             },
           },
@@ -524,14 +502,12 @@
         <button on:click={copyClipboard} class="btn btn-outline-primary"
           ><i class="bi bi-share-fill" /></button
         >
-        {#if login == true}
-          <button
-            class="btn btn-outline-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#suggest"
-            ><i class="bi bi-question-circle" /> Ask Question</button
-          >
-        {/if}
+        <button
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#suggest"
+          ><i class="bi bi-question-circle" /> Ask Question</button
+        >
       </h4>
 
       <nav
@@ -712,7 +688,7 @@
                     alt=""
                     height="30"
                   />
-                  <b class="small">{userAnswer.answeredBy}</b> &emsp;
+                  <b class="small">{userUniqueAlias}</b> &emsp;
                   <span class="badge rounded-pill bg-success">Your Answer</span>
                 </div>
                 <div class="card-body text-secondary my-0 py-0">
@@ -795,7 +771,7 @@
                     alt=""
                     height="30"
                   />
-                  <b class="small">{answer.answeredBy}</b> &emsp;
+                  <b class="small">{answer.answeredByName}</b> &emsp;
                   <small class="text-muted">{answer.createdAt}</small>
                 </div>
                 <div class="card-body text-secondary pb-1">
@@ -868,60 +844,6 @@
 </div>
 
 <!-- Mobile Bootom NavBar -->
-
-<!-- Suggest question -->
-
-<div
-  class="modal fade"
-  id="suggest"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Share your thoughts
-        </h1>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        />
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label"
-              >What do you want to learn as five year old ?</label
-            >
-            <div class="mb-3 mt-1">
-              <label for="message-text" class="col-form-label">Question:</label>
-              <textarea
-                class="form-control"
-                id="message-text"
-                bind:value={textAreaAskQuestion}
-              />
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-          >Close</button
-        >
-        <button
-          on:click={askQuestion}
-          type="button"
-          class="btn btn-primary"
-          data-bs-dismiss="modal">Send message</button
-        >
-      </div>
-    </div>
-  </div>
-</div>
 
 <Footer />
 
