@@ -23,7 +23,7 @@ export const load = async ({ params, fetch, cookies }) => {
       `${BaseUrl}/answers/${questionId}?sort=${sortType}`
     );
   } else {
-    response = await axios.get(
+    response = await fetch(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
     );
     if (response.status != 204) {
