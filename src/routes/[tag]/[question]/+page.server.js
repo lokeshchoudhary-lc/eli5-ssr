@@ -1,5 +1,4 @@
 import { BaseUrl } from '$lib/vars';
-import axios from 'axios';
 
 export const load = async ({ params, fetch, cookies }) => {
   let noAnswerContent;
@@ -19,9 +18,7 @@ export const load = async ({ params, fetch, cookies }) => {
   let data;
 
   if (appStateCookie) {
-    response = await axios.get(
-      `${BaseUrl}/answers/${questionId}?sort=${sortType}`
-    );
+    response = await fetch(`${BaseUrl}/answers/${questionId}?sort=${sortType}`);
   } else {
     response = await fetch(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
