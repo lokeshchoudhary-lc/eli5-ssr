@@ -1,23 +1,18 @@
 import { BaseUrl } from '$lib/vars';
-import { error } from '@sveltejs/kit';
-import axios from 'axios';
 
 export const load = async ({ fetch, cookies }) => {
   let loginedIn = false;
-  const loginStateCookie = cookies.get('loginState2');
+  const appStateCookie = cookies.get('appState');
+  const userCookie = cookies.get('user');
 
-  if (loginStateCookie) {
+  if (appStateCookie) {
     loginedIn = true;
 
-    const res = await fetch(`${BaseUrl}/userDetails`, {
-      credentials: 'include',
-    });
+    const res = await fetch(`${BaseUrl}/userDetails/${userCookie}`);
+
     const data = await res.json();
 
     return { loginedIn, userDetails: data };
-
-    // axios didn't work here don't know why? didn't got cookies
-    // const res  = await axios.get(`${BaseUrl}/userDetails`,{ withCredentials: true} )
   } else {
     return { loginedIn };
   }

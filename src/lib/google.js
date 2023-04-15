@@ -54,15 +54,6 @@ async function checkEmail(email) {
     if (response.data == 'go_to_feed') {
       // loginState.set(true);
 
-      //set cookie
-      document.cookie =
-        'loginState2' +
-        '=' +
-        '1' +
-        ';max-age= 604800' +
-        '; path=/' +
-        ';samesite=strict';
-
       return '/';
     }
     if (response.data == 'go_to_completeProfile') {

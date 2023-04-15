@@ -1,4 +1,3 @@
-import { error } from '@sveltejs/kit';
 import { BaseUrl } from '$lib/vars';
 
 export const load = async ({ params, fetch, cookies }) => {
@@ -9,69 +8,59 @@ export const load = async ({ params, fetch, cookies }) => {
   let questionUrl = params.question;
   let questionId = decodeUrl(questionUrl);
 
-  const loginStateCookie = cookies.get('loginState2');
+  const appStateCookie = cookies.get('appState');
 
-  if (questionId == '') {
-    throw error(404, 'question url is incorrect');
+  const res = await fetch(`${BaseUrl}/question/${questionId}`);
+  const question = await res.json();
+  userChoosenTag = question.tag;
+
+  let response;
+  let data;
+
+  if (appStateCookie) {
+    response = await fetch(`${BaseUrl}/answers/${questionId}?sort=${sortType}`);
+    if (response.status != 204) {
+      data = await response.json();
+    }
   } else {
-    const res = await fetch(`${BaseUrl}/question/${questionId}`);
-    const question = await res.json();
-    userChoosenTag = question.tag;
-
-    let response;
-    let data;
-
-    if (loginStateCookie) {
-      response = await fetch(
-        `${BaseUrl}/answers/${questionId}?sort=${sortType}`
-      );
-      if (response.status != 204) {
-        data = await response.json();
-      }
-    } else {
-      response = await fetch(
-        `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
-      );
-      if (response.status != 204) {
-        data = await response.json();
-      }
+    response = await fetch(
+      `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
+    );
+    if (response.status != 204) {
+      data = await response.json();
     }
+  }
 
-    if (response.status == 204) {
-      loadMore = false;
-      noAnswerContent = true;
-      return {
-        noAnswerContent,
-        loadMore,
-        userChoosenTag,
-        sortType,
-        question: question,
-        answers: [],
-        questionUrl,
-      };
-    }
-    if (data.length < 10) {
-      loadMore = false;
-    }
-    noAnswerContent = false;
-
+  if (response.status == 204) {
+    loadMore = false;
+    noAnswerContent = true;
     return {
       noAnswerContent,
       loadMore,
       userChoosenTag,
       sortType,
       question: question,
-      answers: data,
+      answers: [],
       questionUrl,
     };
   }
+  if (data.length < 10) {
+    loadMore = false;
+  }
+  noAnswerContent = false;
+
+  return {
+    noAnswerContent,
+    loadMore,
+    userChoosenTag,
+    sortType,
+    question: question,
+    answers: data,
+    questionUrl,
+  };
 };
 
 function decodeUrl(url) {
-  if (url.length >= 24) {
-    let res = url.slice(-24);
-    return res;
-  } else {
-    return '';
-  }
+  let res = url.slice(-24);
+  return res;
 }

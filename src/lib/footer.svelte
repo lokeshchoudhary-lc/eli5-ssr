@@ -68,7 +68,7 @@
           >
         </li>
         <li class="nav-item mb-2">
-          <a href="/suprise" class="nav-link p-0 text-muted">Suprise Me</a>
+          <a href="/surprise" class="nav-link p-0 text-muted">Surprise Me</a>
         </li>
       </ul>
     </div>

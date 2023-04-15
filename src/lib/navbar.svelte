@@ -15,23 +15,25 @@
 
   let login = data.loginedIn;
   let userFirstName = data.userDetails?.firstName;
+  let uniqueAlias = data.userDetails?.uniqueAlias;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;
   let userRank = 100;
   let userTotalAnswers = data.userDetails?.totalAnswers;
   let userTotalLikes = data.userDetails?.totalLikes;
   let userStreak = data.userDetails?.streak;
 
-  function eraseCookie(name) {
-    document.cookie =
-      name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-  }
+  // function eraseCookie(name) {
+  //   document.cookie =
+  //     name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  // }
 
   function logout() {
     axios
       .get('/logout')
       .then(function (response) {
-        eraseCookie('loginState2');
+        // eraseCookie('loginState2');
         loginState.set(false);
+        window.location.replace(`/`);
         //redirect to home ?
       })
       .catch(function (error) {
@@ -109,7 +111,7 @@
         <ul
           class="navbar-nav mt-2 mb-2 text-light border-bottom border-top border-light d-block d-md-none"
         >
-          <li class="nav-item mb-2">Ask Question</li>
+          <!-- <li class="nav-item mb-2">Ask Question</li> -->
           <li onclick="window.location.href='/'" class="nav-item mb-2">Home</li>
           <li onclick="window.location.href='/explore'" class="nav-item mb-2">
             Explore
@@ -120,9 +122,9 @@
           >
             Leaderboard
           </li>
-          <li onclick="window.location.href='/share'" class="nav-item mb-2">
+          <!-- <li onclick="window.location.href='/share'" class="nav-item mb-2">
             Share with friends
-          </li>
+          </li> -->
           <li onclick="window.location.href='/eli5'" class="nav-item mb-2">
             How it works
           </li>
@@ -203,79 +205,59 @@
                 <li class="list-group-item">100 <i class="bi bi-patch-question"></i></li>
               </ul> -->
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav text-light">
-            <li class="nav-item mx-1 ">
-              <p class="nav-link active text-light">
-                {userTotalAnswers} <i class="bi bi-pen" />
-              </p>
-            </li>
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light">
-                {userStreak} <i class="bi bi-calendar-day" />
-              </p>
-            </li>
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light">
-                {userTotalLikes} <i class="bi bi-heart-fill" />
-              </p>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="/"
-                >Home</a
-              >
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link text-light" href="#">Ask Question</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/explore">Explore</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-light"
-                href={null}
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                More
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/eli5">How it works</a></li>
-                <!-- <li>
-                  <a class="dropdown-item" href="/share">Share with friends</a>
-                </li> -->
-                <li>
-                  <a class="dropdown-item" href="https://tally.so/r/nW2D4k"
-                    >Need help</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/rules">Rules</a>
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/eli5">FAQ</a>
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/privacy"
-                    >Privacy Policy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    on:click={logout}
-                    class="dropdown-item text-danger"
-                    href={null}>Logout</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav text-light" style="display: flex; align-items: center;">
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userTotalAnswers} <i class="bi bi-pen" />
+                    </p>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userStreak} <i class="bi bi-calendar-day" />
+                    </p>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userTotalLikes} <i class="bi bi-heart-fill" />
+                    </p>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="/explore">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href={null} role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href={`/@${uniqueAlias}`}>Your Profile</a>
+                      </li>
+                      <li><a class="dropdown-item" href="/eli5">How it works</a></li>
+                      <li>
+                        <a class="dropdown-item" href="https://tally.so/r/nW2D4k">Need help</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/rules">Rules</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/eli5">FAQ</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/privacy">Privacy Policy</a>
+                      </li>
+                      <li>
+                        <a on:click={logout} class="dropdown-item text-danger" href={null}>Logout</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
 
         <ul
           class="navbar-nav mt-3 mb-2 text-light border-bottom border-top border-light d-block d-md-none"
@@ -295,6 +277,11 @@
           <!-- <li class="nav-item mb-2">
             <a class="nav-link text-light" href="#">Share with friends</a>
           </li> -->
+          <li class="nav-item mb-2">
+            <a class="nav-link text-light" href={`/@${uniqueAlias}`}
+              >Your Profile</a
+            >
+          </li>
           <li class="nav-item mb-2">
             <a class="nav-link text-light" href="/eli5">How it works</a>
           </li>

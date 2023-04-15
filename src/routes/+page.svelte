@@ -303,7 +303,7 @@
               alt=""
               height="30"
             />
-            <p class="text-dark">{bestAnswer.answeredBy} &ensp;</p>
+            <p class="text-dark">{bestAnswer.answeredByName} &ensp;</p>
             <i style="color: #3366FF;" class="bi bi-heart-fill fs-6" />
             <small class="text-muted"> {bestAnswer.likeNumber} likes</small>
           </h5>
