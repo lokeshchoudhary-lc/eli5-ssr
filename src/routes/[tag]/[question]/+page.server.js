@@ -16,7 +16,7 @@ export const load = async ({ params, fetch, cookies }) => {
   userChoosenTag = question.tag;
 
   let response;
-  // let data;
+  let data;
 
   if (appStateCookie) {
     response = await axios.get(
@@ -26,6 +26,9 @@ export const load = async ({ params, fetch, cookies }) => {
     response = await axios.get(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
     );
+    if (response.status != 204) {
+      data = await response.json();
+    }
   }
 
   if (response.status == 204) {
@@ -52,7 +55,7 @@ export const load = async ({ params, fetch, cookies }) => {
     userChoosenTag,
     sortType,
     question: question,
-    answers: response.data,
+    answers: data,
     questionUrl,
   };
 };
