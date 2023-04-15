@@ -52,6 +52,7 @@
 
   function copyClipboardShareInvite() {
     navigator.clipboard.writeText(inviteUrl);
+    toastInstance1.show();
   }
 
   async function submitProfile() {
@@ -132,7 +133,83 @@
   //   let theDate = new Date(createdAt);
   //   userJoinDate = theDate.toDateString();
   // });
+
+  let toastInstance1;
+
+  onMount(() => {
+    toastInstance1 = new bootstrap.Toast(document.querySelector('.invitetoast'));
+  });
+
+if(bio == ''){
+  bio = 'Welcome to my social media page where I break down complex concepts in a way thats easy to understand. Ask me your questions and lets learn together!';
+}
+
 </script>
+
+<svelte:head>
+  <title
+    >{firstName}'s World -  Thoughts, Answer and more @{uniqueAlias} </title
+  >
+  <!-- Get clear, concise explanations of -->
+  <meta
+    name="description"
+    content="{bio}"
+  />
+  <!-- Google / Search Engine Tags -->
+  <meta
+    itemprop="name"
+    content="{firstName}'s World -  Thoughts, Answer and more @{uniqueAlias}"
+  />
+  <meta
+    itemprop="description"
+    content="{bio}"
+  />
+  <meta
+    itemprop="image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1681573467/Frame_45_q2keus.png"
+  />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://eli5.club/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="{firstName}'s World -  Thoughts, Answer and more @{uniqueAlias}"
+  />
+  <meta
+    property="og:description"
+    content="{bio}"
+  />
+  <meta
+    property="og:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1681573467/Frame_45_q2keus.png"
+  />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="{firstName}'s World -  Thoughts, Answer and more @{uniqueAlias}"
+  />
+  <meta
+    name="twitter:description"
+    content="{bio}"
+  />
+  <meta
+    name="twitter:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1681573467/Frame_45_q2keus.png"
+  />
+</svelte:head>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast align-items-center text-bg-success border-0 invitetoast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Invite link copied start sharing NOW!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
 
 <Nav {data} />
 
@@ -159,7 +236,7 @@
               <h5 class="card-title fw-bolder">{firstName}</h5>
               <p class="card-text my-1 fw-light">@{uniqueAlias}</p>
               <p class="card-text">
-                <small class="text-primary">{createdAt}</small>
+                <small class="text-primary">Joined On: {new Date(createdAt * 1000).toLocaleDateString('en-GB')}</small>
               </p>
             </div>
           </div>
@@ -454,10 +531,15 @@
               on:focusout={() => (showRules = false)}
             />
             {#if showRules == true}
-              <p>only specail characters allowed are "_" or "."</p>
-              <p>username can't have two or more consecutive "_" or "."</p>
-              <p>username can't start or end with "_" or "."</p>
-              <p>username can't have spaces(white-space character)</p>
+            <p class="small mt-2 text-primary">Username rules</p>
+            <blockquote class="blockquote-footer">
+              <ul>
+              <li class="my-0">only specail characters allowed are "_" or "."</li>
+              <li class="my-0">username can't have two or more consecutive "_" or "."</li>
+              <li class="my-0">username can't start or end with "_" or "."</li>
+              <li class="my-0">username can't have spaces(white-space character)</li>
+              </ul>
+            </blockquote>
             {/if}
           </div>
           <div class="mb-3">

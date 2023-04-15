@@ -205,84 +205,59 @@
                 <li class="list-group-item">100 <i class="bi bi-patch-question"></i></li>
               </ul> -->
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav text-light">
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light">
-                {userTotalAnswers} <i class="bi bi-pen" />
-              </p>
-            </li>
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light">
-                {userStreak} <i class="bi bi-calendar-day" />
-              </p>
-            </li>
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light">
-                {userTotalLikes} <i class="bi bi-heart-fill" />
-              </p>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="/"
-                >Home</a
-              >
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link text-light" href="#">Ask Question</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/explore">Explore</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-light"
-                href={null}
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                More
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href={`/@${uniqueAlias}`}
-                    >Your Profile</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="/eli5">How it works</a></li>
-                <!-- <li>
-                  <a class="dropdown-item" href="/share">Share with friends</a>
-                </li> -->
-                <li>
-                  <a class="dropdown-item" href="https://tally.so/r/nW2D4k"
-                    >Need help</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/rules">Rules</a>
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/eli5">FAQ</a>
-                </li>
-                <li>
-                  <a class="dropdown-item text-primary" href="/privacy"
-                    >Privacy Policy</a
-                  >
-                </li>
-                <li>
-                  <a
-                    on:click={logout}
-                    class="dropdown-item text-danger"
-                    href={null}>Logout</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav text-light" style="display: flex; align-items: center;">
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userTotalAnswers} <i class="bi bi-pen" />
+                    </p>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userStreak} <i class="bi bi-calendar-day" />
+                    </p>
+                  </li>
+                  <li class="nav-item mx-1">
+                    <p class="nav-link active text-light my-auto">
+                      {userTotalLikes} <i class="bi bi-heart-fill" />
+                    </p>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="/explore">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href={null} role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href={`/@${uniqueAlias}`}>Your Profile</a>
+                      </li>
+                      <li><a class="dropdown-item" href="/eli5">How it works</a></li>
+                      <li>
+                        <a class="dropdown-item" href="https://tally.so/r/nW2D4k">Need help</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/rules">Rules</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/eli5">FAQ</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item text-primary" href="/privacy">Privacy Policy</a>
+                      </li>
+                      <li>
+                        <a on:click={logout} class="dropdown-item text-danger" href={null}>Logout</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
 
         <ul
           class="navbar-nav mt-3 mb-2 text-light border-bottom border-top border-light d-block d-md-none"

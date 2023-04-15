@@ -29,6 +29,8 @@
     }
   }
 
+  // let currentPath = '';
+
   onMount(() => {
     // let client = new EventSource(
     //   'http://localhost:3000/api/v1/sse/leaderboard',
@@ -39,6 +41,10 @@
     // };
 
     url = window.location.href;
+
+    // currentPath = window.location.pathname;
+
+    
   });
 </script>
 
@@ -46,9 +52,9 @@
 
 <!-- ask question button -->
 
-{#if url != ''}
-  {#if url.includes('complete-profile')}
-    <div
+<!-- {#if url != ''}
+  {#if !url.includes('/auth')}
+  <div
       class="fixed-bottom m-2 d-flex justify-content-center text-center shadow-sm mx-auto"
       style="max-width: 170px;"
     >
@@ -62,8 +68,24 @@
         Question
       </button>
     </div>
-  {/if}
-{/if}
+    {/if}
+{/if} -->
+
+  <div
+    class="fixed-bottom m-2 d-flex justify-content-center text-center shadow-sm mx-auto"
+    style="max-width: 170px;"
+  >
+    <button
+      type="button"
+      class="btn btn-primary btn-lg fs-6"
+      data-bs-toggle="modal"
+      data-bs-target="#suggest"
+    >
+      <img class="me-2" height="30" src="/assets/images/askq.png" alt="" />Ask
+      Question
+    </button>
+  </div>
+
 
 <!-- suggest to login -->
 <div

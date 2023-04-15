@@ -687,14 +687,16 @@
 
     <!-- Mobile Avatar end -->
 
-    <nav class="navbar fixed-bottom justify-content-center">
+    <nav class="navbar fixed-bottom justify-content-center" style="z-index: 9999;">
       <button
         on:click={onSubmit}
         style="width:90%"
         class="btn btn-primary btn-lg"
-        >Submit <i class="bi bi-arrow-right-circle-fill" />
+      >
+        Submit <i class="bi bi-arrow-right-circle-fill" />
       </button>
     </nav>
+    
   </form>
 </div>
 
