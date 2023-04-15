@@ -19,6 +19,9 @@ export const load = async ({ params, fetch, cookies }) => {
 
   if (appStateCookie) {
     response = await fetch(`${BaseUrl}/answers/${questionId}?sort=${sortType}`);
+    if (response.status != 204) {
+      data = await response.json();
+    }
   } else {
     response = await fetch(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
