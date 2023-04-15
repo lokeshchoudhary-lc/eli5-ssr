@@ -80,19 +80,19 @@
       editProfile.uniqueAlias = editUniqueAlias;
     }
     if (editTwitter != '') {
-      if (!editTwitter.includes('https://twitter.com/')) {
+      if (editTwitter.includes('twitter.com/') == false) {
         alert('Wrong twitter url');
         return;
       }
       editProfile.twitterUrl = editTwitter;
     } else if (editLinkedIn != '') {
-      if (!editLinkedIn.includes('https://www.linkedin.com/')) {
+      if (!editLinkedIn.includes('linkedin.com/') == false) {
         alert('Wrong linkedIn url');
         return;
       }
       editProfile.linkedinUrl = editLinkedIn;
     } else if (editInstagram != '') {
-      if (!editInstagram.includes('https://www.instagram.com/')) {
+      if (!editInstagram.includes('instagram.com/') == false) {
         alert('Wrong instagram url');
         return;
       }
