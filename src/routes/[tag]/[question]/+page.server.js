@@ -8,7 +8,7 @@ export const load = async ({ params, fetch, cookies }) => {
   let questionUrl = params.question;
   let questionId = decodeUrl(questionUrl);
 
-  const appStateCookie = cookies.get('appState');
+  const appStateCookie = cookies.get('appState1');
 
   const res = await fetch(`${BaseUrl}/question/${questionId}`);
   const question = await res.json();
