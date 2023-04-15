@@ -86,13 +86,15 @@
         return;
       }
       editProfile.twitterUrl = editTwitter;
-    } else if (editLinkedIn != '') {
+    }
+    if (editLinkedIn != '') {
       if (editLinkedIn.includes('linkedin.com/') == false) {
         alert('Wrong linkedIn url');
         return;
       }
       editProfile.linkedinUrl = editLinkedIn;
-    } else if (editInstagram != '') {
+    }
+    if (editInstagram != '') {
       if (editInstagram.includes('instagram.com/') == false) {
         alert('Wrong instagram url');
         return;

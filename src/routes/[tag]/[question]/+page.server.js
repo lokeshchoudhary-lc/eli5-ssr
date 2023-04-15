@@ -1,4 +1,5 @@
 import { BaseUrl } from '$lib/vars';
+import axios from 'axios';
 
 export const load = async ({ params, fetch, cookies }) => {
   let noAnswerContent;
@@ -15,20 +16,16 @@ export const load = async ({ params, fetch, cookies }) => {
   userChoosenTag = question.tag;
 
   let response;
-  let data;
+  // let data;
 
   if (appStateCookie) {
-    response = await fetch(`${BaseUrl}/answers/${questionId}?sort=${sortType}`);
-    if (response.status != 204) {
-      data = await response.json();
-    }
+    response = await axios.get(
+      `${BaseUrl}/answers/${questionId}?sort=${sortType}`
+    );
   } else {
-    response = await fetch(
+    response = await axios.get(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
     );
-    if (response.status != 204) {
-      data = await response.json();
-    }
   }
 
   if (response.status == 204) {
@@ -55,7 +52,7 @@ export const load = async ({ params, fetch, cookies }) => {
     userChoosenTag,
     sortType,
     question: question,
-    answers: data,
+    answers: response.data,
     questionUrl,
   };
 };
