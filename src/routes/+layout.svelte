@@ -1,12 +1,11 @@
 <script>
   import axios from 'axios';
   import { onMount } from 'svelte';
-  import { page } from '$app/stores';
 
   // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
   // axios.defaults.baseURL = 'http://localhost:8080/api/v1';
-  axios.defaults.baseURL = 'http://localhost:3000/api/v1';
-  // axios.defaults.baseURL = 'https://backend.eli5.club/api/v1';
+  // axios.defaults.baseURL = 'http://localhost:3000/api/v1';
+  axios.defaults.baseURL = 'https://backend.eli5.club/api/v1';
   axios.defaults.withCredentials = true;
 
   export let data;
@@ -43,8 +42,6 @@
     url = window.location.href;
 
     // currentPath = window.location.pathname;
-
-    
   });
 </script>
 
@@ -71,21 +68,20 @@
     {/if}
 {/if} -->
 
-  <div
-    class="fixed-bottom m-2 d-flex justify-content-center text-center shadow-sm mx-auto"
-    style="max-width: 170px;"
+<div
+  class="fixed-bottom m-2 d-flex justify-content-center text-center shadow-sm mx-auto"
+  style="max-width: 170px;"
+>
+  <button
+    type="button"
+    class="btn btn-primary btn-lg fs-6"
+    data-bs-toggle="modal"
+    data-bs-target="#suggest"
   >
-    <button
-      type="button"
-      class="btn btn-primary btn-lg fs-6"
-      data-bs-toggle="modal"
-      data-bs-target="#suggest"
-    >
-      <img class="me-2" height="30" src="/assets/images/askq.png" alt="" />Ask
-      Question
-    </button>
-  </div>
-
+    <img class="me-2" height="30" src="/assets/images/askq.png" alt="" />Ask
+    Question
+  </button>
+</div>
 
 <!-- suggest to login -->
 <div
