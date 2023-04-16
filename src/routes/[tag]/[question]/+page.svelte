@@ -975,6 +975,20 @@
   </div>
 </div> -->
 <style>
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .accordion-body {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(30) forwards;
+  }
   .tags {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
