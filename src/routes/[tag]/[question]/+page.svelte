@@ -986,7 +986,6 @@
 
   .accordion-body {
     overflow: hidden;
-    white-space: nowrap;
     animation: typing 2s steps(30) forwards;
   }
   .tags {
