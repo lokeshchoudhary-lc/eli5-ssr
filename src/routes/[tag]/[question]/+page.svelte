@@ -684,7 +684,7 @@
               <div class="card border-success mt-2 shadow-sm rounded">
                 <div class="card-header bg-white border-light">
                   <img
-                    src={profileUrl + 'pic' + userProfilePictureCode + '.png'}
+                    src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
                     alt=""
                     height="30"
                   />
@@ -753,7 +753,7 @@
             {#if noAnswer == true}
               <div class="containe pt-2">
                 <img
-                  src="/assets/images/noanswer.png"
+                  src="/assets/images/noanswer.webp"
                   class="img-fluid"
                   alt="noanswer"
                 />
@@ -767,7 +767,7 @@
                     src={profileUrl +
                       'pic' +
                       answer.profilePictureCode +
-                      '.png'}
+                      '.webp'}
                     alt=""
                     height="30"
                   />
@@ -860,7 +860,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <img
-            src={profileUrl + 'pic' + userProfilePictureCode + '.png'}
+            src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
             alt=""
             height="30"
           />
@@ -950,7 +950,7 @@
           <div class="card-body">
             <div class="contianer">
               <img
-                src="/assets/images/profile/pic1.png"
+                src="/assets/images/profile/pic1.webp"
                 width="10%"
                 class="img-fluid"
               /> <span>@ritik_cool</span>

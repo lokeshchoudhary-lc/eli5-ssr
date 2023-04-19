@@ -25,7 +25,7 @@
   <div class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
     <a href="/explore">
       <img
-        src="/assets/images/explore.png"
+        src="/assets/images/explore.webp"
         class="img-fluid"
         alt="explore it"
       />
@@ -34,13 +34,13 @@
 
   <!-- <div class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
     <a href="/share">
-      <img src="/assets/images/share.png" class="img-fluid" alt="noanswer" />
+      <img src="/assets/images/share.webp" class="img-fluid" alt="noanswer" />
     </a>
   </div> -->
 
   <div class="container p-0 mt-4 rounded border border-light-subtle shadow-sm">
     <a href="/eli5">
-      <img src="/assets/images/ask.png" class="img-fluid" alt="how it works" />
+      <img src="/assets/images/ask.webp" class="img-fluid" alt="how it works" />
     </a>
   </div>
 </div>

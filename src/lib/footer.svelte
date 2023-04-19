@@ -7,7 +7,7 @@
         href="/"
         class="d-flex align-items-center mb-3 link-dark text-decoration-none"
       >
-        <img src="/assets/images/logo.png" class="bi me-2" width="80" />
+        <img src="/assets/images/logo.webp" alt="" class="bi me-2" width="80" />
       </a>
       <p class="text-muted">
         Explaining complex concepts without infringing on intellectual property
@@ -22,9 +22,6 @@
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
           <a href="/" class="nav-link p-0 text-muted">Home</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a href="/about" class="nav-link p-0 text-muted">About</a>
         </li>
         <li class="nav-item mb-2">
           <a href="/leaderboard" class="nav-link p-0 text-muted">Leaderboard</a>

@@ -4,8 +4,8 @@
 
   // axios.defaults.baseURL = 'http://127.0.0.1:8080/api/v1';
   // axios.defaults.baseURL = 'http://localhost:8080/api/v1';
-  // axios.defaults.baseURL = 'http://localhost:3000/api/v1';
-  axios.defaults.baseURL = 'https://backend.eli5.club/api/v1';
+  axios.defaults.baseURL = 'http://localhost:3000/api/v1';
+  // axios.defaults.baseURL = 'https://backend.eli5.club/api/v1';
   axios.defaults.withCredentials = true;
 
   export let data;
@@ -61,7 +61,7 @@
         data-bs-toggle="modal"
         data-bs-target="#suggest"
       >
-        <img class="me-2" height="30" src="/assets/images/askq.png" alt="" />Ask
+        <img class="me-2" height="30" src="/assets/images/askq.webp" alt="" />Ask
         Question
       </button>
     </div>
@@ -78,7 +78,7 @@
     data-bs-toggle="modal"
     data-bs-target="#suggest"
   >
-    <img class="me-2" height="30" src="/assets/images/askq.png" alt="" />Ask
+    <img class="me-2" height="30" src="/assets/images/askq.webp" alt="" />Ask
     Question
   </button>
 </div>

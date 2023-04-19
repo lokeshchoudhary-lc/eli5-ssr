@@ -7,7 +7,7 @@
         class="card border border-light shadow-sm"
       >
         <img
-          src="/assets/images/podcast/pod3.png"
+          src="/assets/images/podcast/pod3.webp"
           class="card-img-top"
           alt="..."
         />
