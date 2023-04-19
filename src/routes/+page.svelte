@@ -112,7 +112,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta
     name="twitter:title"
-    content="EEli5 - Learn and Share Knowledge in a Fun and Engaging Way!"
+    content="Eli5 - Learn and Share Knowledge in a Fun and Engaging Way!"
   />
   <meta
     name="twitter:description"
