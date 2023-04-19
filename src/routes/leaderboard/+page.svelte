@@ -37,7 +37,7 @@
               <td><span>{i + 1}</span></td>
               <td
                 ><img
-                  src={profileUrl + 'pic' + lead.profilePictureCode + '.png'}
+                  src={profileUrl + 'pic' + lead.profilePictureCode + '.webp'}
                   alt=""
                   height="30"
                 /> <span>{lead.uniqueAlias}</span></td

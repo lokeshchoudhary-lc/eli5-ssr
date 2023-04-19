@@ -1,13 +1,13 @@
 <div class="px-4 pb-5 my-5 text-center">
   <img
     class="d-block mx-auto mb-4 d-lg-none"
-    src="/assets/images/ca.png"
+    src="/assets/images/ca.webp"
     alt=""
     width="100%"
   />
   <img
     class="d-block mx-auto mb-4 d-none d-lg-block"
-    src="/assets/images/ca.png"
+    src="/assets/images/ca.webp"
     alt=""
     width="50%"
   />

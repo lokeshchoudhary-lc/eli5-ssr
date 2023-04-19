@@ -299,7 +299,7 @@
         <div class="card mb-3 shadow-sm round">
           <h5 class="card-header fs-6 bg-white">
             <img
-              src={profileUrl + 'pic' + bestAnswer.profilePictureCode + '.png'}
+              src={profileUrl + 'pic' + bestAnswer.profilePictureCode + '.webp'}
               alt=""
               height="30"
             />

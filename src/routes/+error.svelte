@@ -13,7 +13,7 @@
     <div class="container">
       <div class="container px-5">
         <img
-          src="/assets/images/404.png"
+          src="/assets/images/404.webp"
           class="img-fluid border rounded-3 shadow-lg mb-4"
           alt="Not Found"
           width="300"
@@ -42,7 +42,7 @@
     <div class="container">
       <div class="container px-5">
         <img
-          src="/assets/images/404.png"
+          src="/assets/images/404.webp"
           class="img-fluid border rounded-3 shadow-lg mb-4"
           alt="Not Found"
           width="300"

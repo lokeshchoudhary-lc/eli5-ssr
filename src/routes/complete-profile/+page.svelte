@@ -137,7 +137,7 @@
               value="1"
             />
             <label for="img1">
-              <img src="/assets/images/profile/pic1.png" alt="" />
+              <img src="/assets/images/profile/pic1.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -153,7 +153,7 @@
               value="2"
             />
             <label for="img2">
-              <img src="/assets/images/profile/pic2.png" alt="" />
+              <img src="/assets/images/profile/pic2.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -169,7 +169,7 @@
               value="3"
             />
             <label for="img3">
-              <img src="/assets/images/profile/pic3.png" alt="" />
+              <img src="/assets/images/profile/pic3.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -185,7 +185,7 @@
               value="4"
             />
             <label for="img4">
-              <img src="/assets/images/profile/pic4.png" alt="" />
+              <img src="/assets/images/profile/pic4.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -202,7 +202,7 @@
               value="5"
             />
             <label for="img5">
-              <img src="/assets/images/profile/pic5.png" alt="" />
+              <img src="/assets/images/profile/pic5.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -218,7 +218,7 @@
               value="6"
             />
             <label for="img6">
-              <img src="/assets/images/profile/pic6.png" alt="" />
+              <img src="/assets/images/profile/pic6.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -234,7 +234,7 @@
               value="7"
             />
             <label for="img7">
-              <img src="/assets/images/profile/pic7.png" alt="" />
+              <img src="/assets/images/profile/pic7.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -250,7 +250,7 @@
               value="8"
             />
             <label for="img8">
-              <img src="/assets/images/profile/pic8.png" alt="" />
+              <img src="/assets/images/profile/pic8.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -272,7 +272,7 @@
               value="9"
             />
             <label for="img9">
-              <img src="/assets/images/profile/pic9.png" alt="" />
+              <img src="/assets/images/profile/pic9.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -288,7 +288,7 @@
               value="10"
             />
             <label for="img10">
-              <img src="/assets/images/profile/pic10.png" alt="" />
+              <img src="/assets/images/profile/pic10.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -304,7 +304,7 @@
               value="11"
             />
             <label for="img11">
-              <img src="/assets/images/profile/pic11.png" alt="" />
+              <img src="/assets/images/profile/pic11.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -320,7 +320,7 @@
               value="12"
             />
             <label for="img12">
-              <img src="/assets/images/profile/pic12.png" alt="" />
+              <img src="/assets/images/profile/pic12.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -337,7 +337,7 @@
               value="13"
             />
             <label for="img13">
-              <img src="/assets/images/profile/pic13.png" alt="" />
+              <img src="/assets/images/profile/pic13.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -353,7 +353,7 @@
               value="14"
             />
             <label for="img14">
-              <img src="/assets/images/profile/pic14.png" alt="" />
+              <img src="/assets/images/profile/pic14.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -369,7 +369,7 @@
               value="15"
             />
             <label for="img15">
-              <img src="/assets/images/profile/pic15.png" alt="" />
+              <img src="/assets/images/profile/pic15.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -385,7 +385,7 @@
               value="16"
             />
             <label for="img16">
-              <img src="/assets/images/profile/pic16.png" alt="" />
+              <img src="/assets/images/profile/pic16.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -414,7 +414,7 @@
               value="1"
             />
             <label for="imgm1">
-              <img src="/assets/images/profile/pic1.png" alt="" />
+              <img src="/assets/images/profile/pic1.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -430,7 +430,7 @@
               value="2"
             />
             <label for="imgm2">
-              <img src="/assets/images/profile/pic2.png" alt="" />
+              <img src="/assets/images/profile/pic2.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -446,7 +446,7 @@
               value="3"
             />
             <label for="imgm3">
-              <img src="/assets/images/profile/pic3.png" alt="" />
+              <img src="/assets/images/profile/pic3.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -464,7 +464,7 @@
               value="4"
             />
             <label for="imgm4">
-              <img src="/assets/images/profile/pic4.png" alt="" />
+              <img src="/assets/images/profile/pic4.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -481,7 +481,7 @@
               value="5"
             />
             <label for="imgm5">
-              <img src="/assets/images/profile/pic5.png" alt="" />
+              <img src="/assets/images/profile/pic5.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -497,7 +497,7 @@
               value="6"
             />
             <label for="imgm6">
-              <img src="/assets/images/profile/pic6.png" alt="" />
+              <img src="/assets/images/profile/pic6.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -516,7 +516,7 @@
               value="7"
             />
             <label for="imgm7">
-              <img src="/assets/images/profile/pic7.png" alt="" />
+              <img src="/assets/images/profile/pic7.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -532,7 +532,7 @@
               value="8"
             />
             <label for="imgm8">
-              <img src="/assets/images/profile/pic8.png" alt="" />
+              <img src="/assets/images/profile/pic8.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -549,7 +549,7 @@
               value="9"
             />
             <label for="imgm9">
-              <img src="/assets/images/profile/pic9.png" alt="" />
+              <img src="/assets/images/profile/pic9.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -572,7 +572,7 @@
               value="10"
             />
             <label for="imgm10">
-              <img src="/assets/images/profile/pic10.png" alt="" />
+              <img src="/assets/images/profile/pic10.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -588,7 +588,7 @@
               value="11"
             />
             <label for="imgm11">
-              <img src="/assets/images/profile/pic11.png" alt="" />
+              <img src="/assets/images/profile/pic11.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -604,7 +604,7 @@
               value="12"
             />
             <label for="imgm12">
-              <img src="/assets/images/profile/pic12.png" alt="" />
+              <img src="/assets/images/profile/pic12.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -622,7 +622,7 @@
               value="13"
             />
             <label for="imgm13">
-              <img src="/assets/images/profile/pic13.png" alt="" />
+              <img src="/assets/images/profile/pic13.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -638,7 +638,7 @@
               value="14"
             />
             <label for="imgm14">
-              <img src="/assets/images/profile/pic14.png" alt="" />
+              <img src="/assets/images/profile/pic14.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -654,7 +654,7 @@
               value="15"
             />
             <label for="imgm15">
-              <img src="/assets/images/profile/pic15.png" alt="" />
+              <img src="/assets/images/profile/pic15.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -674,7 +674,7 @@
               value="16"
             />
             <label for="imgm16">
-              <img src="/assets/images/profile/pic16.png" alt="" />
+              <img src="/assets/images/profile/pic16.webp" alt="" />
               <div class="tick_container">
                 <div class="tick"><i class="bi bi-check" /></div>
               </div>
@@ -687,7 +687,10 @@
 
     <!-- Mobile Avatar end -->
 
-    <nav class="navbar fixed-bottom justify-content-center" style="z-index: 9999;">
+    <nav
+      class="navbar fixed-bottom justify-content-center"
+      style="z-index: 9999;"
+    >
       <button
         on:click={onSubmit}
         style="width:90%"
@@ -696,7 +699,6 @@
         Submit <i class="bi bi-arrow-right-circle-fill" />
       </button>
     </nav>
-    
   </form>
 </div>
 

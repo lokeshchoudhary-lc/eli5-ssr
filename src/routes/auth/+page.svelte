@@ -22,7 +22,7 @@
 <div class="conatiner p-3">
   <div class="card text-center">
     <div class="card-body">
-      <img src="/assets/images/signin.png" alt="" class="img-fluid" />
+      <img src="/assets/images/signin.webp" alt="" class="img-fluid" />
       <div class="container d-flex justify-content-center my-3">
         <div id="googleButton" />
       </div>

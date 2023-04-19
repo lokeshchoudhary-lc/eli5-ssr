@@ -4,7 +4,7 @@ import axios from 'axios';
 export const load = async ({ params }) => {
   const userName = params.username;
 
-  const res = await axios.get(`${BaseUrl}/userDetails/${userName}`);
+  const res = await axios.get(`${BaseUrl}/profileDetails/${userName}`);
 
   // console.log(res.data);
 

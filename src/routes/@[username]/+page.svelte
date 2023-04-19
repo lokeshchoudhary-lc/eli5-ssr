@@ -223,7 +223,7 @@
         <div class="row g-0 p-1">
           <div class="col-2 m-auto">
             <img
-              src={profileUrl + 'pic' + profilePictureCode + '.png'}
+              src={profileUrl + 'pic' + profilePictureCode + '.webp'}
               class="img-fluid"
               alt="..."
             />
@@ -284,7 +284,7 @@
           <img
             class="me-1"
             height="30"
-            src="/assets/images/curious.png"
+            src="/assets/images/curious.webp"
             alt=""
           />Curious
         </span>
@@ -294,7 +294,7 @@
           <img
             class="me-1"
             height="30"
-            src="/assets/images/rookie.png"
+            src="/assets/images/rookie.webp"
             alt=""
           />Rookie
         </span>
@@ -304,7 +304,7 @@
           <img
             class="me-1"
             height="30"
-            src="/assets/images/brainy.png"
+            src="/assets/images/brainy.webp"
             alt=""
           />Brainy
         </span>
@@ -315,7 +315,7 @@
             <img
               class="me-1"
               height="30"
-              src="/assets/images/expert.png"
+              src="/assets/images/expert.webp"
               alt=""
             />Expert
           </span>
@@ -327,7 +327,7 @@
             <img
               class="me-1"
               height="30"
-              src="/assets/images/master.png"
+              src="/assets/images/master.webp"
               alt=""
             />Master
           </span>
@@ -339,7 +339,7 @@
             <img
               class="me-1"
               height="30"
-              src="/assets/images/guru.png"
+              src="/assets/images/guru.webp"
               alt=""
             />Guru
           </span>
