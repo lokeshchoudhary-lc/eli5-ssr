@@ -8,7 +8,8 @@ export const load = async ({ params, fetch, cookies }) => {
   let questionUrl = params.question;
   let questionId = decodeUrl(questionUrl);
 
-  const appStateCookie = cookies.get('appState');
+  // const appStateCookie = cookies.get('appState');
+  const token = cookies.get('Token');
 
   const res = await fetch(`${BaseUrl}/question/${questionId}`);
   const question = await res.json();
@@ -17,8 +18,15 @@ export const load = async ({ params, fetch, cookies }) => {
   let response;
   let data;
 
-  if (appStateCookie) {
-    response = await fetch(`${BaseUrl}/answers/${questionId}?sort=${sortType}`);
+  if (token) {
+    response = await fetch(
+      `${BaseUrl}/answers/${questionId}?sort=${sortType}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
     if (response.status != 204) {
       data = await response.json();
     }
