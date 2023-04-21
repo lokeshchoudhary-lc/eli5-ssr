@@ -5,9 +5,9 @@ let color = '#fff';
 </script>
 
 <section class="h-100 gradient-custom-2">
-    <div class="container py-5 h-100">
+    <div class="container pt-3 pb-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-lg-9 col-xl-10">
+        <div class="col col-lg-9 col-xl-10 position-relative">
           <div class="card">
             <div class="rounded-top text-white d-flex flex-row backdrop">
               <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
@@ -19,12 +19,18 @@ let color = '#fff';
             <div class="p-3 text-black">
               <div class="d-flex justify-content-end text-center py-0">
 
-                <div>
+                <div class="m-1 position-absolute top-0 end-0">
                     <button type="button" class="btn btn-outline-danger like-btn"
-                    style="z-index: 1;">
-                    <i class="bi bi-heart-fill"></i> 100K+ Love
+                    style="z-index: 1;" data-bs-toggle="modal" data-bs-target="#profileModal">
+                    <i class="bi bi-pen"></i>
                   </button>
                 </div>
+                <div class="mx-1">
+                  <button type="button" class="btn btn-outline-danger like-btn"
+                  style="z-index: 1;">
+                  <i class="bi bi-heart-fill"></i> 100K+ Love
+                </button>
+              </div>
               </div>
             </div>
 
@@ -121,8 +127,6 @@ let color = '#fff';
                     </div>
                 </div>
                   
-                  
-
               </div>
               
           </div>
@@ -130,6 +134,78 @@ let color = '#fff';
       </div>
     </div>
   </section>
+
+<!-- Profile edit modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col">
+              <h3 class="mb-2">Enter Company Profile Details</h3>
+              <p class="mb-2 text-secondary small">Note: You can edit this in the future as well</p>
+              <form>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="text" class="form-control border border-primary bg-light" id="email" name="email" placeholder="ritikiitrbiotech@gmail.com" disabled>
+                    </div>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="mb-3">
+                  <label for="logo" class="form-label">Logo Upload</label>
+                  <input type="file" class="form-control" id="logo" name="logo" accept=".png" required>
+                  <small class="text-muted">File must be in PNG format and under 1MB.</small>
+                </div>
+                <div class="mb-3">
+                  <label for="bio" class="form-label">Bio</label>
+                  <textarea class="form-control" id="bio" name="bio" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="instagram" class="form-label">Instagram URL</label>
+                  <input type="url" class="form-control" id="instagram" name="instagram" placeholder="https://www.instagram.com/username">
+                </div>
+                <div class="mb-3">
+                  <label for="twitter" class="form-label">Twitter URL</label>
+                  <input type="url" class="form-control" id="twitter" name="twitter" placeholder="https://twitter.com/username">
+                </div>
+                <div class="mb-3">
+                  <label for="linkedin" class="form-label">LinkedIn URL</label>
+                  <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/username">
+                </div>
+                <div class="mb-3">
+                  <label for="facebook" class="form-label">Facebook URL</label>
+                  <input type="url" class="form-control" id="facebook" name="facebook" placeholder="https://www.facebook.com/username">
+                </div>
+                <div class="mb-3">
+                  <label for="youtube" class="form-label">YouTube URL</label>
+                  <input type="url" class="form-control" id="youtube" name="youtube" placeholder="https://www.youtube.com/channel/username">
+                </div>
+                <div class="mb-3">
+                  <label for="other" class="form-label">Other Links</label>
+                  <input type="url" class="form-control" id="other" name="other" placeholder="https://www.example.com">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-success" type="button">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 
 <style>
