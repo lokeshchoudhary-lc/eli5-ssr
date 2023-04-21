@@ -138,7 +138,7 @@
     }
     
     .backdrop{
-        background: white;  
+        background: #3366FF10;  
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover; 

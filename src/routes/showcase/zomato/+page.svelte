@@ -138,11 +138,12 @@ let color = '#fff';
 }
 
 .backdrop{
-    background: url('https://pbs.twimg.com/profile_banners/23283603/1673515223/1500x500');  
+    background: #E1374410;  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
     height:200px;
+    
 }
 
 .like-btn{
