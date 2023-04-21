@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { BaseUrl } from '$lib/vars';
 
-export const load = async ({ params, fetch, cookies }) => {
+export const load = async ({ params }) => {
   let noAnswerContent;
   let loadMore;
   let sortType = 'trending';
@@ -8,10 +9,7 @@ export const load = async ({ params, fetch, cookies }) => {
   let questionUrl = params.question;
   let questionId = decodeUrl(questionUrl);
 
-  // const appStateCookie = cookies.get('appState');
-  const token = cookies.get('Token');
-
-  const res = await fetch(`${BaseUrl}/question/${questionId}`);
+  const res = await axios.get(`${BaseUrl}/question/${questionId}`);
   const question = await res.json();
   userChoosenTag = question.tag;
 
@@ -19,19 +17,14 @@ export const load = async ({ params, fetch, cookies }) => {
   let data;
 
   if (token) {
-    response = await fetch(
-      `${BaseUrl}/answers/${questionId}?sort=${sortType}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+    response = await axios.get(
+      `${BaseUrl}/answers/${questionId}?sort=${sortType}`
     );
     if (response.status != 204) {
       data = await response.json();
     }
   } else {
-    response = await fetch(
+    response = await axios.get(
       `${BaseUrl}/guestAnswers/${questionId}?sort=${sortType}`
     );
     if (response.status != 204) {
