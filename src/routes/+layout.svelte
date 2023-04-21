@@ -9,11 +9,9 @@
   axios.defaults.baseURL = 'http://localhost:3000/api/v1';
   // axios.defaults.baseURL = 'https://backend.eli5.club/api/v1';
   axios.defaults.withCredentials = true;
-  axios.defaults.headers.common['Authorization'] = data?.token
-    ? `Bearer ${data.token}`
-    : '';
-
-  let url = '';
+  // axios.defaults.headers.common['Authorization'] = data?.token
+  //   ? `Bearer ${data.token}`
+  //   : '';
   let textAreaAskQuestion = '';
 
   async function askQuestion() {
@@ -42,10 +40,6 @@
     // client.onmessage = function (msg) {
     //   console.log(JSON.parse(msg.data));
     // };
-
-    url = window.location.href;
-
-    // currentPath = window.location.pathname;
   });
 </script>
 
