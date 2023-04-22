@@ -454,7 +454,7 @@ if(bio == ''){
           <div class="col-4">
             <div class="p-3 border rounded-4 shadow-sm">
               {#if instagramUrl}
-                <a href={instagramUrl} class="text-decoration-none text-dark">
+                <a href={instagramUrl} class="text-decoration-none">
                   <i class="bi bi-instagram" style="color:#D02C77" /> Instagram
                 </a>
               {:else}
@@ -465,7 +465,7 @@ if(bio == ''){
           <div class="col-4">
             <div class="p-3 border rounded-4 shadow-sm">
               {#if twitterUrl}
-                <a href={twitterUrl} class="text-decoration-none text-dark">
+                <a href={twitterUrl} class="text-decoration-none">
                   <i class="bi bi-twitter" style="color:#00acee" /> Twitter
                 </a>
               {:else}
@@ -476,7 +476,7 @@ if(bio == ''){
           <div class="col-4">
             <div class="p-3 border rounded-4 shadow-sm">
               {#if linkedinUrl}
-                <a href={linkedinUrl} class="text-decoration-none text-dark">
+                <a href={linkedinUrl} class="text-decoration-none">
                   <i class="bi bi-linkedin" style="color:#0072b1" /> Linkedin
                 </a>
               {:else}

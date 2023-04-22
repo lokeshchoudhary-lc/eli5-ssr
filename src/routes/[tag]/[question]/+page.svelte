@@ -511,7 +511,7 @@
       </h4>
 
       <nav
-        class="navbar navbar-light bg-light fixed-bottom d-lg-none px-4 py-2 shadow-lg border-top rounded"
+        class="navbar navbar-light fixed-bottom d-lg-none px-4 py-2 "
       >
         <a
           on:click={previousQuestion}
@@ -558,7 +558,7 @@
             <!-- Deskptop -->
             <div
               class="container p-0 shadow-sm rounded d-none d-lg-block"
-              style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
+              style="border-style: solid; border-color: #3366FF;"
             >
               <div class="row align-items-center py-1">
                 <div class="col-2 text-center fs-2 px-0">
@@ -603,7 +603,7 @@
             <!-- Mobile -->
             <div
               class="container p-2 shadow-sm rounded d-lg-none"
-              style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
+              style="border-style: solid; border-color: #3366FF;"
             >
               <div class="row align-items-center">
                 <div class="col-9">
@@ -682,7 +682,7 @@
             <!-- user answer for the above question -->
             {#if userAnswer.answer !== undefined && login == true}
               <div class="card border-success mt-2 shadow-sm rounded">
-                <div class="card-header bg-white border-light">
+                <div class="card-header">
                   <img
                     src={profileUrl + 'pic' + userProfilePictureCode + '.png'}
                     alt=""
@@ -691,7 +691,7 @@
                   <b class="small">{userUniqueAlias}</b> &emsp;
                   <span class="badge rounded-pill bg-success">Your Answer</span>
                 </div>
-                <div class="card-body text-secondary my-0 py-0">
+                <div class="card-body text-secondary my-1 py-0">
                   <p class="card-text m-0 py-0 small text-secondary">
                     {@html userAnswer.answer}
                   </p>
@@ -762,7 +762,7 @@
 
             {#each answers as answer}
               <div class="card border-light mt-4 shadow-sm rounded">
-                <div class="card-header bg-white border-light">
+                <div class="card-header">
                   <img
                     src={profileUrl +
                       'pic' +

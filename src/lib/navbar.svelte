@@ -231,12 +231,12 @@
                   <li class="nav-item">
                     <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="dropdown-item" href={`/@${uniqueAlias}`}>Your Profile</a>
+                  </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" href={null} role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <ul class="dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href={`/@${uniqueAlias}`}>Your Profile</a>
-                      </li>
                       <li><a class="dropdown-item" href="/eli5">How it works</a></li>
                       <li>
                         <a class="dropdown-item" href="https://tally.so/r/nW2D4k">Need help</a>

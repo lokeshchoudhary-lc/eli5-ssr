@@ -6,6 +6,12 @@ let color = '#fff';
 
 <section class="h-100 gradient-custom-2">
     <div class="container pt-3 pb-5 h-100">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/showcase" class="link-primary link-offset-2 link-underline-opacity-100-hover">Explore</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Zomato</li>
+        </ol>
+      </nav>
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-9 col-xl-10 position-relative">
           <div class="card">
@@ -41,8 +47,8 @@ let color = '#fff';
                   </div>
             </div>
 
-            <div class="card-body text-black">
-              <div class="mb-2 bg-light border border-light rounded p-4">
+            <div class="card-body">
+              <div class="mb-2 border border-light rounded p-4 shadow-sm">
                 <p class="lead fw-bold mb-1">Eli5 what does <span class="brand-name"> Zomato </span> do?</p>
                 <div>
                   <p class="font-italic mb-1">Zomato is a food app that helps you find the best restaurants with ratings and reviews. 
@@ -55,35 +61,35 @@ let color = '#fff';
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
                       
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-instagram" style="color:#D02C77" /> Instagram
                         </a>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-twitter" style="color:#00acee" /> Twitter
                         </a>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-linkedin" style="color:#0072b1" /> Linkedin
                         </a>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-facebook" style="color:#3b5998" /> Facebook
                         </a>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-youtube" style="color:#FF0000" /> Youtube
                         </a>
                     </div>
@@ -91,7 +97,7 @@ let color = '#fff';
 
                   <div class="col-sm-4">
                     <div class="p-3 border rounded-4 shadow-sm">
-                        <a href={null} class="text-decoration-none text-dark">
+                        <a href={null} class="text-decoration-none">
                           <i class="bi bi-link-45deg" style="color:#FF0000" /> Other link
                         </a>
                     </div>
@@ -110,7 +116,7 @@ let color = '#fff';
               <div class="container p-0">
                 
                 <div class="card my-2 border border-secondary-subtle">
-                    <div class="card-header bg-white border-0 pb-1">
+                    <div class="card-header border-0 pb-1">
                         <span class="badge rounded-pill tags">Zomato</span> <span class="badge rounded-pill tags">Eli5</span>
                     </div>
                     <div class="card-body pt-2">
@@ -119,7 +125,7 @@ let color = '#fff';
                 </div>
                   
                 <div class="card my-2 border border-secondary-subtle">
-                    <div class="card-header bg-white border-0 pb-1">
+                    <div class="card-header border-0 pb-1">
                         <span class="badge rounded-pill tags">Zomato</span> <span class="badge rounded-pill tags">Eli5</span>
                     </div>
                     <div class="card-body py-1">

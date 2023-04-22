@@ -4,7 +4,6 @@
   import Signup from '$lib/signup.svelte';
   import Nav from '$lib/navbar.svelte';
   import Footer from '$lib/footer.svelte';
-  import Podcast from '$lib/podcast.svelte';
   export let data;
   let exploreTags = data.exploreTags.data;
 </script>
@@ -38,7 +37,7 @@
           </div>
         </div>
 
-        <Podcast />
+
       </div>
     </div>
 

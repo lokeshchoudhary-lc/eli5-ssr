@@ -1,6 +1,5 @@
 <div
   class="card rounded border border-light shadow-sm d-none d-lg-block"
-  style="background-color: #FAFBFF;"
 >
   <div class="card-body">
     <h5 class="card-title">What is eli5?</h5>
@@ -25,6 +24,7 @@
 
     <i class="bi bi-info-circle" />
     <a class="link-dark" href="/rules">Rules</a>
+
     <!-- <div class="ratio ratio-16x9 mt-3 ">
       <iframe
         class="rounded border border-light shadow-sm"

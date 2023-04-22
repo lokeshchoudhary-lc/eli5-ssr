@@ -23,7 +23,7 @@
         are absolutely crushing it in this community.
       </h6>
       <table class="table p-0 m-0" style=" font-size: small;">
-        <thead style="background-color:#FAFBFF;">
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">User</th>
