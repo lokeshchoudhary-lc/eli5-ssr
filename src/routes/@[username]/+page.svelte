@@ -215,11 +215,11 @@ if(bio == ''){
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6 mb-5">
+    <div class="col-lg-6 mb-5">
       <div
         class="card mb-2 mt-2 shadow-sm border position-relative p-2 rounded-4"
       >
@@ -488,7 +488,7 @@ if(bio == ''){
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
   </div>

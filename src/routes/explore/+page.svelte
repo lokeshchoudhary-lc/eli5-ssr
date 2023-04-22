@@ -12,11 +12,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <div class="container">
         <h4>Explore</h4>
 
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
     <Signup />

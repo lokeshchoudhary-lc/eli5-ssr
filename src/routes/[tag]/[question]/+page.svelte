@@ -492,11 +492,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <h4>
         # {userChoosenTag}
         <button on:click={copyClipboard} class="btn btn-outline-primary"
@@ -837,7 +837,7 @@
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
   </div>

@@ -12,11 +12,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <h4>Leaderboard</h4>
       <h6>
         Check out our leaderboard! It's where we showcase the top 100 users who
@@ -50,7 +50,7 @@
       </table>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
   </div>

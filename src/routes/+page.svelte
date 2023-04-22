@@ -128,10 +128,10 @@
 
 <div class="container mt-3">
   <div class="row">
-    <div class="col-sm-3" id="slide">
+    <div class="col-lg-3" id="slide">
       <Left {data} />
     </div>
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <!-- New design start -->
       <div class="container px-0">
         <!-- Desktop -->
@@ -326,7 +326,7 @@
 
       <!-- New design end -->
     </div>
-    <div class="col-sm-3 d-none d-lg-block">
+    <div class="col-lg-3 d-none d-lg-block">
       <Right />
     </div>
   </div>
