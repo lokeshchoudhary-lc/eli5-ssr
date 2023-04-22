@@ -168,9 +168,17 @@ let color = '#fff';
                   <input type="text" class="form-control" id="username" name="username" required>
                 </div>
                 <div class="mb-3">
+                    <label for="urlInput">Website Url</label>
+                    <input type="url" class="form-control" id="urlInput">
+                </div>
+                <div class="mb-3">
                   <label for="logo" class="form-label">Logo Upload</label>
                   <input type="file" class="form-control" id="logo" name="logo" accept=".png" required>
                   <small class="text-muted">File must be in PNG format and under 1MB.</small>
+                </div>
+                <div class="mb-3">
+                      <label for="exampleColorInput" class="form-label">Color picker</label>
+                      <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#fff" title="Choose your color">
                 </div>
                 <div class="mb-3">
                   <label for="bio" class="form-label">Bio</label>

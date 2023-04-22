@@ -1,39 +1,40 @@
-<div class="container" style="height: 500px; width: 100%;">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="image1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Caption for image 1</p>
-        </div>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Web Story</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chapter 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chapter 2</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="image2.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Caption for image 2</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img class="card-img-top" src="image3.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Caption for image 3</p>
-        </div>
-      </div>
+  </nav>
+
+  
+  <div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chapter 1</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed diam eget ipsum rhoncus sodales.</p>
+      <a href="#" class="btn btn-primary">Read More</a>
     </div>
   </div>
-</div>
 
-<!-- JavaScript -->
-<script>
-  var swiper = new Swiper('.container', {
-    direction: 'horizontal',
-    slidesPerView: 'auto',
-    spaceBetween: 30,
-    mousewheel: true,
-    grabCursor: true
-  });
-</script>
+  
+  <footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Copyright &copy; 2023</span>
+  </div>
+</footer>
+</div>
