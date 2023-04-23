@@ -5,11 +5,10 @@
   import { goto } from '$app/navigation';
   import { profileUrl } from '$lib/vars';
   import axios from 'axios';
-  import { BaseUrl } from '../../lib/vars.js';
   import { onMount } from 'svelte';
   export let data;
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
 
   let username = data.userName;
   let userJoinDate;
@@ -103,7 +102,7 @@
     }
 
     await axios
-      .put(`${BaseUrl}/userDetails`, editProfile)
+      .put(`/userDetails`, editProfile)
       .then(function (response) {
         uniqueAlias = editUniqueAlias != '' ? editUniqueAlias : uniqueAlias;
 

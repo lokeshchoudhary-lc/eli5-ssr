@@ -1,7 +1,7 @@
 <script>
   export let data;
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
 </script>
 
 <div class="d-none d-lg-block">

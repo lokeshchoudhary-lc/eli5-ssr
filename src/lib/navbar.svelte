@@ -13,7 +13,7 @@
 
   export let data;
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
   let userFirstName = data.userDetails?.firstName;
   let uniqueAlias = data.userDetails?.uniqueAlias;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;

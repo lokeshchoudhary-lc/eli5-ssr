@@ -1,7 +1,7 @@
 <script>
   import axios from 'axios';
   import { onMount } from 'svelte';
-  import { profileUrl } from '../lib/vars';
+  import { profileUrl } from '../../lib/vars';
 
   import Footer from '$lib/footer.svelte';
   import Right from '$lib/right.svelte';

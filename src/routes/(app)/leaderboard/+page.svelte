@@ -3,7 +3,7 @@
   import Left from '$lib/left.svelte';
   import Nav from '$lib/navbar.svelte';
 
-  import { profileUrl } from '../../lib/vars';
+  import { profileUrl } from '../../../lib/vars';
   export let data;
   let leaderboard = data.leaderboard.data;
 </script>

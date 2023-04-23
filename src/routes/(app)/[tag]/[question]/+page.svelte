@@ -24,7 +24,7 @@
   let reRenderTipTapeditor = false;
   let textAreaAnswer = '';
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;
   let userUniqueAlias = data.userDetails?.uniqueAlias;
   let boolAnswered;

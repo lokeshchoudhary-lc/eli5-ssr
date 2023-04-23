@@ -8,7 +8,7 @@ export const load = async ({ params }) => {
   let userChoosenTag;
   let questionUrl = params.question;
 
-  let loginedIn = false;
+  let logedIn = false;
 
   const res = await axios.get(`${BaseUrl}/authCheck`, {
     withCredentials: true,
@@ -16,7 +16,7 @@ export const load = async ({ params }) => {
   const auth = res.data.auth;
 
   if (auth == true) {
-    loginedIn = true;
+    logedIn = true;
     const userResponse = await axios.get(`${BaseUrl}/userDetails`, {
       withCredentials: true,
     });
@@ -39,7 +39,7 @@ export const load = async ({ params }) => {
         loadMore = false;
         noAnswerContent = true;
         return {
-          loginedIn,
+          logedIn,
           userDetails: userResponse.data,
           noAnswerContent,
           loadMore,
@@ -57,7 +57,7 @@ export const load = async ({ params }) => {
       noAnswerContent = false;
 
       return {
-        loginedIn,
+        logedIn,
         userDetails: userResponse.data,
         noAnswerContent,
         loadMore,
@@ -69,7 +69,7 @@ export const load = async ({ params }) => {
       };
     }
 
-    return { loginedIn, userDetails: userResponse.data };
+    return { logedIn, userDetails: userResponse.data };
   } else {
     if (questionUrl) {
       let questionId = decodeUrl(questionUrl);
@@ -86,7 +86,7 @@ export const load = async ({ params }) => {
         loadMore = false;
         noAnswerContent = true;
         return {
-          loginedIn,
+          logedIn,
           noAnswerContent,
           loadMore,
           userChoosenTag,
@@ -103,7 +103,7 @@ export const load = async ({ params }) => {
       noAnswerContent = false;
 
       return {
-        loginedIn,
+        logedIn,
         noAnswerContent,
         loadMore,
         userChoosenTag,
@@ -114,7 +114,7 @@ export const load = async ({ params }) => {
       };
     }
 
-    return { loginedIn };
+    return { logedIn };
   }
 };
 
