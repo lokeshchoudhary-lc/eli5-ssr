@@ -128,10 +128,10 @@
 
 <div class="container mt-3">
   <div class="row">
-    <div class="col-sm-3" id="slide">
+    <div class="col-lg-3" id="slide">
       <Left {data} />
     </div>
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <!-- New design start -->
       <div class="container px-0">
         <!-- Desktop -->
@@ -277,7 +277,7 @@
               </div>
               <div class="col-10">
                 <div class="card-body">
-                  <p class="card-text small text-dark">
+                  <p class="card-text fs-6">
                     {question.question} ?
                   </p>
                 </div>
@@ -297,22 +297,19 @@
         class="text-decoration-none"
       >
         <div class="card mb-3 shadow-sm round">
-          <h5 class="card-header fs-6 bg-white">
+          <h5 class="card-header fs-6">
             <img
               src={profileUrl + 'pic' + bestAnswer.profilePictureCode + '.webp'}
               alt=""
               height="30"
             />
-            <p class="text-dark">{bestAnswer.answeredByName} &ensp;</p>
+            {bestAnswer.answeredByName} &ensp;
             <i style="color: #3366FF;" class="bi bi-heart-fill fs-6" />
             <small class="text-muted"> {bestAnswer.likeNumber} likes</small>
           </h5>
-          <div class="card-body mt-1 pt-0">
-            <small
-              ><span class="badge rounded-pill text-bg-primary">Question</span
-              ></small
-            >
-            <h5 class="card-title fs-6 border-bottom py-2 text-dark">
+          <div class="card-body mt-2 pt-0">
+            <small><span class="badge rounded-pill text-bg-primary">Question</span></small>
+            <h5 class="card-title fs-6 border-bottom py-1">
               {bestAnswer.question}?
             </h5>
             <p class="card-text text-secondary">
@@ -329,7 +326,7 @@
 
       <!-- New design end -->
     </div>
-    <div class="col-sm-3 d-none d-lg-block">
+    <div class="col-lg-3 d-none d-lg-block">
       <Right />
     </div>
   </div>

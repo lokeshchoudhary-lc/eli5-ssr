@@ -56,6 +56,9 @@
       <h5>Community</h5>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
+          <a href="/ca" class="nav-link p-0 text-muted">Startup Expo</a>
+        </li>
+        <li class="nav-item mb-2">
           <a href="/ca" class="nav-link p-0 text-muted">Community Ambassador</a>
         </li>
         <li class="nav-item mb-2">

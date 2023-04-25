@@ -4,6 +4,8 @@
   let login = data.logedIn;
   let uniqueAlias = data?.uniqueAlias;
   let companyList = data.companyList;
+
+
 </script>
 
 <main>
@@ -12,7 +14,7 @@
       <div class="col-lg-3 text-center">
         <img
           src="https://cdn.dribbble.com/users/2736280/screenshots/16268961/media/cdca026170f7a3181e951ab200ba8c74.jpg"
-          class="img-fluid rounded border border-light shadow-sm"
+          class="img-fluid rounded border border-light shadow-sm d-none d-md-block"
           style="width:200px"
           alt=""
         />
@@ -44,8 +46,8 @@
 
   <div class="album py-2 bg-body-tertiary">
     <div class="container">
-      <h1 class="display-6">Top companies to explore</h1>
-      <lead>Browse companies stacks and how they Eli5 thier services</lead>
+      <h1 class="display-6">Startup Expo</h1>
+      <lead>Browse top startup stacks and know how they work in Eli5 way</lead>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 mt-2">
         <!-- listing of comapnies -->
         {#each companyList as company}
@@ -53,7 +55,7 @@
             href={`/showcase/@${company.uniqueAlias}`}
             class="text-dark text-decoration-none"
           >
-            <div class="col">
+            <div class="col" style="--brand-color: {company.brandColor}; --brand-color-op: {company.brandColor.concat("10")}">
               <div class="card shadow-sm">
                 <div class="backdrop3" />
                 <div class="card-body card3">
@@ -85,13 +87,13 @@
 
 <style>
   .backdrop3 {
-    background: #00baf210;
+    background: var(--brand-color-op);
     height: 100px;
     border-radius: 5px 5px 0 0;
   }
 
   .card3 {
-    border-top: 5px solid #00baf2;
+    border-top: 5px solid var(--brand-color);
   }
 
   .info {

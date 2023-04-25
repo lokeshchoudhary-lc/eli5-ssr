@@ -209,6 +209,46 @@
   });
 </script>
 
+<svelte:head>
+  <title>{name} Eli5</title>
+  <!-- Get clear, concise explanations of -->
+  <meta name="description" content="Know how {name} works in Eli5 way. {bio}" />
+  <!-- Google / Search Engine Tags -->
+  <meta
+    itemprop="name"
+    content="{name} Eli5"
+  />
+  <meta itemprop="description" content="Know how {name} works in Eli5 way. {bio}" />
+  <meta
+    itemprop="image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
+  />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://eli5.club/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:title"
+    content="{name} Eli5"
+  />
+  <meta property="og:description" content="Know how {name} works in Eli5 way. {bio}" />
+  <meta
+    property="og:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
+  />
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta
+    name="twitter:title"
+    content="{name} Eli5"
+  />
+  <meta name="twitter:description" content="Know how {name} works in Eli5 way. {bio}" />
+  <meta
+    name="twitter:image"
+    content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
+  />
+</svelte:head>
+
+
 <section
   class="h-100 gradient-custom-2"
   style="--brand-color: {brandColor}; --brand-color-op: {brandColorOp}"
@@ -278,7 +318,7 @@
               <h3 class="fw-bolder">
                 {name}
                 <i
-                  onclick={`window.location.href = '${websiteUrl}';`}
+                  onclick={`window.location.href = '${websiteUrl}'`}
                   class="website bi bi-box-arrow-up-right fs-6 align-top"
                 />
               </h3>
@@ -391,6 +431,9 @@
       </div>
     </div>
   </div>
+  <!-- <div class="container text-center mb-5 pb-5">
+    <p><a href="#" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Logout</a></p>
+  </div> -->
 </section>
 
 <!-- Profile edit modal -->
@@ -476,7 +519,7 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="logo" class="form-label">Logo Url</label>
+                <label for="logo" class="form-label">Logo Url <small class="text-primary"> - Please upload a square logo</small></label>
                 <input
                   type="url"
                   class="form-control"
