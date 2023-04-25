@@ -5,6 +5,9 @@ export const firstName = writable(null);
 export const textEditorHtml = writable(null);
 export const loginState = writable(null);
 
+export const companyEmail = writable(null);
+export const companyFirstName = writable(null);
+
 export const profilePictureCode = writable(null);
 export const streak = writable(null);
 export const totalAnswers = writable(null);

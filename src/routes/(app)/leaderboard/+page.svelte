@@ -3,7 +3,7 @@
   import Left from '$lib/left.svelte';
   import Nav from '$lib/navbar.svelte';
 
-  import { profileUrl } from '../../lib/vars';
+  import { profileUrl } from '../../../lib/vars';
   export let data;
   let leaderboard = data.leaderboard.data;
 </script>
@@ -12,18 +12,18 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <h4>Leaderboard</h4>
       <h6>
         Check out our leaderboard! It's where we showcase the top 100 users who
         are absolutely crushing it in this community.
       </h6>
       <table class="table p-0 m-0" style=" font-size: small;">
-        <thead style="background-color:#FAFBFF;">
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">User</th>
@@ -50,7 +50,7 @@
       </table>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { BaseUrl } from '../../lib/vars';
+import { BaseUrl } from '../../../lib/vars';
 import axios from 'axios';
 
 export const load = async () => {

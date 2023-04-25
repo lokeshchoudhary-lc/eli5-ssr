@@ -6,7 +6,7 @@
   import { initializeGoogleAccounts, renderGoogleButton } from '$lib/google';
 
   export let data;
-  let login = data.loginedIn;
+  let login = data.logedIn;
 
   onMount(() => {
     if (login == true) {
@@ -27,7 +27,7 @@
         <div id="googleButton" />
       </div>
     </div>
-    <div class="card-footer bg-white">
+    <div class="card-footer">
       Not able to sign-in: <a href="https://tally.so/r/nW2D4k" class="url">
         Need help?</a
       >

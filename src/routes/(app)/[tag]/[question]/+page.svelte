@@ -24,7 +24,7 @@
   let reRenderTipTapeditor = false;
   let textAreaAnswer = '';
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;
   let userUniqueAlias = data.userDetails?.uniqueAlias;
   let boolAnswered;
@@ -492,11 +492,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Left {data} />
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-lg-6">
       <h4>
         # {userChoosenTag}
         <button on:click={copyClipboard} class="btn btn-outline-primary"
@@ -511,7 +511,7 @@
       </h4>
 
       <nav
-        class="navbar navbar-light bg-light fixed-bottom d-lg-none px-4 py-2 shadow-lg border-top rounded"
+        class="navbar navbar-light fixed-bottom d-lg-none px-4 py-2 "
       >
         <a
           on:click={previousQuestion}
@@ -558,7 +558,7 @@
             <!-- Deskptop -->
             <div
               class="container p-0 shadow-sm rounded d-none d-lg-block"
-              style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
+              style="border-style: solid; border-color: #3366FF;"
             >
               <div class="row align-items-center py-1">
                 <div class="col-2 text-center fs-2 px-0">
@@ -603,7 +603,7 @@
             <!-- Mobile -->
             <div
               class="container p-2 shadow-sm rounded d-lg-none"
-              style="background-color: #F3F6FF; border-style: solid; border-color: #3366FF;"
+              style="border-style: solid; border-color: #3366FF;"
             >
               <div class="row align-items-center">
                 <div class="col-9">
@@ -682,7 +682,7 @@
             <!-- user answer for the above question -->
             {#if userAnswer.answer !== undefined && login == true}
               <div class="card border-success mt-2 shadow-sm rounded">
-                <div class="card-header bg-white border-light">
+                <div class="card-header">
                   <img
                     src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
                     alt=""
@@ -758,11 +758,12 @@
                   alt="noanswer"
                 />
               </div>
+
             {/if}
 
             {#each answers as answer}
               <div class="card border-light mt-4 shadow-sm rounded">
-                <div class="card-header bg-white border-light">
+                <div class="card-header">
                   <img
                     src={profileUrl +
                       'pic' +
@@ -837,7 +838,7 @@
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-lg-3">
       <Right />
     </div>
   </div>

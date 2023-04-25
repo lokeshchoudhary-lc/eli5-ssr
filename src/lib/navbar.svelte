@@ -12,8 +12,9 @@
   import { profileUrl } from '$lib/vars';
 
   export let data;
+  export let theme = '';
 
-  let login = data.loginedIn;
+  let login = data.logedIn;
   let userFirstName = data.userDetails?.firstName;
   let uniqueAlias = data.userDetails?.uniqueAlias;
   let userProfilePictureCode = data.userDetails?.profilePictureCode;
@@ -60,6 +61,31 @@
       });
     }
   });
+
+  // let theme = '';
+
+  // // function changeTheme() {
+  // //   if (window.matchMedia) {
+  // //   if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+  // //     console.log('dark hai');
+  // //     theme = "light";
+  // //     document.documentElement.setAttribute('data-bs-theme', theme);
+  // //   } else {
+  // //     console.log('light hai');
+  // //     theme ="dark";
+  // //     document.documentElement.dataset.bsTheme = get(theme);
+  // //   }
+  // //   }
+  // // }
+  function toggleTheme() {
+    if (theme === 'light') {
+      theme = 'dark';
+    } else {
+      theme = 'light';
+    }
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  }
+
 </script>
 
 <nav
@@ -125,6 +151,9 @@
           <!-- <li onclick="window.location.href='/share'" class="nav-item mb-2">
             Share with friends
           </li> -->
+           <li onclick="window.location.href='/showcase'" class="nav-item mb-2">
+            Startup Expo
+          </li>
           <li onclick="window.location.href='/eli5'" class="nav-item mb-2">
             How it works
           </li>
@@ -236,6 +265,16 @@
             <li class="nav-item">
               <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href={`/@${uniqueAlias}`}
+                >😎 Your Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary text-light border border-light" on:click={toggleTheme}>
+                {theme === 'light' ? '🌝' : '🌞'}
+              </button>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle text-light"
@@ -245,10 +284,13 @@
                 aria-expanded="false">More</a
               >
               <ul class="dropdown-menu">
-                <li>
+                <!-- <li>
                   <a class="dropdown-item" href={`/@${uniqueAlias}`}
                     >Your Profile</a
                   >
+                </li> -->
+                <li>
+                  <a class="dropdown-item"  href="/showcase">Startup Expo</a>
                 </li>
                 <li><a class="dropdown-item" href="/eli5">How it works</a></li>
                 <li>
@@ -299,11 +341,19 @@
           </li> -->
           <li class="nav-item mb-2">
             <a class="nav-link text-light" href={`/@${uniqueAlias}`}
-              >Your Profile</a
+              >😎 Your Profile</a
             >
           </li>
           <li class="nav-item mb-2">
+            <a class="nav-link text-light" href="/showcase">Company Clarity</a>
+          </li>
+          <li class="nav-item mb-2">
             <a class="nav-link text-light" href="/eli5">How it works</a>
+          </li>
+          <li class="nav-item mb-2">
+            <button class="btn btn-primary text-light border border-light" on:click={toggleTheme}>
+              {theme === 'light' ? 'Dark 🌝' : 'Light 🌞'}
+            </button>
           </li>
         </ul>
 
