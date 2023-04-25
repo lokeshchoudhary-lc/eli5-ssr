@@ -4,8 +4,6 @@
   let login = data.logedIn;
   let uniqueAlias = data?.uniqueAlias;
   let companyList = data.companyList;
-
-
 </script>
 
 <main>
@@ -44,7 +42,7 @@
     </div>
   </section>
 
-  <div class="album py-2 bg-body-tertiary">
+  <div class="album py-2">
     <div class="container">
       <h1 class="display-6">Startup Expo</h1>
       <lead>Browse top startup stacks and know how they work in Eli5 way</lead>
@@ -55,7 +53,12 @@
             href={`/showcase/@${company.uniqueAlias}`}
             class="text-dark text-decoration-none"
           >
-            <div class="col" style="--brand-color: {company.brandColor}; --brand-color-op: {company.brandColor.concat("10")}">
+            <div
+              class="col"
+              style="--brand-color: {company.brandColor}; --brand-color-op: {company.brandColor.concat(
+                '10'
+              )}"
+            >
               <div class="card shadow-sm">
                 <div class="backdrop3" />
                 <div class="card-body card3">
