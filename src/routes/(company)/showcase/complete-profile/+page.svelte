@@ -6,8 +6,8 @@
 
   let gmail = '';
   let name = '';
-  let bio = '';
-  let brandColor = '';
+  let bio = ' ';
+  let brandColor = '#3366ff';
   let websiteUrl = '';
   let twitterUrl = '';
   let linkedinUrl = '';
@@ -41,17 +41,21 @@
     editProfile.otherUrl = otherUrl;
     editProfile.profilePictureUrl = profilePictureUrl;
 
-    if (uniqueAlias != '') {
-      uniqueAlias = uniqueAlias.trim();
-      if (usernameReg.test(uniqueAlias) == false) {
-        alert('Username is not Correct');
-        return;
-      }
-      if (numberReg.test(uniqueAlias)) {
-        alert('Username cannot have all numbers');
-        return;
-      }
-      editProfile.uniqueAlias = uniqueAlias;
+    uniqueAlias = uniqueAlias.trim();
+    if (usernameReg.test(uniqueAlias) == false) {
+      alert('Username is not Correct');
+      return;
+    }
+    if (numberReg.test(uniqueAlias)) {
+      alert('Username cannot have all numbers');
+      return;
+    }
+    editProfile.uniqueAlias = uniqueAlias;
+
+    name = name.trim();
+    if (name == '') {
+      alert('Name cannot be empty');
+      return;
     }
 
     await axios
@@ -153,7 +157,11 @@
           />
         </div>
         <div class="mb-3">
-          <label for="logo" class="form-label">Logo Url</label>
+          <label for="logo" class="form-label"
+            >Logo Url <small class="text-primary">
+              - Please upload a square logo</small
+            ></label
+          >
           <input
             type="url"
             class="form-control"

@@ -113,7 +113,7 @@
     if (editprofilePictureUrl != '') {
       editProfile.profilePictureUrl = editprofilePictureUrl;
     }
-
+    editname = editname.trim();
     if (editname != '') {
       // if (edittwitterUrl.includes('twitter.com/') == false) {
       //   alert('Wrong twitter url');
@@ -214,11 +214,11 @@
   <!-- Get clear, concise explanations of -->
   <meta name="description" content="Know how {name} works in Eli5 way. {bio}" />
   <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="{name} Eli5" />
   <meta
-    itemprop="name"
-    content="{name} Eli5"
+    itemprop="description"
+    content="Know how {name} works in Eli5 way. {bio}"
   />
-  <meta itemprop="description" content="Know how {name} works in Eli5 way. {bio}" />
   <meta
     itemprop="image"
     content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
@@ -226,28 +226,27 @@
   <!-- Facebook Meta Tags -->
   <meta property="og:url" content="https://eli5.club/" />
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="{name} Eli5" />
   <meta
-    property="og:title"
-    content="{name} Eli5"
+    property="og:description"
+    content="Know how {name} works in Eli5 way. {bio}"
   />
-  <meta property="og:description" content="Know how {name} works in Eli5 way. {bio}" />
   <meta
     property="og:image"
     content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
   />
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{name} Eli5" />
   <meta
-    name="twitter:title"
-    content="{name} Eli5"
+    name="twitter:description"
+    content="Know how {name} works in Eli5 way. {bio}"
   />
-  <meta name="twitter:description" content="Know how {name} works in Eli5 way. {bio}" />
   <meta
     name="twitter:image"
     content="https://res.cloudinary.com/djffn8uxx/image/upload/v1682400348/Frame_46_dltexa.webp"
   />
 </svelte:head>
-
 
 <section
   class="h-100 gradient-custom-2"
@@ -519,7 +518,11 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="logo" class="form-label">Logo Url <small class="text-primary"> - Please upload a square logo</small></label>
+                <label for="logo" class="form-label"
+                  >Logo Url <small class="text-primary">
+                    - Please upload a square logo</small
+                  ></label
+                >
                 <input
                   type="url"
                   class="form-control"

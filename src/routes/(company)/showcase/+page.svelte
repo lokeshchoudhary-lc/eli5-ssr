@@ -1,9 +1,23 @@
 <script>
+  import axios from 'axios';
   export let data;
 
   let login = data.logedIn;
   let uniqueAlias = data?.uniqueAlias;
   let companyList = data.companyList;
+
+  function logout() {
+    axios
+      .get('/logout/company')
+      .then(function (response) {
+        // eraseCookie('loginState2');
+        window.location.replace(`/showcase`);
+        //redirect to home ?
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 </script>
 
 <main>
@@ -35,6 +49,9 @@
           {:else}
             <a href={`/showcase/@${uniqueAlias}`} class="btn btn-primary m-2"
               >Go To Profile</a
+            >
+            <a href={null} on:click={logout} class="btn btn-primary m-2"
+              >Logout</a
             >
           {/if}
         </p>
