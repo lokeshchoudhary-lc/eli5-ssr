@@ -85,7 +85,6 @@
     }
     document.documentElement.setAttribute('data-bs-theme', theme);
   }
-
 </script>
 
 <nav
@@ -151,7 +150,7 @@
           <!-- <li onclick="window.location.href='/share'" class="nav-item mb-2">
             Share with friends
           </li> -->
-           <li onclick="window.location.href='/showcase'" class="nav-item mb-2">
+          <li onclick="window.location.href='/showcase'" class="nav-item mb-2">
             Startup Expo
           </li>
           <li onclick="window.location.href='/eli5'" class="nav-item mb-2">
@@ -271,7 +270,10 @@
               >
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary text-light border border-light" on:click={toggleTheme}>
+              <button
+                class="btn btn-primary text-light border border-light"
+                on:click={toggleTheme}
+              >
                 {theme === 'light' ? '🌝' : '🌞'}
               </button>
             </li>
@@ -290,7 +292,7 @@
                   >
                 </li> -->
                 <li>
-                  <a class="dropdown-item"  href="/showcase">Startup Expo</a>
+                  <a class="dropdown-item" href="/showcase">Startup Expo</a>
                 </li>
                 <li><a class="dropdown-item" href="/eli5">How it works</a></li>
                 <li>
@@ -345,13 +347,16 @@
             >
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/showcase">Company Clarity</a>
+            <a class="nav-link text-light" href="/showcase">Startup Expo</a>
           </li>
           <li class="nav-item mb-2">
             <a class="nav-link text-light" href="/eli5">How it works</a>
           </li>
           <li class="nav-item mb-2">
-            <button class="btn btn-primary text-light border border-light" on:click={toggleTheme}>
+            <button
+              class="btn btn-primary text-light border border-light"
+              on:click={toggleTheme}
+            >
               {theme === 'light' ? 'Dark 🌝' : 'Light 🌞'}
             </button>
           </li>
