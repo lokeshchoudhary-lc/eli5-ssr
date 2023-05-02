@@ -463,7 +463,7 @@
               '@type': 'Answer',
               upvoteCount: data.answers[0].likeNumber,
               text: data.answers[0].answer,
-              url: `https://eli5.club/${questionUrl}`,
+              url: `https://eli5.club/${userChoosenTag}/${questionUrl}`,
               author: {
                 '@type': 'Person',
                 name: data.answers[0].answeredByName,
@@ -510,9 +510,7 @@
         >
       </h4>
 
-      <nav
-        class="navbar navbar-light fixed-bottom d-lg-none px-4 py-2 "
-      >
+      <nav class="navbar navbar-light fixed-bottom d-lg-none px-4 py-2">
         <a
           on:click={previousQuestion}
           href={null}
@@ -758,7 +756,6 @@
                   alt="noanswer"
                 />
               </div>
-
             {/if}
 
             {#each answers as answer}
