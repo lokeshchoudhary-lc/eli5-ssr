@@ -492,11 +492,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-lg-3">
-      <Left {data} />
+    <div class="col-lg-1">
+      <!-- <Left {data} /> -->
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-10">
       <h4>
         # {userChoosenTag}
         <button on:click={copyClipboard} class="btn btn-outline-primary"
@@ -555,22 +555,21 @@
           <div class="col-sm mb-4 px-0">
             <!-- Deskptop -->
             <div
-              class="container p-0 shadow-sm rounded d-none d-lg-block"
-              style="border-style: solid; border-color: #3366FF;"
+              class="container p-3 shadow-sm rounded d-none d-lg-block border border-light-subtle"
             >
               <div class="row align-items-center py-1">
-                <div class="col-2 text-center fs-2 px-0">
+                <!-- <div class="col-2 text-center fs-2 px-0">
                   <a
                     on:click={previousQuestion}
                     class="btn btn-primary"
                     href={null}><i class="bi bi-arrow-left" /></a
                   >
-                </div>
-                <div class="col-5">
-                  <p class="fs-5 fw-bolder my-0">{selectedQuestion} ?</p>
+                </div> -->
+                <div class="col-10">
+                  <p class="fs-4 fw-bolder my-0 text-secondary-emphasis">{selectedQuestion} ?</p>
                   <!-- <span class="badge text-bg-primary">Explain like I'm five</span> -->
                 </div>
-                <div class="col-3 text-end">
+                <div class="col-2 text-end">
                   {#if login == false}
                     <button
                       type="button"
@@ -591,24 +590,24 @@
                     >
                   {/if}
                 </div>
-                <div class="col-2 text-center fs-2 px-0">
+                <!-- <div class="col-2 text-center fs-2 px-0">
                   <a on:click={nextQuestion} class="btn btn-primary" href={null}
                     ><i class="bi bi-arrow-right" /></a
                   >
-                </div>
+                </div> -->
               </div>
             </div>
             <!-- Mobile -->
             <div
-              class="container p-2 shadow-sm rounded d-lg-none"
-              style="border-style: solid; border-color: #3366FF;"
+              class="container p-2 shadow-sm rounded d-lg-none border border-light-subtle"
             >
               <div class="row align-items-center">
                 <div class="col-9">
-                  <b>{selectedQuestion} ?</b>
+                  <p class="fw-bold text-secondary-emphasis p-0 m-0"> {selectedQuestion} ?
                   <span class="badge text-bg-primary"
                     >Explain like I'm five</span
                   >
+                </p>
                 </div>
                 <div class="col-3 text-end">
                   {#if login == false}
@@ -631,6 +630,7 @@
                     </button>
                   {/if}
                 </div>
+                <img src="https://64.media.tumblr.com/65d399f7505db363fd436ca9654b8da5/tumblr_nw6fkzORqx1sjwwzso1_540.gifv" class="mt-2" alt="Image 2">
               </div>
             </div>
 
@@ -680,7 +680,7 @@
             <!-- user answer for the above question -->
             {#if userAnswer.answer !== undefined && login == true}
               <div class="card border-success mt-2 shadow-sm rounded">
-                <div class="card-header">
+                <div class="card-header bg-white border border-light-subtle">
                   <img
                     src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
                     alt=""
@@ -749,18 +749,14 @@
             {/if}
 
             {#if noAnswer == true}
-              <div class="containe pt-2">
-                <img
-                  src="/assets/images/noanswer.webp"
-                  class="img-fluid"
-                  alt="noanswer"
-                />
+              <div class="containe p-3 text-body-tertiary">
+                <h1 class="display-6">🙌🏻 Be the first one to answer!</h1>
               </div>
             {/if}
 
             {#each answers as answer}
               <div class="card border-light mt-4 shadow-sm rounded">
-                <div class="card-header">
+                <div class="card-header bg-white border border-light-subtle">
                   <img
                     src={profileUrl +
                       'pic' +
@@ -772,8 +768,8 @@
                   <b class="small">{answer.answeredByName}</b> &emsp;
                   <small class="text-muted">{answer.createdAt}</small>
                 </div>
-                <div class="card-body text-secondary pb-1">
-                  <p class="card-text small text-secondary">
+                <div class="card-body pb-1">
+                  <p class="card-text text-body-secondary lh-lg">
                     {@html answer.answer}
                   </p>
                 </div>
@@ -833,10 +829,36 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-3">
-      <Right />
+
+      <section class="border-top">
+        <div class="container mt-2">
+          <header>
+            <h4>More from {userChoosenTag}</h4>
+          </header>
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-group lh-lg">
+                <li class="list-group-item"><a href="#" class="link-secondary">How Can Tweets Predict Stock Market Returns?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">How does sentiment analysis of social media posts contribute to stock market predictions?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">What are some popular machine learning algorithms used in analyzing Twitter data for predicting stock market returns?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">Can Twitter data be used to accurately forecast short-term stock market trends?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">How do financial analysts integrate Twitter data into their stock market prediction models?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">What are the limitations and challenges of using Twitter data for stock market forecasting?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">Are there any notable success stories of using Twitter data to predict stock market movements?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">What are the key factors to consider when developing a predictive model based on Twitter sentiment for stock market returns?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">How does the volume and velocity of tweets impact the accuracy of stock market predictions?</a></li>
+                <li class="list-group-item"><a href="#" class="link-secondary">Are there any ethical concerns associated with using Twitter data for stock market predictions?</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+    
+    <div class="col-lg-1">
+      <!-- <Right /> -->
     </div>
   </div>
 </div>
@@ -889,7 +911,6 @@
           <div
             class="alert alert-primary alert-dismissible fade show mt-3"
             role="alert"
-            style=" border-style: solid; border-color: #3366FF;"
           >
             <strong>Approach to write the Answer</strong>
 
