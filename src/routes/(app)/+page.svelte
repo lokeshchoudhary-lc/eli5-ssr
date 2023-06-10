@@ -323,8 +323,8 @@
 <div class="container mt-3">
   <div class="row grid">
     {#each allQuestions as question}
-      <a href={`/${question.tag}/${makeUrl(question.question, question.id)}`}>
-        <div class="col-md-3 grid-item">
+   
+      <div class="col-md-3 grid-item" onclick="location.href = `/${question.tag}/${makeUrl(question.question, question.id)}`;">
           <div class="card">
             {#if question.gifUrl}
               <div class="card-img-overlay">
@@ -349,7 +349,7 @@
             </div>
           </div>
         </div>
-      </a>
+
     {/each}
   </div>
 </div>
@@ -363,6 +363,16 @@
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
     border: none;
     width: 100%;
+  }
+
+  .grid-item:hover{
+    cursor: pointer;
+  }
+
+  .icon:hover{
+    cursor: pointer;
+    border-radius: 15px;
+    color: #3366FF;
   }
 
   .gradient-overlay:hover {
