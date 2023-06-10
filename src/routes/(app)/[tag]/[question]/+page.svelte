@@ -40,6 +40,8 @@
   let loadMore = data.loadMore;
   let selectedQuestion = data.question.question;
   let selectedQuestionId = data.question.id;
+  let selectedQuestionGifUrl = data.question?.gifUrl;
+  let selectedQuestionQuestionMark = data.question?.questionMark;
   let questionUrl = data.questionUrl;
   // let userId = data.userDetails.userId;
   $: answers = [];
@@ -50,6 +52,13 @@
 
   let questionFeed = new Map();
   let counter = 0;
+
+  $: backlinkQuestions = [];
+
+  function makeBacklinkUrl(q, i) {
+    let res = q.trim().replace(/\s/g, '-');
+    return res + '--' + i;
+  }
 
   function copyClipboard() {
     navigator.clipboard.writeText(window.location.href);
@@ -284,6 +293,8 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
+        selectedQuestionGifUrl = result?.gifUrl;
+        selectedQuestionQuestionMark = result?.questionMark;
         makeUrl(selectedQuestion, selectedQuestionId);
         answers = [];
         //check if user is loggedin
@@ -311,6 +322,8 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
+        selectedQuestionGifUrl = result?.gifUrl;
+        selectedQuestionQuestionMark = result?.questionMark;
         makeUrl(selectedQuestion, selectedQuestionId);
         answers = [];
         //check if user is loggedin
@@ -337,6 +350,8 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
+        selectedQuestionGifUrl = result?.gifUrl;
+        selectedQuestionQuestionMark = result?.questionMark;
         makeUrl(selectedQuestion, selectedQuestionId);
         answers = [];
         //check if user is loggedin
@@ -364,6 +379,8 @@
         let result = questionFeed.get(counter);
         selectedQuestion = result.question;
         selectedQuestionId = result.id;
+        selectedQuestionGifUrl = result?.gifUrl;
+        selectedQuestionQuestionMark = result?.questionMark;
         makeUrl(selectedQuestion, selectedQuestionId);
         answers = [];
         //check if user is loggedin
@@ -374,6 +391,16 @@
         await getAnswers();
         await getGptAnswer(selectedQuestionId);
       }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function GetBacklinkQuestions() {
+    try {
+      const response = await axios.get(`/backlinkQuestions/${userChoosenTag}`);
+      // console.log(response);
+      backlinkQuestions = [...response.data];
     } catch (error) {
       console.log(error);
     }
@@ -398,6 +425,8 @@
     // Intialize answers array for client side render , this only work on client side
     answers = [...data.answers];
     findLikeClassAndTime();
+
+    await GetBacklinkQuestions();
   });
 </script>
 
@@ -492,11 +521,11 @@
 
 <div class="container mt-2">
   <div class="row">
-    <div class="col-lg-3">
-      <Left {data} />
+    <div class="col-lg-1">
+      <!-- <Left {data} /> -->
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-10">
       <h4>
         # {userChoosenTag}
         <button on:click={copyClipboard} class="btn btn-outline-primary"
@@ -555,22 +584,30 @@
           <div class="col-sm mb-4 px-0">
             <!-- Deskptop -->
             <div
-              class="container p-0 shadow-sm rounded d-none d-lg-block"
-              style="border-style: solid; border-color: #3366FF;"
+              class="container p-3 shadow-sm rounded d-none d-lg-block border border-light-subtle"
             >
               <div class="row align-items-center py-1">
-                <div class="col-2 text-center fs-2 px-0">
+                <!-- <div class="col-2 text-center fs-2 px-0">
                   <a
                     on:click={previousQuestion}
                     class="btn btn-primary"
                     href={null}><i class="bi bi-arrow-left" /></a
                   >
-                </div>
-                <div class="col-5">
-                  <p class="fs-5 fw-bolder my-0">{selectedQuestion} ?</p>
+                </div> -->
+                <div class="col-10">
+                  {#if selectedQuestionQuestionMark}
+                    <p class="fs-4 fw-bolder my-0 text-secondary-emphasis">
+                      {selectedQuestion} ?
+                    </p>
+                  {:else}
+                    <p class="fs-4 fw-bolder my-0 text-secondary-emphasis">
+                      {selectedQuestion}
+                    </p>
+                  {/if}
+
                   <!-- <span class="badge text-bg-primary">Explain like I'm five</span> -->
                 </div>
-                <div class="col-3 text-end">
+                <div class="col-2 text-end">
                   {#if login == false}
                     <button
                       type="button"
@@ -591,24 +628,34 @@
                     >
                   {/if}
                 </div>
-                <div class="col-2 text-center fs-2 px-0">
+                <!-- <div class="col-2 text-center fs-2 px-0">
                   <a on:click={nextQuestion} class="btn btn-primary" href={null}
                     ><i class="bi bi-arrow-right" /></a
                   >
-                </div>
+                </div> -->
               </div>
             </div>
             <!-- Mobile -->
             <div
-              class="container p-2 shadow-sm rounded d-lg-none"
-              style="border-style: solid; border-color: #3366FF;"
+              class="container p-2 shadow-sm rounded d-lg-none border border-light-subtle"
             >
               <div class="row align-items-center">
                 <div class="col-9">
-                  <b>{selectedQuestion} ?</b>
-                  <span class="badge text-bg-primary"
-                    >Explain like I'm five</span
-                  >
+                  {#if selectedQuestionQuestionMark}
+                    <p class="fw-bold text-secondary-emphasis p-0 m-0">
+                      {selectedQuestion} ?
+                      <span class="badge text-bg-primary"
+                        >Explain like I'm five</span
+                      >
+                    </p>
+                  {:else}
+                    <p class="fw-bold text-secondary-emphasis p-0 m-0">
+                      {selectedQuestion}
+                      <span class="badge text-bg-primary"
+                        >Explain like I'm five</span
+                      >
+                    </p>
+                  {/if}
                 </div>
                 <div class="col-3 text-end">
                   {#if login == false}
@@ -631,6 +678,9 @@
                     </button>
                   {/if}
                 </div>
+                {#if selectedQuestionGifUrl}
+                  <img src={selectedQuestionGifUrl} class="mt-2" alt="" />
+                {/if}
               </div>
             </div>
 
@@ -680,7 +730,7 @@
             <!-- user answer for the above question -->
             {#if userAnswer.answer !== undefined && login == true}
               <div class="card border-success mt-2 shadow-sm rounded">
-                <div class="card-header">
+                <div class="card-header bg-white border border-light-subtle">
                   <img
                     src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
                     alt=""
@@ -749,18 +799,14 @@
             {/if}
 
             {#if noAnswer == true}
-              <div class="containe pt-2">
-                <img
-                  src="/assets/images/noanswer.webp"
-                  class="img-fluid"
-                  alt="noanswer"
-                />
+              <div class="containe p-3 text-body-tertiary">
+                <h1 class="display-6">🙌🏻 Be the first one to answer!</h1>
               </div>
             {/if}
 
             {#each answers as answer}
               <div class="card border-light mt-4 shadow-sm rounded">
-                <div class="card-header">
+                <div class="card-header bg-white border border-light-subtle">
                   <img
                     src={profileUrl +
                       'pic' +
@@ -772,8 +818,8 @@
                   <b class="small">{answer.answeredByName}</b> &emsp;
                   <small class="text-muted">{answer.createdAt}</small>
                 </div>
-                <div class="card-body text-secondary pb-1">
-                  <p class="card-text small text-secondary">
+                <div class="card-body pb-1">
+                  <p class="card-text text-body-secondary lh-lg">
                     {@html answer.answer}
                   </p>
                 </div>
@@ -833,10 +879,41 @@
           </div>
         </div>
       </div>
+
+      <section class="border-top">
+        <div class="container mt-2">
+          <header>
+            <h4>More from {userChoosenTag}</h4>
+          </header>
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-group lh-lg">
+                {#each backlinkQuestions as question}
+                  <li class="list-group-item">
+                    <a
+                      href={`/${question.tag}/${makeBacklinkUrl(
+                        question.question,
+                        question.id
+                      )}`}
+                      class="link-secondary"
+                    >
+                      {#if question.questionMark}
+                        {question.question} ?
+                      {:else}
+                        {question.question}
+                      {/if}
+                    </a>
+                  </li>
+                {/each}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div class="col-lg-3">
-      <Right />
+    <div class="col-lg-1">
+      <!-- <Right /> -->
     </div>
   </div>
 </div>
@@ -889,7 +966,6 @@
           <div
             class="alert alert-primary alert-dismissible fade show mt-3"
             role="alert"
-            style=" border-style: solid; border-color: #3366FF;"
           >
             <strong>Approach to write the Answer</strong>
 
