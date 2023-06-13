@@ -95,20 +95,19 @@
     return color;
   }
 
-  function setRandomBackground() {
-    var elements = document.getElementsByClassName('custom-div');
-    for (var i = 0; i < elements.length; i++) {
-      var element = elements[i];
-      element.style.background = getRandomLightColor();
-    }
-  }
+  // function setRandomBackground() {
+  //   var elements = document.getElementsByClassName('custom-div');
+  //   for (var i = 0; i < elements.length; i++) {
+  //     var element = elements[i];
+  //     element.style.background = getRandomLightColor();
+  //   }
+  // }
 
   let masonry;
 
   onMount(() => {
     // greetUser();
-    renderMasonry();
-    setRandomBackground();
+    // renderMasonry();
   });
 </script>
 
@@ -340,7 +339,7 @@
               <div class="gradient-overlay" />
             </div>
           {:else}
-            <div class="custom-div" />
+            <div class="custom-div" style={`background-color:${getRandomLightColor()}`}/>
           {/if}
           <div class="card-body">
             {#if question.questionMark == false}
@@ -348,9 +347,13 @@
                 {question.question}
               </h6>
             {:else}
-              <h6 class="card-title">
+              <a href="/${question.tag}/${makeUrl(
+                question.question,
+                question.id
+              )}" class="text-decoration-none text-secondary-emphasis"><h6 class="card-title info">
                 {question.question} ?
               </h6>
+            </a>
             {/if}
 
             <p class="card-text text-body-tertiary">{question.tag}</p>
@@ -419,6 +422,12 @@
     border-radius: 15px;
   }
 
+  @media only screen and (max-width: 600px) {
+  .gradient-overlay {
+    background-image: none;
+  }
+}
+
   .card-img-top {
     width: 100%;
     height: 200px;
@@ -458,5 +467,12 @@
   .custom-div {
     height: 200px;
     border-radius: 15px;
+  }
+
+  .info {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 </style>

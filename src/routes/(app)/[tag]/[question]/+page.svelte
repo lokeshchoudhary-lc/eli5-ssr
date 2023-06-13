@@ -889,7 +889,10 @@
             <div class="col-md-12">
               <ul class="list-group lh-lg">
                 {#each backlinkQuestions as question}
-                  <li
+                  <a href="/${question.tag}/${makeBacklinkUrl(
+                    question.question,
+                    question.id
+                  )}" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"><li
                     style="cursor: pointer;"
                     class="list-group-item"
                     on:keydown={null}
@@ -906,6 +909,7 @@
                       {question.question} ?
                     {/if}
                   </li>
+                </a>
                 {/each}
               </ul>
             </div>
