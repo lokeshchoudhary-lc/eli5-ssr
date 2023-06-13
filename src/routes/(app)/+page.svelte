@@ -48,13 +48,13 @@
       }
       page++;
       const response = await axios.get(`/allQuestions?page=${page}`);
-      // console.log(response);
+      console.log(response);
 
       if (response.status == 204) {
         loadMore = false;
         return;
       }
-      if (response.data.length < 10) {
+      if (response.data.length < 2) {
         loadMore = false;
       }
 
@@ -323,36 +323,54 @@
 <div class="container mt-3">
   <div class="row grid">
     {#each allQuestions as question}
-   
-      <div class="col-md-3 grid-item" onclick="location.href = `/${question.tag}/${makeUrl(question.question, question.id)}`;">
-          <div class="card">
-            {#if question.gifUrl}
-              <div class="card-img-overlay">
-                <img src={question.gifUrl} class="card-img-top" alt="" />
-                <div class="gradient-overlay" />
-              </div>
-            {:else}
-              <div class="custom-div" />
-            {/if}
-            <div class="card-body">
-              {#if question.questionMark}
-                <h6 class="card-title">
-                  {question.question} ?
-                </h6>
-              {:else}
-                <h6 class="card-title">
-                  {question.question}
-                </h6>
-              {/if}
-
-              <p class="card-text text-body-tertiary">{question.tag}</p>
+      <div
+        class="col-md-3 grid-item"
+        on:click={() => {
+          location.href = `/${question.tag}/${makeUrl(
+            question.question,
+            question.id
+          )}`;
+        }}
+        on:keydown={null}
+      >
+        <div class="card">
+          {#if question.gifUrl}
+            <div class="card-img-overlay">
+              <img src={question.gifUrl} class="card-img-top" alt="" />
+              <div class="gradient-overlay" />
             </div>
+          {:else}
+            <div class="custom-div" />
+          {/if}
+          <div class="card-body">
+            {#if question.questionMark == false}
+              <h6 class="card-title">
+                {question.question}
+              </h6>
+            {:else}
+              <h6 class="card-title">
+                {question.question} ?
+              </h6>
+            {/if}
+
+            <p class="card-text text-body-tertiary">{question.tag}</p>
           </div>
         </div>
-
+      </div>
     {/each}
   </div>
 </div>
+
+{#if loadMore != false}
+  <div class="text-center mt-3">
+    <button
+      on:click={loadMoreQuestions}
+      type="button"
+      class="btn btn-outline-primary mx-2 rounded-pill"
+      ><i class="bi bi-plus" />See More</button
+    >
+  </div>
+{/if}
 
 <Footer />
 
@@ -365,14 +383,14 @@
     width: 100%;
   }
 
-  .grid-item:hover{
+  .grid-item:hover {
     cursor: pointer;
   }
 
-  .icon:hover{
+  .icon:hover {
     cursor: pointer;
     border-radius: 15px;
-    color: #3366FF;
+    color: #3366ff;
   }
 
   .gradient-overlay:hover {

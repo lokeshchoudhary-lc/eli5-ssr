@@ -595,13 +595,13 @@
                   >
                 </div> -->
                 <div class="col-10">
-                  {#if selectedQuestionQuestionMark}
+                  {#if selectedQuestionQuestionMark == false}
                     <p class="fs-4 fw-bolder my-0 text-secondary-emphasis">
-                      {selectedQuestion} ?
+                      {selectedQuestion}
                     </p>
                   {:else}
                     <p class="fs-4 fw-bolder my-0 text-secondary-emphasis">
-                      {selectedQuestion}
+                      {selectedQuestion} ?
                     </p>
                   {/if}
 
@@ -889,20 +889,22 @@
             <div class="col-md-12">
               <ul class="list-group lh-lg">
                 {#each backlinkQuestions as question}
-                  <li class="list-group-item">
-                    <a
-                      href={`/${question.tag}/${makeBacklinkUrl(
+                  <li
+                    style="cursor: pointer;"
+                    class="list-group-item"
+                    on:keydown={null}
+                    on:click={() => {
+                      location.href = `/${question.tag}/${makeBacklinkUrl(
                         question.question,
                         question.id
-                      )}`}
-                      class="link-secondary"
-                    >
-                      {#if question.questionMark}
-                        {question.question} ?
-                      {:else}
-                        {question.question}
-                      {/if}
-                    </a>
+                      )}`;
+                    }}
+                  >
+                    {#if question.questionMark == false}
+                      {question.question}
+                    {:else}
+                      {question.question} ?
+                    {/if}
                   </li>
                 {/each}
               </ul>

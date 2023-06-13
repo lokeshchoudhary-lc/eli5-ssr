@@ -23,7 +23,7 @@ export const load = async () => {
   let loadMore;
   const questions = await axios.get(`${BaseUrl}/allQuestions`);
 
-  if (questions.data.length < 10) {
+  if (questions.data.length < 2) {
     loadMore = false;
   }
   return { questions, loadMore };
