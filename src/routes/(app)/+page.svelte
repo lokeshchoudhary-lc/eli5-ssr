@@ -351,10 +351,10 @@
               </h6>
             {:else}
               <a
-                href="/${question.tag}/${makeUrl(
+                href={`/${question.tag}/${makeUrl(
                   question.question,
                   question.id
-                )}"
+                )}`}
                 class="text-decoration-none text-secondary-emphasis"
                 ><h6 class="card-title info">
                   {question.question} ?
