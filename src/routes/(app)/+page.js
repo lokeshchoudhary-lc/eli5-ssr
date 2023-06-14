@@ -20,11 +20,11 @@ export const load = async () => {
 
   // return { feed, tags, loadMore };
 
-  let loadMore;
+  let loadMoreQuestions;
   const questions = await axios.get(`${BaseUrl}/allQuestions`);
 
-  if (questions.data.length < 2) {
-    loadMore = false;
+  if (questions.data.length < 20) {
+    loadMoreQuestions = false;
   }
-  return { questions, loadMore };
+  return { questions, loadMoreQuestions };
 };

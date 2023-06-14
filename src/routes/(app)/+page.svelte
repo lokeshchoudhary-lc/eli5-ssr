@@ -15,7 +15,7 @@
   let icon;
 
   let page = 1;
-  let loadMore = data.loadMore;
+  let loadMore = data.loadMoreQuestions;
   // $: allTags = data.tags.data;
   $: allQuestions = data.questions.data;
 
@@ -339,7 +339,10 @@
               <div class="gradient-overlay" />
             </div>
           {:else}
-            <div class="custom-div" style={`background-color:${getRandomLightColor()}`}/>
+            <div
+              class="custom-div"
+              style={`background-color:${getRandomLightColor()}`}
+            />
           {/if}
           <div class="card-body">
             {#if question.questionMark == false}
@@ -347,13 +350,16 @@
                 {question.question}
               </h6>
             {:else}
-              <a href="/${question.tag}/${makeUrl(
-                question.question,
-                question.id
-              )}" class="text-decoration-none text-secondary-emphasis"><h6 class="card-title info">
-                {question.question} ?
-              </h6>
-            </a>
+              <a
+                href="/${question.tag}/${makeUrl(
+                  question.question,
+                  question.id
+                )}"
+                class="text-decoration-none text-secondary-emphasis"
+                ><h6 class="card-title info">
+                  {question.question} ?
+                </h6>
+              </a>
             {/if}
 
             <p class="card-text text-body-tertiary">{question.tag}</p>
@@ -423,10 +429,10 @@
   }
 
   @media only screen and (max-width: 600px) {
-  .gradient-overlay {
-    background-image: none;
+    .gradient-overlay {
+      background-image: none;
+    }
   }
-}
 
   .card-img-top {
     width: 100%;
