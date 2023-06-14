@@ -88,22 +88,21 @@
 </script>
 
 <nav
-  class="navbar navbar-expand-md sticky-top"
-  style="background-color: #3366FF"
+  class="navbar navbar-expand-md sticky-top bg-white px-lg-5"
   aria-label="Fourth navbar example"
 >
   {#if login == false}
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img
-          src="/assets/images/navlogo.webp"
+          src="/assets/images/logo.webp"
           alt="Logo"
           height="40"
           class="d-inline-block align-text-top"
         />
       </a>
       <button
-        class="navbar-toggler border-white"
+        class="navbar-toggler border-secondary"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarsExample04"
@@ -111,30 +110,29 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="text-light fs-2"><i class="bi bi-list" /></span>
+        <span class="text-secondary fs-2"><i class="bi bi-list" /></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0 text-light">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 text-body-secondary">
           <li class="nav-item">
-            <p class="fs-4 mb-0">Stay on top of the latest happenings</p>
+            <p class="fs-3 fw-bolder mb-0">Unleash Your Curiosity</p>
             <p class="fs-6 mb-0">
-              The Eli5 community is always ahead of the curve
+              One Simple Question at a Time - Join the Eli5 Club
             </p>
           </li>
         </ul>
         <form class="form mb-2">
-          <a href="/auth" type="button" class="btn btn-outline-light">Log-In</a>
-          <a
-            href="/auth"
-            type="button"
-            class="btn btn-light"
-            style="color:#3366FF">Sign-Up</a
+          <a href="/auth" class="text-decoration-none text-dark-emphasis mr-3"
+            >Log in</a
+          >
+          <a href="/auth" class="text-decoration-none text-dark-emphasis mx-3"
+            >Sign up</a
           >
         </form>
 
         <ul
-          class="navbar-nav mt-2 mb-2 text-light border-bottom border-top border-light d-block d-md-none"
+          class="navbar-nav mt-2 mb-2 text-secondary border-bottom border-top border-light-subtle d-block d-md-none"
         >
           <!-- <li class="nav-item mb-2">Ask Question</li> -->
           <li onclick="window.location.href='/'" class="nav-item mb-2">Home</li>
@@ -159,7 +157,7 @@
         </ul>
 
         <ul
-          class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
+          class="navbar-nav mt-2 mb-2 text-secondary border-bottom border-light-subtle d-block d-md-none"
         >
           <li
             onclick="window.location.href='https://tally.so/r/nW2D4k'"
@@ -169,9 +167,7 @@
           </li>
         </ul>
 
-        <ul
-          class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
-        >
+        <ul class="navbar-nav mt-2 mb-2 text-secondary d-block d-md-none">
           <li onclick="window.location.href='/privacy'" class="nav-item mb-2">
             Privacy Policy
           </li>
@@ -189,14 +185,14 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">
         <img
-          src={profileUrl + 'pic' + userProfilePictureCode + '.webp'}
+          src="/assets/images/logo.webp"
           alt="Logo"
           height="40"
           class="d-inline-block align-text-top"
         />
       </a>
       <button
-        class="navbar-toggler border-white"
+        class="navbar-toggler border-secondary"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navbarsExample04"
@@ -204,11 +200,11 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class=" text-light fs-2"><i class="bi bi-list" /></span>
+        <span class=" text-secondary fs-2"><i class="bi bi-list" /></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample04">
-        <p class="h5 text-light mt-3 fw-bold">
+        <p class="h5 text-secondary mt-3 fw-bold">
           Hi {userFirstName}
           <!-- <span style="background:#D6E0FF" class="badge rounded-pill text-light"
             >#{userRank}</span
@@ -216,13 +212,13 @@
         </p>
 
         <div class="row mt-3 d-md-none">
-          <div class="col text-light">
+          <div class="col text-secondary">
             {userTotalAnswers} <i class="bi bi-pen" />
           </div>
-          <div class="col text-light">
+          <div class="col text-secondary">
             {userStreak} <i class="bi bi-calendar-day" />
           </div>
-          <div class="col text-light">
+          <div class="col text-secondary">
             {userTotalLikes} <i class="bi bi-heart-fill" />
           </div>
         </div>
@@ -233,53 +229,55 @@
                 <li class="list-group-item">100 <i class="bi bi-patch-question"></i></li>
               </ul> -->
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse mx-4" id="navbarNavDropdown">
           <ul
-            class="navbar-nav text-light"
+            class="navbar-nav text-secondary"
             style="display: flex; align-items: center;"
           >
-            <li class="nav-item mx-1">
-              <p class="nav-link active text-light my-auto">
+            <!-- <li class="nav-item mx-1">
+              <p class="nav-link active text-secondary my-auto">
                 {userTotalAnswers} <i class="bi bi-pen" />
               </p>
             </li>
             <li class="nav-item mx-1">
-              <p class="nav-link active text-light my-auto">
+              <p class="nav-link active text-secondary my-auto">
                 {userStreak} <i class="bi bi-calendar-day" />
               </p>
             </li>
             <li class="nav-item mx-1">
-              <p class="nav-link active text-light my-auto">
+              <p class="nav-link active text-secondary my-auto">
                 {userTotalLikes} <i class="bi bi-heart-fill" />
               </p>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-light" aria-current="page" href="/"
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link active text-secondary" aria-current="page" href="/"
                 >Home</a
               >
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="/explore">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/explore">Explore</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light" href={`/@${uniqueAlias}`}
-                >😎 Your Profile</a
+              <a class="nav-link text-secondary" href="/leaderboard"
+                >Leaderboard</a
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
+              <a class="nav-link text-secondary" href={`/@${uniqueAlias}`}
+                >😎 Your Profile</a
+              >
+            </li> -->
+            <!-- <li class="nav-item">
               <button
-                class="btn btn-primary text-light border border-light"
+                class="btn btn-primary text-secondary border border-secondary"
                 on:click={toggleTheme}
               >
                 {theme === 'light' ? '🌝' : '🌞'}
               </button>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle text-light"
+                class="nav-link dropdown-toggle text-secondary"
                 href={null}
                 role="button"
                 data-bs-toggle="dropdown"
@@ -291,6 +289,13 @@
                     >Your Profile</a
                   >
                 </li> -->
+
+                <li>
+                  <a class="dropdown-item" href={`/@${uniqueAlias}`}>Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/showcase">Startup Expo</a>
+                </li>
                 <li>
                   <a class="dropdown-item" href="/showcase">Startup Expo</a>
                 </li>
@@ -324,70 +329,73 @@
         </div>
 
         <ul
-          class="navbar-nav mt-3 mb-2 text-light border-bottom border-top border-light d-block d-md-none"
+          class="navbar-nav mt-3 mb-2 text-secondary border-bottom border-top border-light-subtle d-block d-md-none"
         >
           <!-- <li class="nav-item mb-2">
             <a class="nav-link text-light" href="#">Ask Question</a>
           </li> -->
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/">Home</a>
+            <a class="nav-link text-secondary" href="/">Home</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/explore">Explore</a>
+            <a class="nav-link text-secondary" href="/explore">Explore</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/leaderboard">Leaderboard</a>
+            <a class="nav-link text-secondary" href="/leaderboard"
+              >Leaderboard</a
+            >
           </li>
           <!-- <li class="nav-item mb-2">
             <a class="nav-link text-light" href="#">Share with friends</a>
           </li> -->
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href={`/@${uniqueAlias}`}
+            <a class="nav-link text-secondary" href={`/@${uniqueAlias}`}
               >😎 Your Profile</a
             >
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/showcase">Startup Expo</a>
+            <a class="nav-link text-secondary" href="/showcase">Startup Expo</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/eli5">How it works</a>
+            <a class="nav-link text-secondary" href="/eli5">How it works</a>
           </li>
-          <li class="nav-item mb-2">
+          <!-- <li class="nav-item mb-2">
             <button
-              class="btn btn-primary text-light border border-light"
+              class="btn btn-primary text-secondary border border-secondary"
               on:click={toggleTheme}
             >
               {theme === 'light' ? 'Dark 🌝' : 'Light 🌞'}
             </button>
-          </li>
+          </li> -->
         </ul>
 
         <ul
-          class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
+          class="navbar-nav mt-2 mb-2 text-secondary border-bottom border-light-subtle d-block d-md-none"
         >
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="https://tally.so/r/nW2D4k"
+            <a class="nav-link text-secondary" href="https://tally.so/r/nW2D4k"
               >Need Help</a
             >
           </li>
           <li class="nav-item mb-2">
-            <a on:click={logout} class="nav-link text-light" href={null}
+            <a on:click={logout} class="nav-link text-secondary" href={null}
               >Logout</a
             >
           </li>
         </ul>
 
         <ul
-          class="navbar-nav mt-2 mb-2 text-light border-bottom border-light d-block d-md-none"
+          class="navbar-nav mt-2 mb-2 text-secondary border-bottom border-light-subtle d-block d-md-none"
         >
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/privacy">Privacy Policy</a>
+            <a class="nav-link text-secondary" href="/privacy">Privacy Policy</a
+            >
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/rules">Rules</a>
+            <a class="nav-link text-secondary" href="/rules">Rules</a>
           </li>
           <li class="nav-item mb-2">
-            <a class="nav-link text-light" href="/eli5">FAQ</a>
+            <a class="nav-link text-secondary" href="/eli5">FAQ</a>
           </li>
         </ul>
       </div>
@@ -403,5 +411,9 @@
   .navbar-toggler:active {
     outline: none;
     box-shadow: none;
+  }
+
+  .navbar {
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
   }
 </style>
