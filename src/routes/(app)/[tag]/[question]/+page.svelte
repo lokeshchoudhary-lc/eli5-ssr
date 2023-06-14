@@ -889,27 +889,30 @@
             <div class="col-md-12">
               <ul class="list-group lh-lg">
                 {#each backlinkQuestions as question}
-                  <a href="/${question.tag}/${makeBacklinkUrl(
-                    question.question,
-                    question.id
-                  )}" class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"><li
-                    style="cursor: pointer;"
-                    class="list-group-item"
-                    on:keydown={null}
-                    on:click={() => {
-                      location.href = `/${question.tag}/${makeBacklinkUrl(
-                        question.question,
-                        question.id
-                      )}`;
-                    }}
-                  >
-                    {#if question.questionMark == false}
-                      {question.question}
-                    {:else}
-                      {question.question} ?
-                    {/if}
-                  </li>
-                </a>
+                  <a
+                    href={`/${question.tag}/${makeBacklinkUrl(
+                      question.question,
+                      question.id
+                    )}`}
+                    class="link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover"
+                    ><li
+                      style="cursor: pointer;"
+                      class="list-group-item"
+                      on:keydown={null}
+                      on:click={() => {
+                        location.href = `/${question.tag}/${makeBacklinkUrl(
+                          question.question,
+                          question.id
+                        )}`;
+                      }}
+                    >
+                      {#if question.questionMark == false}
+                        {question.question}
+                      {:else}
+                        {question.question} ?
+                      {/if}
+                    </li>
+                  </a>
                 {/each}
               </ul>
             </div>
