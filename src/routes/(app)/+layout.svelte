@@ -93,7 +93,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">
-          Like an answer or want to answer; To share the love Sing-in
+          Like an answer or want to answer; To share the love Login
         </h1>
         <button
           type="button"
@@ -104,13 +104,10 @@
       </div>
       <div class="modal-body">
         <lead>Eli5 is a place to share answers and get ♥s.</lead> <br /> <br />
-        <a
-          href="/auth"
-          type="button"
-          class="btn btn-primary btn-lg"
-          data-bs-dismiss="modal"
+        <a href="/auth" class="btn btn-primary btn-lg"
           ><i class="bi bi-google" /> Sign in with Google</a
         >
+        <!-- data-bs-dismiss="modal" -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
