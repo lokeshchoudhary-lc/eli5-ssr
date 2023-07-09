@@ -40,7 +40,12 @@ async function googleCallback(response) {
     firstName.set(fromEndpoint.firstName);
     email.set(fromEndpoint.email);
     if (location == '/') {
-      window.location.replace(websiteUrl);
+      if (sessionStorage.getItem('lastQuestionVisited')) {
+        let value = sessionStorage.getItem('autosave');
+        window.location.replace(value);
+      } else {
+        window.location.replace(websiteUrl);
+      }
     } else {
       goto(location);
     }
