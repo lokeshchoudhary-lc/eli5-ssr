@@ -41,7 +41,7 @@ async function googleCallback(response) {
     email.set(fromEndpoint.email);
     if (location == '/') {
       if (sessionStorage.getItem('lastQuestionVisited')) {
-        let value = sessionStorage.getItem('autosave');
+        let value = sessionStorage.getItem('lastQuestionVisited');
         window.location.replace(value);
       } else {
         window.location.replace(websiteUrl);
