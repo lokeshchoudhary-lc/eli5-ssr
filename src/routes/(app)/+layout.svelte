@@ -104,10 +104,13 @@
       </div>
       <div class="modal-body">
         <lead>Eli5 is a place to share answers and get ♥s.</lead> <br /> <br />
-        <a href="/auth" class="btn btn-primary btn-lg"
-          ><i class="bi bi-google" /> Sign in with Google</a
+        <p
+          onclick="window.location.href='/auth'"
+          class="btn btn-primary btn-lg"
+          data-bs-dismiss="modal"
         >
-        <!-- data-bs-dismiss="modal" -->
+          <i class="bi bi-google" /> Sign in with Google
+        </p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
