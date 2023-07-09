@@ -415,6 +415,8 @@
       loginState.subscribe((value) => {
         login = value;
       });
+    } else {
+      sessionStorage.setItem('lastQuestionVisited', window.location.href);
     }
 
     await getGptAnswer(selectedQuestionId);
